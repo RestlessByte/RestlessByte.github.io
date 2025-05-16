@@ -4,29 +4,69 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name | Developer</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Daniil [RestlessByte] | Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com ">
-  <link href="https://fonts.googleapis.com/css2?family=Inter :wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter :wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary: #58a6ff;
+      --secondary: #30d158;
+      --accent: #8e79f0;
+      --dark: #0d1117;
+      --light-dark: #161b22;
+      --gray: #808080;
+    }
+
+    * {
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+    }
+
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background-color: #0d1117;
+      background: var(--dark);
       color: #c9d1d9;
+      line-height: 1.6;
     }
 
     .container {
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
+      padding: 2.5rem;
+      animation: fadeIn 1s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
       padding: 2rem;
-      text-align: center;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
     }
 
     h1,
     h2,
-    p {
-      margin: 0.5rem 0;
+    h3 {
+      margin: 1rem 0 0.5rem;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      color: var(--gray);
+      font-size: 1.1rem;
     }
 
     .tech-stack,
@@ -34,84 +74,221 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 12px;
+      margin-top: 1.5rem;
     }
 
     .techBorder {
-      background: linear-gradient(455deg, lime, rgb(94, 175, 94), rgb(87, 87, 154));
-      border-radius: 10px;
-      padding: 5px;
+      background: linear-gradient(45deg, var(--secondary), var(--accent));
+      border-radius: 12px;
+      padding: 4px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .techBorder::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+      animation: pulse 3s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.1);
+      }
+
+      100% {
+        transform: scale(1);
+      }
     }
 
     .tech-tag {
-      background: #24292e;
-      padding: 20px;
-      border-radius: 999px;
+      background: var(--light-dark);
+      padding: 12px 24px;
+      border-radius: 50px;
       font-size: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: transform 0.2s;
+    }
+
+    .tech-tag:hover {
+      transform: translateY(-3px);
+      background: var(--secondary);
+      color: #000;
     }
 
     a {
-      color: #58a6ff;
+      color: var(--primary);
       text-decoration: none;
     }
 
+    a:hover {
+      text-decoration: underline;
+    }
+
     .socials img {
-      margin: 0 8px;
+      margin: 0 10px;
+      filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.5));
+      transition: transform 0.3s;
+    }
+
+    .socials img:hover {
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    .project-card {
+      background: var(--light-dark);
+      padding: 1.5rem;
+      border-radius: 12px;
+      width: 280px;
+      text-align: left;
+      border-left: 4px solid var(--accent);
+      transition: transform 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateX(5px);
+      background: #21262d;
+    }
+
+    .project-title {
+      color: var(--secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .icon {
+      width: 20px;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+
+    .footer {
+      margin-top: 3rem;
+      padding: 1.5rem 0;
+      text-align: center;
+      color: #7d8590;
+      font-size: 0.9rem;
+      border-top: 1px solid #30363d;
+    }
+
+    .time {
+      font-family: monospace;
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+
+    .emoji {
+      transition: transform 0.3s;
+    }
+
+    .emoji:hover {
+      transform: rotate(12deg);
     }
   </style>
 </head>
 
 <body>
   <div class="container">
-    <h1>👋 Hi, I'm Daniil [RestlessByte]</h1>
-    <p>🎓 Student / Developer / Tech Enthusiast</p>
-    <p>📍 Bashkortostan, Russia | Remote</p>
-    <p>📬 <a href="mailto:localhost.l@yandex.ru">localhost.l@yandex.ru</a></p>
-    <p>🐱 <a href="https://github.com/RestlessByte ">GitHub</a></p>
+    <div class="glass">
+      <h1>👋 <span class="emoji">Daniil</span> [RestlessByte]</h1>
+      <p class="subtitle">🎓 Student / Developer / Tech Enthusiast</p>
+      <p class="subtitle">📍 Bashkortostan, Russia | Remote</p>
+      <p class="subtitle">
+        📬 <a href="mailto:localhost.l@yandex.ru">localhost.l@yandex.ru</a>
+      </p>
+      <p class="subtitle">
+        🐱 <a href="https://github.com/RestlessByte " target="_blank">GitHub</a>
+      </p>
 
-    <hr style="margin: 2rem 0 border-color: #30363d;" />
-    <span class="time" id="time">
+      <div class="time" id="time"></div>
+    </div>
 
-    </span>
-    <h2>💻 About Me</h2>
-    <p>I'm a frontend developer passionate about building modern, responsive and scalable web applications.</p>
+    <div class="glass" style="margin-top: 2rem;">
+      <h2>💻 About Me</h2>
+      <p style="margin-top: 1rem;">
+        I'm a frontend developer passionate about building modern, responsive and scalable web applications.
+        My goal is to create beautiful and functional digital experiences that make a difference.
+      </p>
+    </div>
 
-    <h2 style="margin-top: 1.5rem;">🔧 Tech Stack</h2>
-    <div class="techBorder">
-      <div class="tech-stack">
-        <span class="tech-tag">HTML</span>
-        <span class="tech-tag">CSS / SCSS</span>
-        <span class="tech-tag">JavaScript</span>
-        <span class="tech-tag">React.js</span>
-        <span class="tech-tag">Next.js</span>
-        <span class="tech-tag">PostgreSQL</span>
-        <span class="tech-tag">BUN</span>
-        <span class="tech-tag">Python</span>
-        <span class="tech-tag">C++</span>
-        <span class="tech-tag">GitHub CLI</span>
+    <div class="glass" style="margin-top: 2rem;">
+      <h2>🔧 Tech Stack</h2>
+      <div class="techBorder">
+        <div class="tech-stack">
+          <span class="tech-tag">HTML5</span>
+          <span class="tech-tag">CSS3 / SCSS</span>
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">TypeScript</span>
+          <span class="tech-tag">React.js</span>
+          <span class="tech-tag">Next.js</span>
+          <span class="tech-tag">PostgreSQL</span>
+          <span class="tech-tag">BUN</span>
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">C++</span>
+          <span class="tech-tag">GitHub CLI</span>
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">TailwindCSS</span>
+        </div>
       </div>
-
-    </div>
-    <h2 style="margin-top: 2rem;">🎯 Projects</h2>
-    <div class="projects">
-      <p>• <strong>Project One</strong> <a href="https://t.me/ByteMindGame_bot">Telegram Game Chat
-          Bot</a></p>
-      <p>• <strong>Project Two</strong <a href="https://t.me/ByteMindAiHub_bot">Telegram AI Hub</a></p>
     </div>
 
-    <h2 style="margin-top: 2rem;">🔗 Let's Connect!</h2>
-    <div class="socials">
-      <a href="mailto:localhost.l@yandex.ru" target="_blank"><img
-          src="https://img.icons8.com/color/48/000000/email.png " width="24" /></a>
-      <a href="https://t.me/@RestlessByte " target="_blank"><img
-          src="https://img.icons8.com/color/48/000000/telegram-app.png " width="24" /></a>
+    <div class="glass" style="margin-top: 2rem;">
+      <h2>🎯 Projects</h2>
+      <div class="projects" style="justify-content: center;">
+        <div class="project-card">
+          <h3 class="project-title">🎮 Telegram Game Bot</h3>
+          <p>Interactive game chat bot with real-time engagement features.</p>
+          <p><img src="https://img.icons8.com/ios-filled/24/000000/telegram.png " class="icon" alt="Telegram icon" />
+            <a href="https://t.me/ByteMindGame_bot " target="_blank">Launch</a>
+          </p>
+        </div>
+
+        <div class="project-card">
+          <h3 class="project-title">🤖 Telegram AI Hub</h3>
+          <p>Centralized hub for AI-powered tools and chatbots integration.</p>
+          <p><img src="https://img.icons8.com/ios-filled/24/000000/telegram.png " class="icon" alt="Telegram icon" />
+            <a href="https://t.me/ByteMindAiHub_bot " target="_blank">Launch</a>
+          </p>
+        </div>
+      </div>
     </div>
 
+    <div class="glass" style="margin-top: 2rem;">
+      <h2>🔗 Let's Connect!</h2>
+      <div class="socials" style="margin: 1.5rem 0;">
+        <a href="mailto:localhost.l@yandex.ru" target="_blank">
+          <img src="https://img.icons8.com/color/48/000000/email.png " width="24" alt="Email icon" />
+        </a>
+        <a href="https://t.me/RestlessByte " target="_blank">
+          <img src="https://img.icons8.com/color/48/000000/telegram-app.png " width="24" alt="Telegram app icon" />
+        </a>
+        <a href="https://github.com/RestlessByte " target="_blank">
+          <img src="https://img.icons8.com/color/48/000000/github--v1.png " width="24" alt="GitHub icon" />
+        </a>
+      </div>
+    </div>
+
+    <div class="footer">
+      &copy; 2025 Daniil [RestlessByte]. Built with ❤️ and code.
+    </div>
   </div>
+
+  <script>
+    function formatDate(date) {
+      return date.toISOString().split('T')[0];
+    }
+
+    document.getElementById('time').innerHTML = `🕒 Updated: ${formatDate(new Date())}`;
+  </script>
 </body>
-<script>
-  const data = new Date()
-  document.getElementById('time').innerHTML = `${data.getTime()}`
-</script>
 
 </html>
