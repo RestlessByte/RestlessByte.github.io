@@ -69,8 +69,10 @@
     <p>📬 <a href="mailto:localhost.l@yandex.ru">localhost.l@yandex.ru</a></p>
     <p>🐱 <a href="https://github.com/RestlessByte ">GitHub</a></p>
 
-    <hr style="margin: 2rem 0; border-color: #30363d;" />
+    <hr style="margin: 2rem 0 border-color: #30363d;" />
+    <span class="time" id="time">
 
+    </span>
     <h2>💻 About Me</h2>
     <p>I'm a frontend developer passionate about building modern, responsive and scalable web applications.</p>
 
@@ -107,5 +109,9 @@
 
   </div>
 </body>
+<script>
+  const data = new Date()
+  document.getElementById('time').innerHTML = `${data.getDate()}`
+</script>
 
 </html>
