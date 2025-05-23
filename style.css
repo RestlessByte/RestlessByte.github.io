@@ -116,16 +116,27 @@
    color: #000;
 
  }
-
+p{
+   background: rgb(2, 49, 50);
+   padding: 10px;
+  animation: all 1.5s ease;
+   color: #58a6ff;
+   border-radius: 11px;
+}
  a {
    background: rgb(2, 49, 50);
    text-decoration: none;
    padding: 10px;
+  margin: 5px;
    animation: all 1.5s ease;
    color: #58a6ff;
-   margin: 5px;
    border-radius: 11px;
 
+ }
+ .glassContent{
+  display: flex;
+  margin: 20px;
+  width: fit-content;
  }
 
  .projectButton {
