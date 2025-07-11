@@ -74,14 +74,12 @@
 
    .containerLogo {
      position: relative;
-     left: 20px;
    }
 
  }
 
 
- p,
- a {
+ p {
    background: linear-gradient(45deg, rgba(165, 42, 42, 0.325), black, rgba(165, 42, 42, 0.325));
    padding: 5px;
    border-radius: 5px;
@@ -102,9 +100,9 @@
 
  .subtitle {
    color: var(--gray);
-   margin-top: 3px;
-   font-size: 1.1rem;
+   padding: 20px;
  }
+
 
  .tech-stack-card {
    background: linear-gradient(45deg, rgba(170, 18, 18, 0.288), black);
@@ -156,6 +154,10 @@
      .grid {
        grid-template-columns: repeat(1, 1fr);
      }
+
+     .subtitle {
+       padding: 2px;
+     }
    }
 
 
@@ -201,7 +203,7 @@
    }
 
    .button {
-     color: #fff;
+     color: black;
      text-decoration: none;
 
    }
@@ -217,9 +219,9 @@
    }
 
    .project-card-button {
-     background: lightblue;
+     background: linear-gradient(454deg, rgb(7, 136, 221), rgb(152, 189, 20), rgb(104, 69, 75));
      display: flex;
-     flex-direction: column;
+     width: fit-content;
      align-items: center;
      height: fit-content;
      border-radius: 20px;
@@ -239,10 +241,10 @@
      scale: 1.03;
    }
 
-   .socials img {
+   .socials img,
+   svg {
      position: relative;
      top: 5px;
-     margin: 0 10px;
      filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.5));
      transition: transform 0.3s;
    }
@@ -256,17 +258,32 @@
 
  .projects {
    display: flex;
-   gap: 15px;
+   flex-direction: column;
 
+ }
+
+ .project-card-buttonn {
+   display: flex;
+   justify-content: center;
  }
 
  .project-card {
    border-radius: 20px;
    background: linear-gradient(45deg, rgb(70, 61, 61), rgba(41, 13, 107, 0.247), rgb(83, 116, 83));
-   width: fit-content;
-   display: flex;
+   grid-template-columns: repeat(1, 1fr);
+   margin: 5px;
+   animation: all ease;
    flex-direction: column;
    align-items: center;
+ }
+
+ @media (max-width:800px) {
+   .project-card {
+     font-size: small;
+     padding: 5px;
+     display: grid;
+
+   }
  }
 
  .project-card:hover {
