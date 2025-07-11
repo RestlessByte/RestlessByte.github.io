@@ -8,107 +8,221 @@
   <link rel="preconnect" href="https://fonts.googleapis.com ">
   <link href="https://fonts.googleapis.com/css2?family=Inter :wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./index.css">
-</head>
 
 <body>
   <div class="container">
     <div class="glass">
-      <h1>👋 <span class="emoji">Daniil</span> [RestlessByte]</h1>
-      <p class="subtitle">🎓 Student / Developer / Tech Enthusiast</p>
-      <p class="subtitle">📍 Bashkortostan, Russia | Remote</p>
-      <p class="subtitle">
-        📬 <a href="mailto:localhost.l@yandex.ru">localhost.l@yandex.ru</a>
-      </p>
-      <p class="subtitle">
-        🐱 <a href="https://github.com/RestlessByte " target="_blank">GitHub</a>
-      </p>
+      <div class="containerLogo">
+        <img class="logo" src="./attachments/logo/logo.webp" width="250" height="250" alt="no image logo" />
+      </div>
+      <div class="containerAbout">
 
-      <div class="time" id="time"></div>
+        <h1>👋 <span class="emoji">Daniil</span> [RestlessByte]</h1>
+        <p class="subtitle">🎓 Student / Developer / Tech Enthusiast</p>
+        <p class="subtitle">📍 Bashkortostan, Russia | Remote</p>
+        <p class="subtitle">
+          📬 <a href="mailto:localhost.l@yandex.ru">localhost.l@yandex.ru</a>
+        </p>
+        <p class="subtitle">🧑🏼‍🏭 OS Type:
+          <span id="OS"><b>Linux [Ubuntu KDE]</b> - for all lifestyle</span>
+        <p class="subtitle">
+          🐱 <a href="https://github.com/RestlessByte " target="_blank">GitHub [touch please]</a>
+        </p>
+
+        <div class="time" id="time"></div>
+      </div>
     </div>
 
     <div class="glass" style="margin-top: 2rem;">
       <h2>💻 About Me</h2>
       <p style="margin-top: 1rem;">
         <code> Greetings to everyone on my this site. This site is created only for portfolio and not more. Here I write what
-        stack I am using at the moment.
-        About me I can say this: I like to code, help others in development, and analyze algorithms. And - yes, I use
-        neural networks in my daily life</code>
+              stack I am using at the moment.
+              About me I can say this: I like to code, help others in development, and analyze algorithms. And - yes, I use
+              neural networks in my daily life</code>
       </p>
     </div>
 
     <div class="glass" style="margin-top: 2rem;">
       <h2>🔧 Tech Stack</h2>
       <div class="techBorder">
-        <div class="tech-stack">
-          <span class="tech-tag"><b>LINUX</b></span>
-          <span class="tech-tag">HTML</span>
-          <span class="tech-tag">CSS / SCSS</span>
-          <span class="tech-tag">JavaScript</span>
-          <span class="tech-tag">TypeScript</span>
-          <span class="tech-tag">React.js</span>
-          <span class="tech-tag">Next.js</span>
-          <span class="tech-tag">PostgreSQL</span>
-          <span class="tech-tag">Bun</span>
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">C++</span>
-          <span class="tech-tag">GitHub CLI</span>
-          <span class="tech-tag">Node.js</span>
-          <span class="tech-tag">Bash</span>
-        </div>
-      </div>
-    </div>
+        <div class="grid">
+          <div class="tech-stack-card">
+            <span className='tech-stack-cardTitle'>
+              Language Programming
+            </span>
 
-    <div class="glass" style="margin-top: 2rem;">
-      <h2>🎯 Projects</h2>
-      <div class="projects" style="justify-content: center;">
-        <div class="project-card">
-          <h3 class="project-title">🎮 Telegram Game Bot [AI Powered]</h3>
-          <p>Interactive game chat bot with real-time engagement features.</p>
-          <div class="project-card-button">
-            <p><img src="https://img.icons8.com/ios-filled/24/000000/telegram.png " class="icon" alt="Telegram icon" />
-              <a class='s' href="https://t.me/farmilochka0_bot " target="_blank">Launch</a>
+
+            <span class="tech-stack-card-stack">
+              <img class="logo_pr"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
+                height="20" width="20" />
+              <span class="tech-stack-card-stack-name">TypeScript</span>
+            </span>
+            <span class="tech-stack-card-stack">
+              <img class="logo_pr"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+                height="20" width="20" />
+              <span class="tech-stack-card-stack-name">JavaScript</span>
+            </span>
+            <span class="tech-stack-card-stack">
+              <img class="logo_pr"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg"
+                height="20" width="20" />
+              <span class="tech-stack-card-stack-name">Python</span>
+            </span>
+            <span class="tech-stack-card-stack">
+              <img class="logo_pr"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg"
+                height="20" width="20" />
+              <span class="tech-stack-card-stack-name">C++</span>
+            </span>
+          </div>
+
+
+          <div class="tech-stack-card">
+            <span className='tech-stack-cardTitle'>
+              SQL DATABASE
+            </span>
+
+
+            <span class="tech-stack-card-stack">
+              <img class="logo_pr"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original-wordmark.svg"
+                height="20" width="20" />
+              <span class="tech-stack-card-stack-name">PostgreSQL</span>
+            </span>
+          </div>
+          <div class="tech-stack-card">
+            <span className='tech-stack-cardTitle'>
+              Frameworks
+            </span>
+
+
+            <span class="tech-stack-card-stack">
+              <img class="logo_pr"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" height="20"
+                width="20" />
+              <span class="tech-stack-card-stack-name">Next.js</span>
+            </span>
+            <span class="tech-stack-card-stack">
+              <img class="logo_pr" <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg" height="20"
+                width="20" />
+              <span class="tech-stack-card-stack-name">Nest.js</span>
+            </span>
+          </div>
+
+          <div class="tech-stack-card">
+            <span className='tech-stack-cardTitle'>
+              Libaries
+            </span>
+
+
+            <span class="tech-stack-card-stack">
+              <img class="logo_pr"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" height="20"
+                width="20" />
+              <span class="tech-stack-card-stack-name">React.js</span>
+            </span>
+            <span class="tech-stack-card-stack">
+              <img class="logo_pr" <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" height="20"
+                width="20" />
+              <span class="tech-stack-card-stack-name">Express.js</span>
+            </span>
+          </div>
+
+          <div class="tech-stack-card">
+            <span className='tech-stack-cardTitle'>
+              Tools
+            </span>
+
+
+            <span class="tech-stack-card-stack">
+              <img class="logo_pr"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" height="20"
+                width="20" />
+              <span class="tech-stack-card-stack-name"><b>LINUX</b></span>
+            </span>
+            <span class="tech-stack-card-stack">
+              <img class="logo_pr"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" height="20"
+                width="20" />
+              <span class="tech-stack-card-stack-name"><b>Visual Studio Code</b></span>
+            </span>
+            <span class="tech-stack-card-stack">
+              <img class="logo_pr"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ssh/ssh-original-wordmark.svg"
+                height="20" width="20" />
+              <span class="tech-stack-card-stack-name"><b>SSH</b></span>
+            </span>
+            <span class="tech-stack-card-stack">
+              <img class="logo_pr"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg"
+                height="20" width="20" />
+              <span class="tech-stack-card-stack-name"><b>GitHub</b></span>
+            </span>
+            <span class="tech-stack-card-stack">
+              <img class="logo_pr"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original-wordmark.svg"
+                height="20" width="20" />
+              <span class="tech-stack-card-stack-name"><b>Docker</b></span>
+            </span>
+            <span class="tech-stack-card-stack">
+              <img class="logo_pr"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-original-wordmark.svg"
+                height="20" width="20" />
+              <span class="tech-stack-card-stack-name"><b>Kubernetes</b></span>
+            </span>
           </div>
         </div>
+      </div>
 
-        <div class="project-card">
-          <h3 class="project-title">🤖 Telegram AI Hub</h3>
-          <p>Centralized hub for AI-powered tools and chatbots integration.</p>
-          <div class="project-card-button">
-            <p><img src="https://img.icons8.com/ios-filled/24/000000/telegram.png " class="icon" alt="Telegram icon" />
-              <a class='s' href="https://t.me/AIHub0_bot " target="_blank">Launch</a>
+      <div class="glass" style="margin-top: 2rem;">
+        <h2>🎯 Projects</h2>
+        <div class="projects" style="justify-content: center;">
+          <div class="project-card">
+            <h3 class="project-title">🎮 Telegram Game Bot [AI Powered]</h3>
+            <p>Interactive game chat bot with real-time engagement features.</p>
+            <div class="project-card-button">
+              <p><img src="https://img.icons8.com/ios-filled/24/000000/telegram.png " class="icon"
+                  alt="Telegram icon" />
+                <a class='button' href="https://t.me/farmilochka0_bot " target="_blank">Launch</a>
+            </div>
           </div>
-          </p>
+
+          <div class="project-card">
+            <h3 class="project-title">🤖 Telegram AI Hub</h3>
+            <p>Centralized hub for AI-powered tools and chatbots integration.</p>
+            <div class="project-card-button">
+              <img src="https://img.icons8.com/ios-filled/24/000000/telegram.png " class="icon" alt="Telegram icon" />
+              <a class='button' href="https://t.me/AIHub0_bot " target="_blank">Launch</a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="glass" style="margin-top: 2rem;">
-      <h2>🔗 Let's Connect!</h2>
-      <div class="socials" style="margin: 1.5rem 0;">
-        <a href="mailto:localhost.l@yandex.ru" target="_blank">
-          <img src="https://img.icons8.com/color/48/000000/email.png " width="24" alt="Email icon" />
-        </a>
-        <a href="https://t.me/RestlessByte " target="_blank">
-          <img src="https://img.icons8.com/color/48/000000/telegram-app.png " width="24" alt="Telegram app icon" />
-        </a>
-        <a href="https://github.com/RestlessByte " target="_blank">
-          <img src="https://img.icons8.com/color/48/000000/github--v1.png " width="24" alt="GitHub icon" />
-        </a>
+      <div class="glass" style="margin-top: 2rem;">
+        <h2>🔗 Let's Connect!</h2>
+        <div class="socials" style="margin: 1.5rem 0;">
+          <a href="mailto:localhost.l@yandex.ru" target="_blank">
+            <img src="https://img.icons8.com/color/48/000000/email.png " width="24" alt="Email icon" />
+          </a>
+          <a href="https://t.me/RestlessByte " target="_blank">
+            <img src="https://img.icons8.com/color/48/000000/telegram-app.png " width="24" alt="Telegram app icon" />
+          </a>
+          <a href="https://github.com/RestlessByte " target="_blank">
+            <img src="https://img.icons8.com/color/48/000000/github--v1.png " width="24" alt="GitHub icon" />
+          </a>
+        </div>
+      </div>
+
+      <div class="footer">
+        &copy; 2025 Daniil [RestlessByte]. Built with ❤️ and code.
       </div>
     </div>
-
-    <div class="footer">
-      &copy; 2025 Daniil [RestlessByte]. Built with ❤️ and code.
-    </div>
-  </div>
-
-  <script>
-    function formatDate(date) {
-      return date.toISOString().split('T')[0];
-    }
-
-    document.getElementById('time').innerHTML = `🕒 Updated: ${formatDate(new Date())} `;
-  </script>
+    <script src="./index.js"></script>
 </body>
 
 </html>
