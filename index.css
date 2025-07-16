@@ -13,6 +13,10 @@
    transition: all 0.3s ease;
  }
 
+ .project-card-descripton {
+   margin: 20px;
+ }
+
  body {
    margin: 0;
    font-family: 'Inter', sans-serif;
@@ -81,7 +85,7 @@
  p {
    background: linear-gradient(45deg, rgba(165, 42, 42, 0.325), black, rgba(165, 42, 42, 0.325));
    padding: 5px;
-   border-radius: 5px;
+   border-radius: 1rem;
 
    &:hover {
      scale: 1.04;
@@ -110,7 +114,8 @@
  .tech-stack-card {
    background: linear-gradient(45deg, rgba(170, 18, 18, 0.288), black);
    padding: 10px;
-
+   display: flex;
+   flex-direction: column;
    margin: 5px;
    border-radius: 20px;
  }
