@@ -317,6 +317,11 @@
    border-top: 1px solid #30363d;
  }
 
+ .tech-stack-cardTitle {
+   display: flex;
+   justify-content: center;
+ }
+
  .time {
    font-family: monospace;
    color: var(--gray);
