@@ -275,7 +275,7 @@ h3 {
 
 .project-card {
   border-radius: 20px;
-  background: linear-gradient(45deg, rgb(70, 61, 61), rgba(41, 13, 107, 0.247), rgb(83, 116, 83));
+  background: linear-gradient(30deg, pink, rgb(70, 61, 61), rgba(85, 73, 112, 0.247), rgb(132, 164, 132), pink);
   grid-template-columns: repeat(1, 1fr);
   margin: 5px;
   animation: all ease;
