@@ -144,6 +144,7 @@ h3 {
   position: relative;
   top: -5px;
   margin: 20px;
+
 }
 
 .techBorder {
@@ -341,6 +342,7 @@ h3 {
 
 .tech-stack-cardTitle {
   display: flex;
+  color: black;
   justify-content: center;
 }
 
