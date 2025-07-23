@@ -90,7 +90,6 @@ body {
 b,
 p {
   color: rgba(0, 0, 0, 0.473);
-  margin: 20px;
 }
 
 p {
@@ -144,6 +143,7 @@ h3 {
 .tech-stack-card-stack-name {
   position: relative;
   top: -5px;
+  margin: 20px;
 }
 
 .techBorder {
