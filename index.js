@@ -247,7 +247,7 @@ const renderSkills = () => {
     titleElement.className = 'tech-stack-cardTitle';
     titleElement.style.display = 'flex';
     titleElement.style.justifyContent = 'center';
-    titleElement.innerHTML = `<b>${skillCategory.title}</b>`;
+    titleElement.innerHTML = `<b>${skillCategory.label}</b>`;
 
     skillCard.appendChild(titleElement);
 
