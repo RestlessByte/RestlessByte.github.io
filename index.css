@@ -50,8 +50,8 @@ body {
 }
 
 .glass {
-  /* background: rgba(97, 60, 60, 0.561); */
-  background: linear-gradient(45deg, rgba(165, 42, 42, 0.321), rgba(1, 77, 139, 0.266), rgba(170, 18, 18, 0.288), rgba(93, 6, 143, 0.225), rgba(255, 192, 203, 0.506));
+  background: rgba(97, 60, 60, 0.561);
+  /* background: linear-gradient(45deg, rgba(165, 42, 42, 0.321), rgba(1, 77, 139, 0.266), rgba(170, 18, 18, 0.288), rgba(93, 6, 143, 0.225), rgba(255, 192, 203, 0.506)); */
   border-radius: 16px;
   padding: 2rem;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.737);
