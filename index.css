@@ -89,11 +89,12 @@ body {
 
 b,
 p {
-  color: rgba(0, 0, 0, 0.534);
+  color: rgba(0, 0, 0, 0.473);
 }
 
 p {
-  background: linear-gradient(45deg, rgba(165, 42, 42, 0.77), rgba(1, 77, 139, 0.855), rgba(170, 18, 18, 0.288), rgba(143, 6, 36, 0.502), rgba(255, 192, 203, 0.506));
+  background: linear-gradient(45deg, rgba(165, 42, 42, 0.321), rgba(1, 77, 139, 0.266), rgba(170, 18, 18, 0.288), rgba(93, 6, 143, 0.225), rgba(255, 192, 203, 0.506));
+  /* background: linear-gradient(45deg, rgba(165, 42, 42, 0.77), rgba(1, 77, 139, 0.855), rgba(170, 18, 18, 0.288), rgba(143, 6, 36, 0.502), rgba(255, 192, 203, 0.506)); */
   /* background: linear-gradient(45deg, rgba(165, 42, 42, 0.325), rgba(0, 0, 0, 0.642), rgba(165, 42, 42, 0.325)); */
   padding: 5px;
   border-radius: 1rem;
@@ -292,7 +293,8 @@ h3 {
 
 .project-card {
   border-radius: 20px;
-  background: linear-gradient(30deg, pink, rgb(70, 61, 61), rgba(85, 73, 112, 0.247), rgb(132, 164, 132), pink);
+  background: linear-gradient(45deg, rgba(165, 42, 42, 0.321), rgba(1, 77, 139, 0.266), rgba(170, 18, 18, 0.288), rgba(93, 6, 143, 0.225), rgba(255, 192, 203, 0.506));
+  /* background: linear-gradient(30deg, pink, rgb(70, 61, 61), rgba(85, 73, 112, 0.247), rgb(132, 164, 132), pink); */
   grid-template-columns: repeat(1, 1fr);
   margin: 5px;
   animation: all ease;
