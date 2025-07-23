@@ -313,7 +313,6 @@ h3 {
 
 .project-card:hover {
   transform: translateX(5px);
-  background: #21262d;
 }
 
 .project-title {
