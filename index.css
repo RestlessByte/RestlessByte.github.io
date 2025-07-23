@@ -112,12 +112,13 @@ h3 {
 
 
 .tech-stack-card {
-  background: linear-gradient(45deg, rgba(170, 18, 18, 0.288), black);
+  background: linear-gradient(45deg, rgba(165, 42, 42, 0.321), rgba(1, 77, 139, 0.266), rgba(170, 18, 18, 0.288), rgba(93, 6, 143, 0.225), rgba(255, 192, 203, 0.506));
   padding: 5px;
   display: flex;
   flex-direction: column;
   margin: 5px;
   border-radius: 20px;
+  height: fit-content;
 }
 
 .tech-stack-card-stack {}
