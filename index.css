@@ -122,6 +122,11 @@ h3 {
   margin: 5px;
   border-radius: 20px;
   height: fit-content;
+
+  &:hover {
+    scale: 1.10;
+    margin: 10px;
+  }
 }
 
 .tech-stack-card-stack {}
