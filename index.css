@@ -237,7 +237,6 @@ h3 {
   a {
     text-decoration: none;
     padding: 10px;
-    color: #ffffff;
     animation: all 1.5s ease;
     margin: 5px;
     border-radius: 11px;
@@ -342,7 +341,11 @@ h3 {
   margin-top: 3rem;
   padding: 1.5rem 0;
   text-align: center;
-  color: black;
+  background: linear-gradient(to right, red, rgb(120, 120, 136), rgb(85, 2, 218));
+  -webkit-background-clip: text;
+  font-weight: bold;
+  color: transparent;
+  background-clip: text;
   font-size: 0.9rem;
   border-top: 1px solid #30363d;
 }
