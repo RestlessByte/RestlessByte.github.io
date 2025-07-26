@@ -237,7 +237,7 @@ h3 {
   a {
     text-decoration: none;
     padding: 10px;
-    color: var(--gray);
+    color: #ffffff;
     animation: all 1.5s ease;
     margin: 5px;
     border-radius: 11px;
@@ -245,7 +245,7 @@ h3 {
   }
 
   .project-card-button {
-    background: linear-gradient(454deg, rgb(7, 136, 221), rgb(152, 189, 20), rgb(104, 69, 75));
+    background: linear-gradient(45deg, rgba(165, 42, 42, 0.321), rgba(1, 77, 139, 0.266), rgba(170, 18, 18, 0.288), rgba(93, 6, 143, 0.225), rgba(255, 192, 203, 0.506));
     display: flex;
     width: fit-content;
     align-items: center;
@@ -288,8 +288,15 @@ h3 {
 
 }
 
-.project-card-buttonn {
+.project-card-button {
+  background: linear-gradient(45deg, rgba(22, 101, 153, 0.321), rgba(1, 77, 139, 0.266), rgba(170, 18, 18, 0.288), rgba(93, 6, 143, 0.225), rgba(80, 2, 15, 0.506));
+  width: fit-content;
   display: flex;
+  margin: 0px auto;
+  padding: 15px;
+  text-decoration: none;
+  color: wheat;
+  border-radius: 15px;
   justify-content: center;
 }
 
