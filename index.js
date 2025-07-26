@@ -269,7 +269,6 @@ const renderSkills = () => {
 
 const initPage = () => {
   document.getElementById('year').textContent = new Date().getFullYear();
-  document.getElementById('time').innerHTML = `🕒 Updated: ${formatDate(new Date())}`;
   renderSkills();
 };
 
