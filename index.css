@@ -5,7 +5,6 @@
   --dark: #0d1117;
   --light-dark: #161b22;
   --gray: #808080;
-  --wheat: var(--wheat)
 }
 
 * {
@@ -13,7 +12,7 @@
   transition: all 0.3s ease;
 }
 
-.project-card-descripton {
+.project-card-description {
   margin: 20px;
   background: transparent;
 }
@@ -55,18 +54,19 @@ body {
 }
 
 .logo {
-  position: fixed;
-}
-
-.logo {
-  border-radius: 50px;
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .containerAbout {
   background: linear-gradient(45deg, rgba(165, 42, 42, 0.321), rgba(1, 77, 139, 0.266), rgba(170, 18, 18, 0.288), rgba(93, 6, 143, 0.225), rgba(255, 192, 203, 0.506));
-  width: fit-content;
-  padding: 10px;
+  padding: 20px;
   border-radius: 40px;
+  flex: 1;
+  min-width: 300px;
 }
 
 b,
@@ -76,17 +76,21 @@ p {
 
 p {
   background: linear-gradient(45deg, rgba(165, 42, 42, 0.321), rgba(1, 77, 139, 0.266), rgba(170, 18, 18, 0.288), rgba(93, 6, 143, 0.225), rgba(255, 192, 203, 0.506));
-  padding: 5px;
+  padding: 10px;
   border-radius: 1rem;
+  margin: 10px 0;
 }
 
 p:hover {
-  scale: 1.04;
+  transform: scale(1.04);
 }
 
-.containerLogo {
+.header-wrapper {
   display: flex;
-  justify-content: flex-end;
+  gap: 30px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
 h1,
@@ -98,36 +102,35 @@ h3 {
 
 .subtitle {
   color: var(--gray);
-  padding: 20px;
+  padding: 10px;
+  margin: 5px 0;
 }
 
 .tech-stack-card {
   background: linear-gradient(45deg, rgba(165, 42, 42, 0.321), rgba(1, 77, 139, 0.266), rgba(170, 18, 18, 0.288), rgba(93, 6, 143, 0.225), rgba(255, 192, 203, 0.506));
-  padding: 5px;
-  display: flex;
-  flex-direction: column;
-  margin: 5px;
+  padding: 15px;
   border-radius: 20px;
   height: fit-content;
+  margin: 15px;
+
+  &:hover {
+    scale: 1.02;
+  }
 }
 
-.tech-stack-card:hover {
-  scale: 1.10;
-  margin: 10px;
+.tech-stack-card-stack {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
 }
 
-.tech-stack-card-stack {}
-
-.tech-stack-card-stack-name {
-  position: relative;
-  top: -5px;
-  margin: 20px;
+.skillTechnologySkillName {
+  margin-left: 10px;
 }
 
 .techBorder {
   background: linear-gradient(45deg, var(--secondary), var(--accent));
   border-radius: 12px;
-  padding: 4px;
   display: flex;
   position: relative;
   overflow: hidden;
@@ -135,9 +138,26 @@ h3 {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: -20;
+  grid-template-columns: repeat(3, 1fr);
   animation: all ease;
+
+
+
+  gap: -20;
+}
+
+@media (max-width:2000px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+
+  }
+}
+
+@media (max-width:1000px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+
+  }
 }
 
 .techBorder::before {
@@ -188,50 +208,11 @@ h3 {
 a {
   text-decoration: none;
   padding: 10px;
-  animation: all 1.5s ease;
   color: black;
   margin: 5px;
   border-radius: 11px;
-}
-
-.project-card-button {
-  background: linear-gradient(45deg, rgba(165, 42, 42, 0.321), rgba(1, 77, 139, 0.266), rgba(170, 18, 18, 0.288), rgba(93, 6, 143, 0.225), rgba(255, 192, 203, 0.506));
-  display: flex;
-  width: fit-content;
+  display: inline-flex;
   align-items: center;
-  height: fit-content;
-  border-radius: 20px;
-}
-
-.s {
-  padding: 10px;
-  color: #ffffff;
-  margin: 5px;
-  animation: all 1.5s ease;
-  text-decoration: none;
-  border-radius: 11px;
-}
-
-a:hover {
-  text-decoration: underline;
-  scale: 1.03;
-}
-
-.socials img,
-svg {
-  position: relative;
-  top: 5px;
-  filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.5));
-  transition: transform 0.3s;
-}
-
-.socials img:hover {
-  transform: scale(1.1) rotate(5deg);
-}
-
-.projects {
-  display: flex;
-  flex-direction: column;
 }
 
 .project-card-button {
@@ -249,15 +230,13 @@ svg {
 .project-card {
   background: rgba(240, 128, 128, 0.393);
   border-radius: 20px;
-  grid-template-columns: repeat(1, 1fr);
-  margin: 5px;
-  animation: all ease;
-  flex-direction: column;
-  align-items: center;
+  margin: 15px 0;
+  padding: 20px;
+  transition: transform 0.3s;
 }
 
 .project-card:hover {
-  transform: translateX(5px);
+  transform: translateY(-5px);
 }
 
 .project-title {
@@ -289,6 +268,8 @@ svg {
   display: flex;
   color: black;
   justify-content: center;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
 }
 
 .time {
@@ -299,51 +280,60 @@ svg {
 
 .emoji {
   transition: transform 0.3s;
+  display: inline-block;
 }
 
 .emoji:hover {
   transform: rotate(12deg);
 }
 
+.socials a {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  margin: 5px;
+  transition: all 0.3s;
+}
+
+.socials a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+  text-decoration: none;
+}
+
 /* Исправленные медиа-запросы */
-@media (max-width: 1050px) {
+@media (max-width: 900px) {
+  .header-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .containerAbout {
-    position: relative;
-    right: 20px;
-    margin-top: 17rem;
+    width: 100%;
   }
 
   .containerLogo {
-    position: relative;
-  }
-}
-
-@media (max-width: 2000px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 1000px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 800px) {
-  .project-card {
-    font-size: small;
-    padding: 5px;
-    display: grid;
+    display: flex;
+    justify-content: center;
   }
 }
 
 @media (max-width: 600px) {
+  .container {
+    padding: 1.5rem;
+  }
+
+  .glass {
+    padding: 1.5rem;
+  }
+
   .grid {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 1fr;
   }
 
   .subtitle {
-    padding: 22px;
+    ;
   }
 }
