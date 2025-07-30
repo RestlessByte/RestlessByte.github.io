@@ -8,6 +8,8 @@
 }
 
 * {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
   box-sizing: border-box;
   transition: all 0.3s ease;
 }
@@ -19,7 +21,6 @@
 
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
   background: linear-gradient(45deg, rgba(177, 172, 172, 0.321), rgba(4, 119, 233, 0.794), rgba(68, 4, 4, 0.161), rgba(34, 99, 10, 0.422), rgba(255, 192, 203, 0.506));
   backdrop-filter: blur(50px);
   color: #c9d1d9;
@@ -117,6 +118,7 @@ h3 {
 }
 
 .otherProjectsTitle {
+  font-weight: bold;
   margin: 0 auto;
 }
 
@@ -287,11 +289,6 @@ a {
 }
 
 
-.time {
-  font-family: monospace;
-  color: var(--gray);
-  font-size: 0.9rem;
-}
 
 .emoji {
   transition: transform 0.3s;
