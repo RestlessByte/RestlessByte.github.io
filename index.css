@@ -22,6 +22,8 @@
 body {
   margin: 0;
   background: linear-gradient(45deg, rgba(177, 172, 172, 0.321), rgba(4, 119, 233, 0.794), rgba(68, 4, 4, 0.161), rgba(34, 99, 10, 0.422), rgba(255, 192, 203, 0.506));
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
   backdrop-filter: blur(50px);
   color: #c9d1d9;
   line-height: 1.6;
@@ -46,6 +48,18 @@ body {
   }
 }
 
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .glass {
   background: linear-gradient(45deg, rgba(165, 42, 42, 0.321), rgba(1, 77, 139, 0.266), rgba(170, 18, 18, 0.288), rgba(93, 6, 143, 0.225), rgba(255, 192, 203, 0.506));
   border-radius: 16px;
@@ -53,10 +67,12 @@ body {
   padding: 2rem;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.737);
   backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-  &:hover {
-    scale: 1.02;
-  }
+.glass:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 40px 0 rgba(0, 0, 0, 0.8);
 }
 
 .logo {
@@ -66,6 +82,11 @@ body {
   object-fit: cover;
   margin: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 1s ease;
+}
+
+.logo:hover {
+  transform: rotate(360deg) scale(1.1);
 }
 
 .containerAbout {
@@ -128,10 +149,12 @@ h3 {
   border-radius: 20px;
   height: fit-content;
   margin: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-  &:hover {
-    scale: 1.02;
-  }
+.tech-stack-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
 .tech-stack-card-stack {
@@ -293,6 +316,10 @@ a {
 .emoji {
   transition: transform 0.3s;
   display: inline-block;
+}
+
+.emoji:hover {
+  transform: scale(1.3) rotate(10deg);
 }
 
 
