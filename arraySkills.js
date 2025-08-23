@@ -1,5 +1,4 @@
-
-const arraySkills = [
+export const arraySkills = [
     {
         label: "Language Programming",
         items: [
