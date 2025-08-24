@@ -21,7 +21,9 @@ const translations = {
       'Daniil (RestlessByte) builds efficient web and AI solutions using JavaScript, TypeScript and Linux. Explore cutting-edge projects and open-source contributions crafted with attention to detail.',
     footer: 'Built with ❤️ and code.',
     githubView: 'VIEW ON MY GITHUB, TO SEE MY OTHER PROJECTS',
-    enter: 'Enter'
+    enter: 'Enter',
+    navAbout: 'About',
+    navProjects: 'My Projects'
   },
   ru: {
     greeting: '👋 Даниил [RestlessByte]',
@@ -43,7 +45,9 @@ const translations = {
       'Даниил (RestlessByte) создаёт эффективные веб и AI-решения на JavaScript, TypeScript и Linux. Исследуйте инновационные проекты и вклад в open-source, созданные с вниманием к деталям.',
     footer: 'Создано с ❤️ и кодом.',
     githubView: 'СМОТРИТЕ НА МОЁМ GITHUB, ЧТОБЫ УВИДЕТЬ ДРУГИЕ ПРОЕКТЫ',
-    enter: 'Перейти'
+    enter: 'Перейти',
+    navAbout: 'Обо мне',
+    navProjects: 'Мои проекты'
   }
 };
 
@@ -51,6 +55,7 @@ let currentLang = 'en';
 
 const renderSkills = () => {
   const skillsContainer = document.getElementById('skillsContainer');
+  if (!skillsContainer) return;
   arraySkills.forEach(skillCategory => {
     const skillCard = document.createElement('div');
     skillCard.className = 'tech-stack-card';
@@ -80,30 +85,44 @@ const renderSkills = () => {
 
 const applyTranslations = lang => {
   const t = translations[lang];
-  document.getElementById('greeting').textContent = t.greeting;
-  document.getElementById('role').innerHTML = t.role;
-  document.getElementById('location').innerHTML = t.location;
-  document.getElementById('about-title').textContent = t.aboutTitle;
-  document.getElementById('about-text').innerHTML = t.aboutText;
-  document.getElementById('skills-title').textContent = t.skillsTitle;
-  document.getElementById('projects-title').textContent = t.projectsTitle;
-  document.getElementById('project1-title').textContent = t.project1Title;
-  document.getElementById('project1-desc').textContent = t.project1Desc;
-  document.getElementById('project1-link').textContent = t.enter;
-  document.getElementById('project2-title').textContent = t.project2Title;
-  document.getElementById('project2-desc').textContent = t.project2Desc;
-  document.getElementById('project2-link').textContent = t.enter;
-  document.getElementById('github-view').textContent = t.githubView;
-  document.getElementById('connect-title').textContent = t.connectTitle;
-  document.getElementById('seo-title').textContent = t.seoTitle;
-  document.getElementById('seo-text').textContent = t.seoText;
+  const setText = (id, text) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = text;
+  };
+  const setHTML = (id, html) => {
+    const el = document.getElementById(id);
+    if (el) el.innerHTML = html;
+  };
+  setText('greeting', t.greeting);
+  setHTML('role', t.role);
+  setHTML('location', t.location);
+  setText('about-title', t.aboutTitle);
+  setHTML('about-text', t.aboutText);
+  setText('skills-title', t.skillsTitle);
+  setText('projects-title', t.projectsTitle);
+  setText('project1-title', t.project1Title);
+  setText('project1-desc', t.project1Desc);
+  setText('project1-link', t.enter);
+  setText('project2-title', t.project2Title);
+  setText('project2-desc', t.project2Desc);
+  setText('project2-link', t.enter);
+  setText('github-view', t.githubView);
+  setText('connect-title', t.connectTitle);
+  setText('seo-title', t.seoTitle);
+  setText('seo-text', t.seoText);
+  setText('nav-about', t.navAbout);
+  setText('nav-projects', t.navProjects);
   const footer = document.querySelector('.footer');
-  footer.innerHTML = `&copy; <span id="year"></span> Daniil [RestlessByte]. <span id="footer-text">${t.footer}</span>`;
-  document.getElementById('year').textContent = new Date().getFullYear();
+  if (footer) {
+    footer.innerHTML = `&copy; <span id="year"></span> Daniil [RestlessByte]. <span id="footer-text">${t.footer}</span>`;
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+  }
 };
 
 const initPage = () => {
-  document.getElementById('year').textContent = new Date().getFullYear();
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
   renderSkills();
   applyTranslations(currentLang);
 
