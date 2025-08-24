@@ -11,6 +11,23 @@ body {
   line-height: 1.6;
 }
 
+.top-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.top-nav a {
+  color: #d4af37;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.top-nav a:hover {
+  opacity: 0.8;
+}
+
 .language-switcher {
   position: fixed;
   top: 10px;
