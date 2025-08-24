@@ -4,6 +4,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Portfolio of Daniil (RestlessByte) showcasing elegant projects in web development and AI." />
+  <meta name="keywords"
+    content="RestlessByte, Daniil, developer, portfolio, JavaScript, TypeScript, AI, Bashkortostan" />
+  <meta name="robots" content="index, follow" />
   <title>👨🏽‍💻 >>>>> CV <<<<< </title>
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -12,6 +17,13 @@
       <!-- <link rel="icon" href=""> -->
 
 <body>
+  <div class="language-switcher">
+    <button id="language-btn">Change language</button>
+    <div id="language-popup">
+      <button class="lang-option" data-lang="en">English</button>
+      <button class="lang-option" data-lang="ru">Русский</button>
+    </div>
+  </div>
   <div class="container">
     <div class="glass">
       <div class="containerLogo">
@@ -19,9 +31,9 @@
       </div>
       <div class="containerAbout">
 
-        <h1>👋 <span class="emoji">Daniil [RestlessByte]</h1>
-        <p class="subtitle">🎓 <b>Student | 👨🏽‍💻 Developer | 🔮 Tech Enthusiast | 🧠 AI-CODER</b></p>
-        <p class="subtitle" style="cursor: pointer;"
+        <h1 id="greeting">👋 Daniil [RestlessByte]</h1>
+        <p id="role" class="subtitle">🎓 <b>Student | 👨🏽‍💻 Developer | 🔮 Tech Enthusiast | 🧠 AI-CODER</b></p>
+        <p id="location" class="subtitle" style="cursor: pointer;"
           onclick="window.open('https://yandex.ru/maps/geo/ufa/53105309/?ll=56.037968%2C54.731079&z=10.02', '_blank')">
           📍 <b>Bashkortostan, Russia | Remote</b></p>
         <p class="subtitle">
@@ -48,8 +60,8 @@
     </div>
 
     <div class="glass" style="margin-top: 2rem;">
-      <h2>💻 About Me</h2>
-      <p style="margin-top: 1rem;">
+      <h2 id="about-title">💻 About Me</h2>
+      <p id="about-text" style="margin-top: 1rem;">
         <code> Greetings to everyone on my this site. This site is created only for portfolio and not more. Here I write what
               stack I am using at the moment.
               About me I can say this: I like to code, help others in development, and analyze algorithms. And - yes, I use
@@ -67,7 +79,7 @@
           <path d="M11 16l4 -1.5" />
           <path d="M10 10c-.5 -1 -2.5 -1 -3 0" />
           <path d="M17 10c-.5 -1 -2.5 -1 -3 0" />
-        </svg><b>MY SKILLS</b>
+        </svg><b id="skills-title">MY SKILLS</b>
       </h2>
       <div class="techBorder">
         <div class="grid" id="skillsContainer">
@@ -77,12 +89,12 @@
     </div>
 
     <div class="glass" style="margin-top: 2rem;">
-      <h2>🎯 Projects</h2>
+      <h2 id="projects-title">🎯 Projects</h2>
       <div class="projects" style="justify-content: center;">
         <div class="project-card" onclick="window.open('https://t.me/farmilochka0_bot', '_blank')"
           style="cursor: pointer;">
-          <h3 class="project-title">🤖 Telegram Game</h3>
-          <p class="project-card-descripton">Interactive game chat bot with real-time engagement features.</p>
+          <h3 id="project1-title" class="project-title">🤖 Telegram Game</h3>
+          <p id="project1-desc" class="project-card-descripton">Interactive game chat bot with real-time engagement features.</p>
 
           <div class="project-card-button">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -91,13 +103,13 @@
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
             </svg>
-            <a href="https://t.me/farmilochka0_bot" target="_blank">Enter</a>
+            <a id="project1-link" href="https://t.me/farmilochka0_bot" target="_blank">Enter</a>
           </div>
         </div>
 
         <div class="project-card" onclick="window.open('https://t.me/AIHub0_bot', '_blank')" style="cursor: pointer;">
-          <h3 class="project-title">🤖 Telegram AI Hub</h3>
-          <p class="project-card-descripton">Centralized hub for AI-powered tools and chatbots integration. Create
+          <h3 id="project2-title" class="project-title">🤖 Telegram AI Hub</h3>
+          <p id="project2-desc" class="project-card-descripton">Centralized hub for AI-powered tools and chatbots integration. Create
             your own chatbots and optimize your
             response time!</p>
           <div class="project-card-button">
@@ -107,7 +119,7 @@
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
             </svg>
-            <a href="https://t.me/AIHub0_bot" target="_blank">Enter</a>
+            <a id="project2-link" href="https://t.me/AIHub0_bot" target="_blank">Enter</a>
           </div>
         </div>
       </div>
@@ -117,12 +129,12 @@
       <div class="otherProjectsContainer">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg"
           width="30" height="30" />
-        <span class="otherProjectsTitle">
+        <span id="github-view" class="otherProjectsTitle">
           VIEW ON MY GITHUB, TO SEE MY OTHER PROJECTS</span>
       </div>
     </div>
     <div class="glass" style="margin-top: 2rem;">
-      <h2>🔗 Let's Connect!</h2>
+      <h2 id="connect-title">🔗 Let's Connect!</h2>
       <div class="socials" style="margin: 1.5rem 0;">
         <a href="mailto:localhost.l@yandex.ru" target="_blank">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -148,8 +160,16 @@
       </div>
     </div>
 
+    <div class="glass" style="margin-top: 2rem;">
+      <h2 id="seo-title">🚀 Portfolio &amp; SEO</h2>
+      <p id="seo-text" class="seo-text">
+        Daniil (RestlessByte) builds efficient web and AI solutions using JavaScript, TypeScript and Linux. Explore
+        cutting-edge projects and open-source contributions crafted with attention to detail.
+      </p>
+    </div>
+
     <div class="footer">
-      &copy; <span id="year"></span> Daniil [RestlessByte]. Built with ❤️ and code.
+      &copy; <span id="year"></span> Daniil [RestlessByte]. <span id="footer-text">Built with ❤️ and code.</span>
     </div>
   </div>
   <script type="module" src="./index.js"></script>
