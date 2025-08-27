@@ -11,34 +11,6 @@ body {
   line-height: 1.6;
 }
 
-.payment-banner {
-  background: linear-gradient(90deg, #0b0b0b, #26a17b, #0b0b0b);
-  color: #fff;
-  text-align: center;
-  padding: 0.75rem;
-  font-weight: 700;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-.payment-banner code {
-  background: rgba(0, 0, 0, 0.6);
-  padding: 0.2rem 0.5rem;
-  border-radius: 6px;
-  color: #d4af37;
-  font-family: 'Courier New', Courier, monospace;
-}
-.payment-banner button {
-  margin-left: 1rem;
-  background: #d4af37;
-  color: #0b0b0b;
-  border: none;
-  padding: 0.3rem 0.6rem;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-}
-.payment-banner button:hover {
-  opacity: 0.85;
-}
 
 .top-nav {
   display: flex;
@@ -104,6 +76,46 @@ body {
   max-width: 1000px;
   margin: auto;
   padding: 2.5rem;
+}
+
+.payment-card {
+  text-align: center;
+}
+
+.payment-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.payment-info code {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  color: #d4af37;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.payment-info button {
+  background: #d4af37;
+  color: #0b0b0b;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.payment-info button:hover {
+  opacity: 0.9;
+}
+
+.payment-info button.copied {
+  background: #4caf50;
+  color: #fff;
 }
 
 .glass {
