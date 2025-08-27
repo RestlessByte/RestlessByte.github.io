@@ -5,6 +5,9 @@ const translations = {
     greeting: '👋 Daniil [RestlessByte]',
     role: '🎓 Student | 👨🏽‍💻 Developer | 🔮 Tech Enthusiast | 🧠 AI-CODER',
     location: '📍 <b>Bashkortostan, Russia | Remote</b>',
+    paymentLabel: '💸 USDT Payment Address:',
+    copy: 'Copy',
+    copied: 'Copied!',
     aboutTitle: '💻 About Me',
     aboutText:
       '<code> Greetings to everyone on my this site. This site is created only for portfolio and not more. Here I write what stack I am using at the moment. About me I can say this: I like to code, help others in development, and analyze algorithms. And - yes, I use neural networks in my daily life</code>',
@@ -29,6 +32,9 @@ const translations = {
     greeting: '👋 Даниил [RestlessByte]',
     role: '🎓 Студент | 👨🏽‍💻 Разработчик | 🔮 Тех энтузиаст | 🧠 AI-КОДЕР',
     location: '📍 <b>Башкортостан, Россия | Удалённо</b>',
+    paymentLabel: '💸 Способ оплаты USDT:',
+    copy: 'Скопировать',
+    copied: 'Скопировано!',
     aboutTitle: '💻 Обо мне',
     aboutText:
       '<code> Приветствую всех на моём сайте. Сайт создан как портфолио. Здесь я пишу, какой стек использую. Мне нравится кодить, помогать другим в разработке и анализировать алгоритмы. Да, я использую нейронные сети каждый день.</code>',
@@ -96,6 +102,9 @@ const applyTranslations = lang => {
   setText('greeting', t.greeting);
   setHTML('role', t.role);
   setHTML('location', t.location);
+  setText('payment-label', t.paymentLabel);
+  const copyBtn = document.getElementById('copy-address');
+  if (copyBtn) copyBtn.textContent = t.copy;
   setText('about-title', t.aboutTitle);
   setHTML('about-text', t.aboutText);
   setText('skills-title', t.skillsTitle);
@@ -137,6 +146,19 @@ const initPage = () => {
       document.getElementById('language-popup').classList.remove('open');
     });
   });
+
+  const copyBtn = document.getElementById('copy-address');
+  const addrEl = document.getElementById('usdt-address');
+  if (copyBtn && addrEl) {
+    const address = addrEl.textContent.trim();
+    copyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(address);
+      copyBtn.textContent = translations[currentLang].copied;
+      setTimeout(() => {
+        copyBtn.textContent = translations[currentLang].copy;
+      }, 2000);
+    });
+  }
 };
 
 document.addEventListener('DOMContentLoaded', initPage);
