@@ -5,9 +5,10 @@ const translations = {
     greeting: '👋 Daniil [RestlessByte]',
     role: '🎓 Student | 👨🏽‍💻 Developer | 🔮 Tech Enthusiast | 🧠 AI-CODER',
     location: '📍 <b>Bashkortostan, Russia | Remote</b>',
-    paymentLabel: '💸 USDT Payment Address:',
-    copy: 'Copy',
-    copied: 'Copied!',
+      paymentLabel: '💸 USDT Payment Address:',
+      copy: 'Copy',
+      copied: 'Copied!',
+      payMetamask: 'Pay with MetaMask',
     aboutTitle: '💻 About Me',
     aboutText:
       '<code> Greetings to everyone on my this site. This site is created only for portfolio and not more. Here I write what stack I am using at the moment. About me I can say this: I like to code, help others in development, and analyze algorithms. And - yes, I use neural networks in my daily life</code>',
@@ -32,9 +33,10 @@ const translations = {
     greeting: '👋 Даниил [RestlessByte]',
     role: '🎓 Студент | 👨🏽‍💻 Разработчик | 🔮 Тех энтузиаст | 🧠 AI-КОДЕР',
     location: '📍 <b>Башкортостан, Россия | Удалённо</b>',
-    paymentLabel: '💸 Способ оплаты USDT:',
-    copy: 'Скопировать',
-    copied: 'Скопировано!',
+      paymentLabel: '💸 Способ оплаты USDT:',
+      copy: 'Скопировать',
+      copied: 'Скопировано!',
+      payMetamask: 'Оплатить через MetaMask',
     aboutTitle: '💻 Обо мне',
     aboutText:
       '<code> Приветствую всех на моём сайте. Сайт создан как портфолио. Здесь я пишу, какой стек использую. Мне нравится кодить, помогать другим в разработке и анализировать алгоритмы. Да, я использую нейронные сети каждый день.</code>',
@@ -102,9 +104,10 @@ const applyTranslations = lang => {
   setText('greeting', t.greeting);
   setHTML('role', t.role);
   setHTML('location', t.location);
-  setText('payment-label', t.paymentLabel);
-  const copyBtn = document.getElementById('copy-address');
-  if (copyBtn) copyBtn.textContent = t.copy;
+    setText('payment-label', t.paymentLabel);
+    const copyBtn = document.getElementById('copy-address');
+    if (copyBtn) copyBtn.textContent = t.copy;
+    setText('metamask-btn', t.payMetamask);
   setText('about-title', t.aboutTitle);
   setHTML('about-text', t.aboutText);
   setText('skills-title', t.skillsTitle);
@@ -147,18 +150,49 @@ const initPage = () => {
     });
   });
 
-  const copyBtn = document.getElementById('copy-address');
-  const addrEl = document.getElementById('usdt-address');
-  if (copyBtn && addrEl) {
-    const address = addrEl.textContent.trim();
-    copyBtn.addEventListener('click', () => {
-      navigator.clipboard.writeText(address);
-      copyBtn.textContent = translations[currentLang].copied;
-      setTimeout(() => {
-        copyBtn.textContent = translations[currentLang].copy;
-      }, 2000);
-    });
-  }
+    const copyBtn = document.getElementById('copy-address');
+    const addrEl = document.getElementById('usdt-address');
+    const metaBtn = document.getElementById('metamask-btn');
+    if (copyBtn && addrEl) {
+      const address = addrEl.textContent.trim();
+      copyBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(address);
+        copyBtn.textContent = translations[currentLang].copied;
+        copyBtn.classList.add('copied');
+        setTimeout(() => {
+          copyBtn.textContent = translations[currentLang].copy;
+          copyBtn.classList.remove('copied');
+        }, 2000);
+      });
+    }
+    if (metaBtn && addrEl) {
+      metaBtn.addEventListener('click', async () => {
+        if (!window.ethereum) {
+          alert('MetaMask not detected');
+          return;
+        }
+        try {
+          const [account] = await window.ethereum.request({ method: 'eth_requestAccounts' });
+          const amount = prompt('Amount of USDT to send:', '1');
+          if (!amount) return;
+          const value = BigInt(Math.round(parseFloat(amount) * 1e6)).toString(16).padStart(64, '0');
+          const receiver = addrEl.textContent.trim().slice(2).padStart(64, '0');
+          const data = '0xa9059cbb' + receiver + value;
+          await window.ethereum.request({
+            method: 'eth_sendTransaction',
+            params: [{
+              from: account,
+              to: '0xdAC17F958D2ee523a2206206994597C13D831ec7',
+              data
+            }]
+          });
+        } catch (err) {
+          console.error(err);
+        }
+      });
+    } else if (metaBtn) {
+      metaBtn.style.display = 'none';
+    }
 };
 
 document.addEventListener('DOMContentLoaded', initPage);
