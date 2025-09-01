@@ -104,13 +104,15 @@ const renderProjects = () => {
     const title = document.createElement('h3');
     title.className = 'project-title';
     title.setAttribute('data-title-key', project.titleKey);
-    title.textContent = translations[currentLang][project.titleKey];
+    const titleText = translations[currentLang][project.titleKey] || project.titleKey;
+    title.textContent = titleText;
     card.appendChild(title);
 
     const desc = document.createElement('p');
     desc.className = 'project-card-descripton';
     desc.setAttribute('data-desc-key', project.descKey);
-    desc.textContent = translations[currentLang][project.descKey];
+    const descText = translations[currentLang][project.descKey] || project.descKey;
+    desc.textContent = descText;
     card.appendChild(desc);
 
     const buttonDiv = document.createElement('div');
@@ -145,11 +147,11 @@ const applyTranslations = lang => {
   setText('projects-title', t.projectsTitle);
   document.querySelectorAll('[data-title-key]').forEach(el => {
     const key = el.getAttribute('data-title-key');
-    if (t[key]) el.textContent = t[key];
+    el.textContent = t[key] || key;
   });
   document.querySelectorAll('[data-desc-key]').forEach(el => {
     const key = el.getAttribute('data-desc-key');
-    if (t[key]) el.textContent = t[key];
+    el.textContent = t[key] || key;
   });
   document.querySelectorAll('.project-link').forEach(el => {
     el.textContent = t.enter;
