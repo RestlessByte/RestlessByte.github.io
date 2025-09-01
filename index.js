@@ -1,5 +1,4 @@
-import { arraySkills } from './arraySkills.js';
-import { arrayProjects } from './arrayProjects.js';
+import { arraySkills, arrayProjects } from './arraySkills.js';
 
 const translations = {
   en: {
