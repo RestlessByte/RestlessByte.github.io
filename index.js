@@ -1,4 +1,5 @@
 import { arraySkills } from './arraySkills.js';
+import { arrayProjects } from './arrayProjects.js';
 
 const translations = {
   en: {
@@ -85,9 +86,39 @@ const renderSkills = () => {
           `;
 
       skillCard.appendChild(skillElement);
-    });
+  });
 
-    skillsContainer.appendChild(skillCard);
+  skillsContainer.appendChild(skillCard);
+  });
+};
+
+const renderProjects = () => {
+  const projectsContainer = document.getElementById('projectsContainer');
+  if (!projectsContainer) return;
+  arrayProjects.forEach(project => {
+    const card = document.createElement('div');
+    card.className = 'project-card';
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', () => window.open(project.link, '_blank'));
+
+    const title = document.createElement('h3');
+    title.className = 'project-title';
+    title.setAttribute('data-title-key', project.titleKey);
+    title.textContent = translations[currentLang][project.titleKey];
+    card.appendChild(title);
+
+    const desc = document.createElement('p');
+    desc.className = 'project-card-descripton';
+    desc.setAttribute('data-desc-key', project.descKey);
+    desc.textContent = translations[currentLang][project.descKey];
+    card.appendChild(desc);
+
+    const buttonDiv = document.createElement('div');
+    buttonDiv.className = 'project-card-button';
+    buttonDiv.innerHTML = `${project.icon}<a class="project-link" href="${project.link}" target="_blank">${translations[currentLang].enter}</a>`;
+    card.appendChild(buttonDiv);
+
+    projectsContainer.appendChild(card);
   });
 };
 
@@ -112,12 +143,17 @@ const applyTranslations = lang => {
   setHTML('about-text', t.aboutText);
   setText('skills-title', t.skillsTitle);
   setText('projects-title', t.projectsTitle);
-  setText('project1-title', t.project1Title);
-  setText('project1-desc', t.project1Desc);
-  setText('project1-link', t.enter);
-  setText('project2-title', t.project2Title);
-  setText('project2-desc', t.project2Desc);
-  setText('project2-link', t.enter);
+  document.querySelectorAll('[data-title-key]').forEach(el => {
+    const key = el.getAttribute('data-title-key');
+    if (t[key]) el.textContent = t[key];
+  });
+  document.querySelectorAll('[data-desc-key]').forEach(el => {
+    const key = el.getAttribute('data-desc-key');
+    if (t[key]) el.textContent = t[key];
+  });
+  document.querySelectorAll('.project-link').forEach(el => {
+    el.textContent = t.enter;
+  });
   setText('github-view', t.githubView);
   setText('connect-title', t.connectTitle);
   setText('seo-title', t.seoTitle);
@@ -136,6 +172,7 @@ const initPage = () => {
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
   renderSkills();
+  renderProjects();
   applyTranslations(currentLang);
 
   document.getElementById('language-btn').addEventListener('click', () => {
