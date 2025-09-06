@@ -220,7 +220,9 @@ export const arraySkills = [
             {
                 title: "Arch Linux",
                 image: `
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows11/windows11-original.svg" height="20" width="20" />
+            
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/archlinux/archlinux-plain.svg" 
+            height="20" width="20" />
           `,
                 link: ""
             },
