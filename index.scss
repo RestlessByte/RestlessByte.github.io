@@ -16,6 +16,50 @@ body {
   line-height: 1.6;
 }
 
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $dark;
+  z-index: 2000;
+  transition: opacity 0.5s ease;
+
+  &.fade-out {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .spinner {
+    width: 60px;
+    height: 60px;
+    border: 6px solid rgba(212, 175, 55, 0.3);
+    border-top-color: $gold;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .language-switcher {
   position: fixed;
   top: 10px;
@@ -69,6 +113,10 @@ body {
   max-width: 1000px;
   margin: auto;
   padding: 2.5rem;
+}
+
+#main-content {
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .glass {
@@ -138,6 +186,8 @@ p {
   padding: 1rem;
   border-radius: 1rem;
   margin: 10px;
+  opacity: 0;
+  transform: translateY(20px);
 }
 
 .tech-stack-cardTitle {
@@ -166,9 +216,23 @@ p {
   margin: 15px 0;
   padding: 20px;
   transition: transform 0.3s;
+  opacity: 0;
+  transform: translateY(20px);
 
   &:hover {
     transform: translateY(-5px);
+  }
+}
+
+.tech-stack-card.show,
+.project-card.show {
+  animation: fadeUp 0.6s forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
