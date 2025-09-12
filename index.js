@@ -123,6 +123,12 @@ const renderProjects = () => {
   });
 };
 
+const showWithDelay = elements => {
+  elements.forEach((el, idx) => {
+    setTimeout(() => el.classList.add('show'), idx * 100);
+  });
+};
+
 const applyTranslations = lang => {
   const t = translations[lang];
   const setText = (id, text) => {
@@ -234,4 +240,19 @@ const initPage = () => {
 };
 
 document.addEventListener('DOMContentLoaded', initPage);
+
+window.addEventListener('load', () => {
+  const loader = document.getElementById('loader');
+  const main = document.getElementById('main-content');
+  if (loader) {
+    loader.classList.add('fade-out');
+    setTimeout(() => (loader.style.display = 'none'), 500);
+  }
+  if (main) {
+    main.classList.remove('hidden');
+    main.classList.add('fade-in');
+  }
+  showWithDelay(document.querySelectorAll('.tech-stack-card'));
+  showWithDelay(document.querySelectorAll('.project-card'));
+});
 
