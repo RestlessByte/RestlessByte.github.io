@@ -56,6 +56,10 @@ export const arraySkills = [
                 title: "Nest.js",
                 image: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg" height="20" width="20" />',
                 link: ""
+            }, {
+                title: "Tauri",
+                image: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tauri/tauri-original-wordmark.svg" height="20" width="20" /> ',
+                link: ""
             }
         ]
     },
