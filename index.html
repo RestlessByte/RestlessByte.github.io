@@ -9,17 +9,18 @@
   <meta name="keywords"
     content="RestlessByte, Daniil, developer, portfolio, JavaScript, TypeScript, AI, Bashkortostan" />
   <meta name="robots" content="index, follow" />
-  <title>👨🏽‍💻 >SUMMARY RESTLESSBYTE [DANIIL V]</title>
+  <title>👨🏽‍💻MMARY RESTLESSBYTE [DANIIL V]</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./index.css">
-
-  <!-- <link rel="icon" href=""> -->
+  <link rel="stylesheet" href="./rb-card.css">
+</head>
 
 <body>
   <div id="loader" class="loader">
     <div class="spinner"></div>
   </div>
+
   <div class="language-switcher">
     <button id="language-btn">Change language</button>
     <div id="language-popup">
@@ -27,131 +28,122 @@
       <button class="lang-option" data-lang="ru">Русский</button>
     </div>
   </div>
+
   <nav class="top-nav">
-    <a href="index.html" id="nav-about">About</a>
+    <a href="index.html" id="nav-profile">Profile</a>
     <a href="my-projects.html" id="nav-projects">My Projects</a>
   </nav>
+
   <div id="main-content" class="container hidden">
-    <div class="glass">
-      <div class="containerLogo">
-        <img class="logo" src="./assets/logo/logo.webp" width="250" height="250" alt="no image logo" />
-      </div>
-      <div class="containerAbout">
 
-        <h1 id="greeting">👋 Daniil [RestlessByte]</h1>
-        <p id="role" class="subtitle">🎓 <b>Student | 👨🏽‍💻 Developer | 🔮 Tech Enthusiast | 🧠 AI-CODER</b></p>
-        <p id="location" class="subtitle" style="cursor: pointer;"
-          onclick="window.open('https://yandex.ru/maps/geo/ufa/53105309/?ll=56.037968%2C54.731079&z=10.02', '_blank')">
-          📍 <b>Bashkortostan, Russia | Remote</b></p>
-        <p class="subtitle">
-          📬 <a style="text-decoration: none;" class="subtitle"
-            href="mailto:localhost.l@yandex.ru"><b>localhost.l@yandex.ru</b></a>
-        </p>
-        <p class="subtitle">🐧
-          <span id="OS"><b>LINUX [Ubuntu KDE, Calculate KDE] - for all lifestyle</b></span>
-        <p class="subtitle" style="cursor: pointer;" onclick="window.open('https://github.com/RestlessByte', '_blank')">
-          🐱 <a style="text-decoration: none;" class="subtitle" href="https://github.com/RestlessByte"
-            target="_blank"><b>GitHub</b></a>
-        </p>
-        <p class="subtitle" style="cursor: pointer;" onclick="window.open('https://taplink.cc/dangnezdilov', '_blank')">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="icon icon-tabler icons-tabler-outline icon-tabler-blend-mode">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M14.5 9.5m-6.5 0a6.5 6.5 0 1 0 13 0a6.5 6.5 0 1 0 -13 0" />
-            <path d="M9.5 14.5m-6.5 0a6.5 6.5 0 1 0 13 0a6.5 6.5 0 1 0 -13 0" />
-          </svg> <a style="text-decoration: none;" class="subtitle" href="https://taplink.cc/dangnezdilov"
-            target="_blank"><b>Taplink [RU]</b></a>
-        </p>
-      </div>
-    </div>
-
-    <div class="glass" style="margin-top: 2rem;">
-      <h2 id="about-title">💻 About Me</h2>
-      <p id="about-text" style="margin-top: 1rem;">
-        <code> Greetings to everyone on my this site. This site is created only for portfolio and not more. Here I write what
-              stack I am using at the moment.
-              About me I can say this: I like to code, help others in development, and analyze algorithms. And - yes, I use
-              neural networks in my daily life</code>
-      </p>
-    </div>
-
-    <div class="glass" style="margin-top: 2rem;">
-      <h2 style="text-align: center;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-          class="icon icon-tabler icons-tabler-outline icon-tabler-mood-unamused">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
-          <path d="M11 16l4 -1.5" />
-          <path d="M10 10c-.5 -1 -2.5 -1 -3 0" />
-          <path d="M17 10c-.5 -1 -2.5 -1 -3 0" />
-        </svg><b id="skills-title">MY SKILLS</b>
-      </h2>
-      <div class="techBorder">
-        <div class="grid" id="skillsContainer">
-          <!-- Skills will be inserted here by JavaScript -->
+    <!-- NEW PROFILE CARD (замена старому About) -->
+    <main class="rb-wrap">
+      <section class="rb-card" role="region" aria-labelledby="rb-title">
+        <div class="rb-head">
+          <img class="rb-ava" src="assets/rb/avatar.svg" alt="Avatar" width="220" height="220" />
+          <div>
+            <h1 id="rb-title" class="rb-title">RestlessByte</h1>
+            <p class="rb-sub">LINUXOID • FullStack Developer • AICoder • SecuritySpecifical • SysAdmin</p>
+            <span class="rb-pill">I love sleeping</span>
+          </div>
         </div>
+
+        <div class="rb-grid">
+          <section class="rb-block" aria-labelledby="contacts">
+            <h2 id="contacts">Contacts</h2>
+            <ul class="rb-links">
+              <li><span>GitHub</span><a href="https://github.com/RestlessByte" target="_blank"
+                  rel="noopener">https://github.com/RestlessByte</a></li>
+              <li><span>GitHub Page</span><a href="https://RestlessByte.github.io" target="_blank"
+                  rel="noopener">https://RestlessByte.github.io</a></li>
+              <li><span>Telegram (bot)</span><a href="https://t.me/reportRestlessByte_bot" target="_blank"
+                  rel="noopener">https://t.me/reportRestlessByte_bot</a></li>
+              <li><span>Telegram (I'am)</span><a href="https://t.me/RestlessByteTelegram" target="_blank"
+                  rel="noopener">https://t.me/RestlessByteTelegram</a></li>
+              <li><span>AI Hub</span><a href="https://t.me/AIHub0_bot" target="_blank"
+                  rel="noopener">https://t.me/AIHub0_bot</a></li>
+              <li><span>Telegram Game Bot</span><a href="https://t.me/farmilochka0_bot" target="_blank"
+                  rel="noopener">https://t.me/farmilochka0_bot</a></li>
+              <li><span>GitZipQR</span><a href="https://github.com/GitZipQR-vault" target="_blank"
+                  rel="noopener">https://github.com/GitZipQR-vault</a></li>
+              <li><span>GitZipQR in Telegram</span><a href="https://t.me/GitZipQR" target="_blank"
+                  rel="noopener">https://t.me/GitZipQR</a></li>
+            </ul>
+          </section>
+
+          <section class="rb-block" aria-labelledby="wallet">
+            <h2 id="wallet">Wallet</h2>
+            <span class="rb-badge">USDT • ERC-20</span>
+            <code id="usdt-address" class="rb-addr">0xa8b3A40008EDF9AF21D981Dc3A52aa0ed1cA88fD</code>
+
+            <h2 style="margin-top:18px">Projects</h2>
+            <ul class="rb-proj">
+              <li><strong>AI Hub</strong> — Platform to create and manage neural Telegram bots: multi-model routing,
+                secure tokens, role presets.</li>
+              <li><strong>GitZipQR</strong> — Encrypted offline data transfer via QR-codes (AES-256-GCM, scrypt KDF,
+                chunking, integrity checks).</li>
+            </ul>
+
+            <h2 style="margin-top:18px">Quotes</h2>
+            <p class="rb-quote">“Strive for the impossible.”</p>
+            <p class="rb-quote">“We know — that we know nothing. (Socrates)”</p>
+
+            <div class="payment-info" style="margin-top:14px">
+              <button id="copy-address">Copy</button>
+              <button id="metamask-btn">Pay with MetaMask</button>
+            </div>
+          </section>
+        </div>
+
+        <div class="rb-foot">© RestlessByte <span style="opacity:.6">•</span> Built with Linux mindset</div>
+      </section>
+    </main>
+
+    <!-- SKILLS (как в твоём about) -->
+    <div class="glass" style="margin-top: 2rem;">
+      <h2 style="text-align:center;"><b id="skills-title">MY SKILLS</b></h2>
+      <div class="techBorder">
+        <div class="grid" id="skillsContainer"><!-- filled by JS --></div>
       </div>
     </div>
 
+    <!-- CTA GitHub -->
     <div class="glass" onclick="window.open('https://github.com/RestlessByte', '_blank')"
-      style="cursor: pointer; background: linear-gradient(45deg,rgba(112, 1, 1, 0.507),black,orange);">
+      style="cursor:pointer;background:linear-gradient(45deg,rgba(112,1,1,.507),black,orange);">
       <div class="otherProjectsContainer">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg"
           width="30" height="30" />
-        <span id="github-view" class="otherProjectsTitle">
-          VIEW ON MY GITHUB, TO SEE MY OTHER PROJECTS</span>
+        <span id="github-view" class="otherProjectsTitle">VIEW ON MY GITHUB, TO SEE MY OTHER PROJECTS</span>
       </div>
     </div>
+
+    <!-- CONNECT -->
     <div class="glass" style="margin-top: 2rem;">
       <h2 id="connect-title">🔗 Let's Connect!</h2>
       <div class="socials" style="margin: 1.5rem 0;">
-        <a href="mailto:localhost.l@yandex.ru" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="icon icon-tabler icons-tabler-outline icon-tabler-mail">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
-            <path d="M3 7l9 6l9 -6" />
-          </svg>
-        </a>
-        <a href="https://t.me/RestlessByte" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="icon icon-tabler icons-tabler-outline icon-tabler-brand-telegram">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
-          </svg>
-        </a>
-        <a href="https://github.com/RestlessByte" target="_blank">
+        <a href="mailto:localhost.l@yandex.ru" target="_blank" aria-label="Email">✉️</a>
+        <a href="https://t.me/RestlessByte" target="_blank" aria-label="Telegram">TG</a>
+        <a href="https://github.com/RestlessByte" target="_blank" aria-label="GitHub">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg"
             width="24" alt="GitHub icon" />
         </a>
       </div>
     </div>
 
+    <!-- SEO -->
     <div class="glass" style="margin-top: 2rem;">
       <h2 id="seo-title">🚀 Portfolio &amp; SEO</h2>
       <p id="seo-text" class="seo-text">
-        Daniil (RestlessByte) builds efficient web and AI solutions using JavaScript, TypeScript and Linux. Explore
-        cutting-edge projects and open-source contributions crafted with attention to detail.
+        Daniil (RestlessByte) builds efficient web and AI solutions using JavaScript, TypeScript and Linux.
+        Explore cutting-edge projects and open-source contributions crafted with attention to detail.
       </p>
     </div>
 
-    <div class="glass payment-card" style="margin-top: 2rem;">
-      <h2 id="payment-label">💸 USDT Payment Address:</h2>
-      <div class="payment-info">
-        <code id="usdt-address">0xa8b3A40008EDF9AF21D981Dc3A52aa0ed1cA88fD</code>
-        <button id="copy-address">Copy</button>
-        <button id="metamask-btn">Pay with MetaMask</button>
-      </div>
-    </div>
-
     <div class="footer">
-      &copy; <span id="year"></span> Daniil [RestlessByte]. <span id="footer-text">Built with ❤️ and code.</span>
+      &copy; <span id="year"></span> Daniil [RestlessByte]. <span id="footer-text">Built with ❤ and code.</span>
     </div>
   </div>
+
   <script type="module" src="./index.js"></script>
 </body>
 

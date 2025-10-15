@@ -9,8 +9,8 @@ const translations = {
       copy: 'Copy',
       copied: 'Copied!',
       payMetamask: 'Pay with MetaMask',
-    profileTitle: '👤 Profile',
-    profileText:
+    aboutTitle: '💻 About Me',
+    aboutText:
       '<code> Greetings to everyone on my this site. This site is created only for portfolio and not more. Here I write what stack I am using at the moment. About me I can say this: I like to code, help others in development, and analyze algorithms. And - yes, I use neural networks in my daily life</code>',
     skillsTitle: 'MY SKILLS',
     projectsTitle: '🎯 Projects',
@@ -26,7 +26,7 @@ const translations = {
     footer: 'Built with ❤️ and code.',
     githubView: 'VIEW ON MY GITHUB, TO SEE MY OTHER PROJECTS',
     enter: 'Enter',
-    navProfile: 'About',
+    navAbout: 'About',
     navProjects: 'My Projects'
   },
   ru: {
@@ -37,8 +37,8 @@ const translations = {
       copy: 'Скопировать',
       copied: 'Скопировано!',
       payMetamask: 'Оплатить через MetaMask',
-    profileTitle: '👤 Профиль',
-    profileText:
+    aboutTitle: '💻 Обо мне',
+    aboutText:
       '<code> Приветствую всех на моём сайте. Сайт создан как портфолио. Здесь я пишу, какой стек использую. Мне нравится кодить, помогать другим в разработке и анализировать алгоритмы. Да, я использую нейронные сети каждый день.</code>',
     skillsTitle: 'МОИ НАВЫКИ',
     projectsTitle: '🎯 Проекты',
@@ -54,7 +54,7 @@ const translations = {
     footer: 'Создано с ❤️ и кодом.',
     githubView: 'СМОТРИТЕ НА МОЁМ GITHUB, ЧТОБЫ УВИДЕТЬ ДРУГИЕ ПРОЕКТЫ',
     enter: 'Перейти',
-    navProfile: 'Обо мне',
+    navAbout: 'Обо мне',
     navProjects: 'Мои проекты'
   }
 };
@@ -146,8 +146,8 @@ const applyTranslations = lang => {
     const copyBtn = document.getElementById('copy-address');
     if (copyBtn) copyBtn.textContent = t.copy;
     setText('metamask-btn', t.payMetamask);
-  setText('profile-title', t.profileTitle);
-  setHTML('profile-text', t.profileText);
+  setText('about-title', t.aboutTitle);
+  setHTML('about-text', t.aboutText);
   setText('skills-title', t.skillsTitle);
   setText('projects-title', t.projectsTitle);
   document.querySelectorAll('[data-title-key]').forEach(el => {
@@ -165,7 +165,7 @@ const applyTranslations = lang => {
   setText('connect-title', t.connectTitle);
   setText('seo-title', t.seoTitle);
   setText('seo-text', t.seoText);
-  setText('nav-profile', t.navProfile);
+  setText('nav-about', t.navAbout);
   setText('nav-projects', t.navProjects);
   const footer = document.querySelector('.footer');
   if (footer) {
