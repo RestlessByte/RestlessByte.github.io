@@ -6,7 +6,12 @@
   --rb-panel-b: rgba(255, 255, 255, .10);
 }
 
+
+
+
 .rb-wrap {
+  display: flex;
+  justify-content: center;
   width: fit-content;
   margin: 40px auto;
   padding: 0 24px
