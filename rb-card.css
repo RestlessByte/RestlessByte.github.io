@@ -9,11 +9,17 @@
   --rb-shadow: rgba(0, 245, 160, 0.14);
 }
 
+.rb-layout {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 .rb-wrap {
   display: flex;
   justify-content: center;
   width: min(960px, 100%);
-  margin: clamp(1.5rem, 4vw, 2.5rem) auto;
+  margin: 0 auto;
   padding: 0 clamp(1rem, 4vw, 1.5rem);
 }
 
@@ -82,6 +88,7 @@
   border-radius: 22px;
   padding: clamp(1.1rem, 3vw, 1.6rem);
   box-shadow: inset 0 0 0 1px rgba(0, 245, 160, 0.1);
+  min-width: 0;
 }
 
 .rb-block h2 {
@@ -109,6 +116,7 @@
   grid-template-columns: minmax(140px, 170px) minmax(0, 1fr);
   gap: 0.75rem;
   align-items: center;
+  min-width: 0;
 }
 
 .rb-links span {
@@ -128,6 +136,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
+  overflow-wrap: anywhere;
 }
 
 .rb-links a:hover {
