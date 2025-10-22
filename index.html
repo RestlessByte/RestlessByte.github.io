@@ -1,146 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Hacker</title>
-<link rel="icon" href="./assets/rb/avatar.svg" <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description"
-  content="Portfolio of Daniil (RestlessByte) showcasing elegant projects in web development and AI." />
-<meta name="keywords" content="RestlessByte, Daniil, developer, portfolio, JavaScript, TypeScript, AI, Bashkortostan" />
-<meta name="robots" content="index, follow" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./index.css">
-<link rel="stylesheet" href="./rb-card.css">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RestlessByte • Daniil V Portfolio</title>
+  <meta name="description"
+    content="Portfolio of Daniil (RestlessByte) showcasing elegant projects in web development and AI." />
+  <meta name="keywords"
+    content="RestlessByte, Daniil, developer, portfolio, JavaScript, TypeScript, AI, Bashkortostan" />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" href="./assets/rb/avatar.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./index.css" />
+  <link rel="stylesheet" href="./rb-card.css" />
 </head>
 
 <body>
-  <div id="loader" class="loader">
+  <div id="loader" class="loader" role="status" aria-live="polite" aria-label="Loading portfolio">
     <div class="spinner"></div>
   </div>
 
-  <div class="language-switcher">
-    <button id="language-btn">Change language</button>
-    <div id="language-popup">
-      <button class="lang-option" data-lang="en">English</button>
-      <button class="lang-option" data-lang="ru">Русский</button>
+  <div class="language-switcher" aria-label="Change language">
+    <button id="language-btn" type="button">Change language</button>
+    <div id="language-popup" role="listbox">
+      <button class="lang-option" data-lang="en" type="button">English</button>
+      <button class="lang-option" data-lang="ru" type="button">Русский</button>
     </div>
   </div>
 
+  <main id="main-content" class="main hidden" role="main">
+    <section class="section-card rb-card profile-card" aria-labelledby="greeting">
+      <div class="rb-head">
+        <img class="rb-ava" src="assets/rb/avatar.svg" alt="Avatar" width="220" height="220" />
+        <div class="profile-meta">
+          <span class="profile-chip">FullStack Developer • AI Coder • Security Specialist</span>
+          <h1 id="greeting" class="rb-title">RestlessByte [Daniil V]</h1>
+          <p id="role" class="profile-role">LINUXOID • FullStack Developer • AI Coder • Security Specialist • System Admin •
+            Enthusiast</p>
+          <p id="location" class="profile-location">📍 <strong>Bashkortostan, Russia | Remote</strong></p>
+          <span class="rb-pill">I love sleeping</span>
+        </div>
+      </div>
 
-
-  <div id="main-content" class="container hidden">
-
-    <!-- NEW PROFILE CARD (замена старому About) -->
-    <sss style="display: flex; justify-content: center;">
-      <main class="rb-wrap">
-        <section class="rb-card" role="region" aria-labelledby="rb-title">
-          <div class="rb-head">
-            <img class="rb-ava" src="assets/rb/avatar.svg" alt="Avatar" width="220" height="220" />
-            <div>
-              <h1 id="rb-title" class="rb-title">RestlessByte [Daniil V]</h1>
-              <p class="rb-sub">LINUXOID • FullStack Developer • AI Coder • Security Specialist • System Admin •
-                Enthusiast</p>
-              <span class="rb-pill">I love sleeping</span>
-            </div>
-          </div>
-
-          <div class="rb-grid">
-            <section class="rb-block" aria-labelledby="contacts">
-              <h2 id="contacts">Contacts</h2>
-              <ul class="rb-links">
-                <li><span>GitHub</span><a href="https://github.com/RestlessByte" target="_blank"
-                    rel="noopener">https://github.com/RestlessByte</a></li>
-                <li><span>GitHub Page</span><a href="https://RestlessByte.github.io" target="_blank"
-                    rel="noopener">https://RestlessByte.github.io</a></li>
-                <li><span>Telegram (bot)</span><a href="https://t.me/reportRestlessByte_bot" target="_blank"
-                    rel="noopener">https://t.me/reportRestlessByte_bot</a></li>
-                <li><span>Telegram (I'am)</span><a href="https://t.me/RestlessByteTelegram" target="_blank"
-                    rel="noopener">https://t.me/RestlessByteTelegram</a></li>
-                <li><span>AI Hub</span><a href="https://t.me/AIHub0_bot" target="_blank"
-                    rel="noopener">https://t.me/AIHub0_bot</a></li>
-                <li><span>Telegram Game Bot</span><a href="https://t.me/farmilochka0_bot" target="_blank"
-                    rel="noopener">https://t.me/farmilochka0_bot</a></li>
-                <li><span>GitZipQR</span><a href="https://github.com/GitZipQR-vault" target="_blank"
-                    rel="noopener">https://github.com/GitZipQR-vault</a></li>
-                <li><span>GitZipQR in Telegram</span><a href="https://t.me/GitZipQR" target="_blank"
-                    rel="noopener">https://t.me/GitZipQR</a></li>
-              </ul>
-            </section>
-
-            <section class="rb-block" aria-labelledby="wallet">
-              <h2 id="wallet">Wallet</h2>
-              <span class="rb-badge">USDT • ERC-20</span>
-              <code id="usdt-address" class="rb-addr">0xa8b3A40008EDF9AF21D981Dc3A52aa0ed1cA88fD</code>
-
-              <h2 style="margin-top:18px">Projects</h2>
-              <ul class="rb-proj">
-                <li><strong>AI Hub</strong> — Platform to create and manage neural Telegram bots: multi-model routing,
-                  secure tokens, role presets.</li>
-                <li><strong>GitZipQR</strong> — Encrypted offline data transfer via QR-codes (AES-256-GCM, scrypt KDF,
-                  chunking, integrity checks).</li>
-              </ul>
-
-              <h2 style="margin-top:18px">Quotes</h2>
-              <p class="rb-quote">“Strive for the impossible.”</p>
-              <p class="rb-quote">“We know — that we know nothing. (Socrates)”</p>
-
-              <div class="payment-info" style="margin-top:14px">
-                <button id="copy-address">Copy</button>
-                <button id="metamask-btn">Pay with MetaMask</button>
-              </div>
-            </section>
-          </div>
-
-          <div class="rb-foot">© RestlessByte <span style="opacity:.6">•</span> Built with Linux mindset</div>
+      <div class="rb-grid">
+        <section class="rb-block" aria-labelledby="contacts">
+          <h2 id="contacts">Contacts</h2>
+          <ul class="rb-links">
+            <li><span>GitHub</span><a href="https://github.com/RestlessByte" target="_blank"
+                rel="noopener">https://github.com/RestlessByte</a></li>
+            <li><span>GitHub Page</span><a href="https://RestlessByte.github.io" target="_blank"
+                rel="noopener">https://RestlessByte.github.io</a></li>
+            <li><span>Telegram (bot)</span><a href="https://t.me/reportRestlessByte_bot" target="_blank"
+                rel="noopener">https://t.me/reportRestlessByte_bot</a></li>
+            <li><span>Telegram (I'am)</span><a href="https://t.me/RestlessByteTelegram" target="_blank"
+                rel="noopener">https://t.me/RestlessByteTelegram</a></li>
+            <li><span>AI Hub</span><a href="https://t.me/AIHub0_bot" target="_blank"
+                rel="noopener">https://t.me/AIHub0_bot</a></li>
+            <li><span>Telegram Game Bot</span><a href="https://t.me/farmilochka0_bot" target="_blank"
+                rel="noopener">https://t.me/farmilochka0_bot</a></li>
+            <li><span>GitZipQR</span><a href="https://github.com/GitZipQR-vault" target="_blank"
+                rel="noopener">https://github.com/GitZipQR-vault</a></li>
+            <li><span>GitZipQR in Telegram</span><a href="https://t.me/GitZipQR" target="_blank"
+                rel="noopener">https://t.me/GitZipQR</a></li>
+          </ul>
         </section>
-      </main>
-    </sss>
 
-    <!-- SKILLS (как в твоём about) -->
-    <div class="glass" style="margin-top: 2rem;">
-      <h2 style="text-align:center;"><b id="skills-title">MY SKILLS</b></h2>
-      <div class="techBorder">
-        <div class="grid" id="skillsContainer"><!-- filled by JS --></div>
+        <section class="rb-block" aria-labelledby="wallet">
+          <h2 id="wallet">Wallet</h2>
+          <p id="payment-label" class="wallet-label">💸 USDT Payment Address:</p>
+          <span class="rb-badge">USDT • ERC-20</span>
+          <code id="usdt-address" class="rb-addr">0xa8b3A40008EDF9AF21D981Dc3A52aa0ed1cA88fD</code>
+
+          <div class="payment-actions">
+            <button id="copy-address" type="button">Copy</button>
+            <button id="metamask-btn" type="button">Pay with MetaMask</button>
+          </div>
+
+          <h2 class="rb-subheading">Projects</h2>
+          <ul class="rb-proj">
+            <li><strong>AI Hub</strong> — Platform to create and manage neural Telegram bots: multi-model routing,
+              secure tokens, role presets.</li>
+            <li><strong>GitZipQR</strong> — Encrypted offline data transfer via QR-codes (AES-256-GCM, scrypt KDF,
+              chunking, integrity checks).</li>
+          </ul>
+
+          <h2 class="rb-subheading">Quotes</h2>
+          <p class="rb-quote">“Strive for the impossible.”</p>
+          <p class="rb-quote">“We know — that we know nothing. (Socrates)”</p>
+        </section>
       </div>
-    </div>
 
-    <!-- CTA GitHub -->
-    <div class="glass" onclick="window.open('https://github.com/RestlessByte', '_blank')"
-      style="cursor:pointer;background:linear-gradient(45deg,rgba(112,1,1,.507),black,orange);">
-      <div class="otherProjectsContainer">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg"
-          width="30" height="30" />
-        <span id="github-view" class="otherProjectsTitle">VIEW ON MY GITHUB, TO SEE MY OTHER PROJECTS</span>
+      <footer class="rb-foot">© RestlessByte <span aria-hidden="true">•</span> Built with Linux mindset</footer>
+    </section>
+
+    <section class="section-card" aria-labelledby="skills-title">
+      <h2 id="skills-title" class="section-title">MY SKILLS</h2>
+      <div id="skillsContainer" class="skills-grid"><!-- populated via JS --></div>
+    </section>
+
+    <section class="section-card" aria-labelledby="projects-title">
+      <h2 id="projects-title" class="section-title">🎯 Projects</h2>
+      <div id="projectsContainer" class="project-grid"><!-- populated via JS --></div>
+    </section>
+
+    <section class="section-card github-card" role="link"
+      onclick="window.open('https://github.com/RestlessByte', '_blank')" tabindex="0"
+      aria-labelledby="github-view">
+      <div class="github-card-content">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg" width="32"
+          height="32" alt="GitHub" />
+        <span id="github-view" class="github-card-title">VIEW ON MY GITHUB, TO SEE MY OTHER PROJECTS</span>
       </div>
-    </div>
+    </section>
 
-    <!-- CONNECT -->
-    <div class="glass" style="margin-top: 2rem;">
-      <h2 id="connect-title">🔗 Let's Connect!</h2>
-      <div class="socials" style="margin: 1.5rem 0;">
+    <section class="section-card connect-card" aria-labelledby="connect-title">
+      <h2 id="connect-title" class="section-title">🔗 Let's Connect!</h2>
+      <div class="socials">
         <a href="mailto:localhost.l@yandex.ru" target="_blank" aria-label="Email">✉️</a>
         <a href="https://t.me/RestlessByte" target="_blank" aria-label="Telegram">TG</a>
         <a href="https://github.com/RestlessByte" target="_blank" aria-label="GitHub">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg"
-            width="24" alt="GitHub icon" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg" width="24"
+            alt="GitHub" />
         </a>
       </div>
-    </div>
+    </section>
 
-    <!-- SEO -->
-    <div class="glass" style="margin-top: 2rem;">
-      <h2 id="seo-title">🚀 Portfolio &amp; SEO</h2>
-      <p id="seo-text" class="seo-text">
-        Daniil (RestlessByte) builds efficient web and AI solutions using JavaScript, TypeScript and Linux.
-        Explore cutting-edge projects and open-source contributions crafted with attention to detail.
-      </p>
-    </div>
+    <section class="section-card seo-card" aria-labelledby="seo-title">
+      <h2 id="seo-title" class="section-title">🚀 Portfolio &amp; SEO</h2>
+      <p id="seo-text" class="seo-text">Daniil (RestlessByte) builds efficient web and AI solutions using JavaScript,
+        TypeScript and Linux. Explore cutting-edge projects and open-source contributions crafted with attention to
+        detail.</p>
+    </section>
+  </main>
 
-    <div class="footer">
-      &copy; <span id="year"></span> Daniil [RestlessByte]. <span id="footer-text">Built with ❤ and code.</span>
-    </div>
-  </div>
+  <footer class="footer">&copy; <span id="year"></span> Daniil [RestlessByte]. <span id="footer-text">Built with ❤ and
+      code.</span></footer>
 
   <script type="module" src="./index.js"></script>
 </body>
