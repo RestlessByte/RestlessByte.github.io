@@ -32,7 +32,7 @@
   <div id="main-content" class="container hidden">
 
     <!-- NEW PROFILE CARD (замена старому About) -->
-    <div class="rb-layout">
+    <sss style="display: flex; justify-content: center;">
       <main class="rb-wrap">
         <section class="rb-card" role="region" aria-labelledby="rb-title">
           <div class="rb-head">
@@ -73,7 +73,7 @@
               <span class="rb-badge">USDT • ERC-20</span>
               <code id="usdt-address" class="rb-addr">0xa8b3A40008EDF9AF21D981Dc3A52aa0ed1cA88fD</code>
 
-              <h2 class="rb-heading-offset">Projects</h2>
+              <h2 style="margin-top:18px">Projects</h2>
               <ul class="rb-proj">
                 <li><strong>AI Hub</strong> — Platform to create and manage neural Telegram bots: multi-model routing,
                   secure tokens, role presets.</li>
@@ -81,32 +81,33 @@
                   chunking, integrity checks).</li>
               </ul>
 
-              <h2 class="rb-heading-offset">Quotes</h2>
+              <h2 style="margin-top:18px">Quotes</h2>
               <p class="rb-quote">“Strive for the impossible.”</p>
               <p class="rb-quote">“We know — that we know nothing. (Socrates)”</p>
 
-              <div class="payment-info">
+              <div class="payment-info" style="margin-top:14px">
                 <button id="copy-address">Copy</button>
                 <button id="metamask-btn">Pay with MetaMask</button>
               </div>
             </section>
           </div>
 
-          <div class="rb-foot">© RestlessByte <span class="rb-separator">•</span> Built with Linux mindset</div>
+          <div class="rb-foot">© RestlessByte <span style="opacity:.6">•</span> Built with Linux mindset</div>
         </section>
       </main>
-    </div>
+    </sss>
 
     <!-- SKILLS (как в твоём about) -->
-    <div class="glass">
-      <h2 class="section-title"><b id="skills-title">MY SKILLS</b></h2>
+    <div class="glass" style="margin-top: 2rem;">
+      <h2 style="text-align:center;"><b id="skills-title">MY SKILLS</b></h2>
       <div class="techBorder">
         <div class="grid" id="skillsContainer"><!-- filled by JS --></div>
       </div>
     </div>
 
     <!-- CTA GitHub -->
-    <div class="glass glass--cta" onclick="window.open('https://github.com/RestlessByte', '_blank')">
+    <div class="glass" onclick="window.open('https://github.com/RestlessByte', '_blank')"
+      style="cursor:pointer;background:linear-gradient(45deg,rgba(112,1,1,.507),black,orange);">
       <div class="otherProjectsContainer">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg"
           width="30" height="30" />
@@ -115,9 +116,9 @@
     </div>
 
     <!-- CONNECT -->
-    <div class="glass">
+    <div class="glass" style="margin-top: 2rem;">
       <h2 id="connect-title">🔗 Let's Connect!</h2>
-      <div class="socials">
+      <div class="socials" style="margin: 1.5rem 0;">
         <a href="mailto:localhost.l@yandex.ru" target="_blank" aria-label="Email">✉️</a>
         <a href="https://t.me/RestlessByte" target="_blank" aria-label="Telegram">TG</a>
         <a href="https://github.com/RestlessByte" target="_blank" aria-label="GitHub">
@@ -128,7 +129,7 @@
     </div>
 
     <!-- SEO -->
-    <div class="glass">
+    <div class="glass" style="margin-top: 2rem;">
       <h2 id="seo-title">🚀 Portfolio &amp; SEO</h2>
       <p id="seo-text" class="seo-text">
         Daniil (RestlessByte) builds efficient web and AI solutions using JavaScript, TypeScript and Linux.
