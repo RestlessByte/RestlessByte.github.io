@@ -234,6 +234,21 @@ export const arraySkills = [
                 title: "Windows (11/10/7/Server)",
                 image: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows11/windows11-original.svg" height="20" width="20" />',
                 link: ""
+            },
+            {
+                title: "RouterOS",
+                image: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-router"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><rect x="3" y="13" width="18" height="6" rx="2" /><path d="M12 13v-4" /><path d="M9 9l3 -3l3 3" /><path d="M7 17v.01" /><path d="M12 17v.01" /><path d="M17 17v.01" /></svg>`,
+                link: ""
+            }
+        ]
+    },
+    {
+        label: "Routers",
+        items: [
+            {
+                title: "MikroTik",
+                image: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-wifi"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M2 9a15 15 0 0 1 20 0" /><path d="M5 12.55a11 11 0 0 1 14 0" /><path d="M8.5 16.05a6 6 0 0 1 7 0" /><path d="M12 20h.01" /></svg>`,
+                link: ""
             }
         ]
     }
