@@ -113,7 +113,7 @@ export const arraySkills = [
     },
     items: [
       {
-        title: { en: 'Linux', ru: 'Linux' },
+        title: { en: 'Linux core', ru: 'Linux core' },
         image:
           '<img class="logo_pr" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" height="20" width="20" />'
       },
@@ -128,55 +128,24 @@ export const arraySkills = [
           '<img class="logo_pr" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" height="20" width="20" />'
       },
       {
-        title: { en: 'Neovim', ru: 'Neovim' },
+        title: { en: 'Nano', ru: 'Nano' },
         image:
           '<img class="logo_pr" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/neovim/neovim-original.svg" height="20" width="20" />'
       },
-      {
-        title: { en: 'Zed', ru: 'Zed' },
-        image:
-          '<img class="logo_pr" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/zed/zed-original.svg" height="20" width="20" />'
-      },
+
       {
         title: { en: 'Figma', ru: 'Figma' },
         image:
           '<img class="logo_pr" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" height="20" width="20" />'
       },
       {
-        title: { en: 'Obsidian', ru: 'Obsidian' },
-        image:
-          '<img class="logo_pr" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/obsidian/obsidian-original.svg" height="20" width="20" />'
-      },
-      {
         title: { en: 'Cursor', ru: 'Cursor' },
         image:
           '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-cursor-text"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 7h14" /><path d="M5 17h14" /><path d="M10 7v10" /><path d="M14 7v10" /><path d="M12 9h2" /><path d="M12 15h2" /></svg>'
       },
-      {
-        title: { en: 'SearXNG', ru: 'SearXNG' },
-        image:
-          '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-world-search"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M16 21a4 4 0 1 0 -4 -4" /><path d="M18.5 18.5l3.5 3.5" /><path d="M4 7h1" /><path d="M4 11h1" /><path d="M4 15h1" /><path d="M20 7h1" /><path d="M20 11h1" /><path d="M20 15h1" /><path d="M8 4v1" /><path d="M12 4v1" /><path d="M16 4v1" /><path d="M8 20v1" /><path d="M12 20v1" /><path d="M16 20v1" /><path d="M7 19h1" /><path d="M7 5h1" /><path d="M16.712 11a8 8 0 1 0 -8.712 8" /></svg>'
-      },
-      {
-        title: { en: 'Warp Terminal', ru: 'Warp Terminal' },
-        image:
-          '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-terminal-2"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 7l5 5l-5 5" /><path d="M13 17h6" /><path d="M3 7v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2 -2v-10a2 2 0 0 0 -2 -2h-14a2 2 0 0 0 -2 2z" /></svg>'
-      },
-      {
-        title: { en: 'Gemini AI', ru: 'Gemini AI' },
-        image:
-          '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-google"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M17.788 5.108a8 8 0 1 0 2.212 6.892h-8" /></svg>'
-      },
-      {
-        title: { en: 'Claude AI', ru: 'Claude AI' },
-        image:
-          '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brain"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 12a4 4 0 0 1 4 -4" /><path d="M12 4a4 4 0 0 1 4 4" /><path d="M12 20a4 4 0 0 0 4 -4" /><path d="M4 12a4 4 0 0 0 4 4" /><path d="M16 8h2a4 4 0 0 1 0 8h-2" /><path d="M8 16h-2a4 4 0 0 1 0 -8h2" /><path d="M9 7h1" /><path d="M14 7h1" /><path d="M9 17h1" /><path d="M14 17h1" /></svg>'
-      },
-      {
-        title: { en: 'Perplexity AI', ru: 'Perplexity AI' },
-        image:
-          '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-search"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>'
-      },
+
+
+
       {
         title: { en: 'Visual Studio Code', ru: 'Visual Studio Code' },
         image:
@@ -211,14 +180,29 @@ export const arraySkills = [
     },
     items: [
       {
-        title: { en: 'DeepSeek R1', ru: 'DeepSeek R1' },
+        title: { en: 'DeepSeek', ru: 'DeepSeek' },
         image:
           '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-ai"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M8 16v-6a2 2 0 1 1 4 0v6" /><path d="M8 13h4" /><path d="M16 8v8" /></svg>'
       },
       {
-        title: { en: 'ChatGPT 4.1', ru: 'ChatGPT 4.1' },
+        title: { en: 'ChatGPT', ru: 'ChatGPT' },
         image:
           '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-openai"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M11.217 19.384a3.501 3.501 0 0 0 6.783 -1.217v-5.167l-6 -3.35" /><path d="M5.214 15.014a3.501 3.501 0 0 0 4.446 5.266l4.34 -2.534v-6.946" /><path d="M6 7.63c-1.391 -.236 -2.787 .395 -3.534 1.689a3.474 3.474 0 0 0 1.271 4.745l4.263 2.514l6 -3.348" /><path d="M12.783 4.616a3.501 3.501 0 0 0 -6.783 1.217v5.067l6 3.45" /><path d="M18.786 8.986a3.501 3.501 0 0 0 -4.446 -5.266l-4.34 2.534v6.946" /><path d="M18 16.302c1.391 .236 2.787 -.395 3.534 -1.689a3.474 3.474 0 0 0 -1.271 -4.745l-4.308 -2.514l-5.955 3.42" /></svg>'
+      },
+      {
+        title: { en: 'Gemini AI', ru: 'Gemini AI' },
+        image:
+          '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-google"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M17.788 5.108a8 8 0 1 0 2.212 6.892h-8" /></svg>'
+      },
+      {
+        title: { en: 'Claude AI', ru: 'Claude AI' },
+        image:
+          '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brain"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 12a4 4 0 0 1 4 -4" /><path d="M12 4a4 4 0 0 1 4 4" /><path d="M12 20a4 4 0 0 0 4 -4" /><path d="M4 12a4 4 0 0 0 4 4" /><path d="M16 8h2a4 4 0 0 1 0 8h-2" /><path d="M8 16h-2a4 4 0 0 1 0 -8h2" /><path d="M9 7h1" /><path d="M14 7h1" /><path d="M9 17h1" /><path d="M14 17h1" /></svg>'
+      },
+      {
+        title: { en: 'Perplexity AI', ru: 'Perplexity AI' },
+        image:
+          '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-search"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>'
       },
       {
         title: { en: 'Qwen AI', ru: 'Qwen AI' },
@@ -275,8 +259,8 @@ export const arraySkills = [
   },
   {
     label: {
-      en: 'Operating Systems',
-      ru: 'Операционные системы'
+      en: 'Operating Systems, destribution',
+      ru: 'Операционные системы, дистрибутивы'
     },
     items: [
       {
@@ -344,10 +328,10 @@ export const arrayProjects = [
       ru: 'GitZipQR'
     },
     description: {
-      en: 'TypeScript toolkit for encrypting archives into secure QR codes with AES-256-GCM and scrypt.',
-      ru: 'Набор инструментов на TypeScript для шифрования архивов в защищённые QR-коды с AES-256-GCM и scrypt.'
+      en: 'My organization in GitHub for product which provides avoided script for secure vault and share your data',
+      ru: 'Моя организация в GitHub для продукта, который предоставляет скрипт для безопасного хранения и обмена вашими данными'
     },
-    link: 'https://github.com/RestlessByte/GitZipQR',
+    link: 'https://github.com/RestlessByte/GitZipQR-vault',
     icon:
       `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-telegram"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" /></svg>`
   },
@@ -358,7 +342,7 @@ export const arrayProjects = [
     },
     description: {
       en: 'Interactive Telegram game bot with real-time quests and virtual economy.',
-      ru: 'Интерактивный Telegram-бот с игровыми квестами и внутриигровой экономикой в реальном времени.'
+      ru: 'Интерактивный Telegram-бот с игровыми квестами и внутриигровой экономикой в реальном времени'
     },
     link: 'https://t.me/farmilochka0_bot',
     icon:
@@ -370,8 +354,8 @@ export const arrayProjects = [
       ru: 'Telegram AI Hub'
     },
     description: {
-      en: 'Hub for AI-powered Telegram bots with model routing, secure tokens and presets.',
-      ru: 'Центр для Telegram-ботов с ИИ с маршрутизацией моделей, безопасными токенами и пресетами.'
+      en: 'In this chatbot, you can communicate with AI directly in Telegram, and you can also create your own chatbots based on AI, set prompts (scripts) for each chatbot',
+      ru: 'В этом чат боте общаться с AI прямо в Telegram, а также вы можете создавать своих чат ботов на основу AI, задавать промпты(сценарии) к каждому чат боту'
     },
     link: 'https://t.me/AIHub0_bot',
     icon:
@@ -383,8 +367,8 @@ export const arrayProjects = [
       ru: 'AI CLI LINUX'
     },
     description: {
-      en: 'Command-line toolkit that connects Linux workflows with ChatGPT, DeepSeek, Grok and more.',
-      ru: 'Инструменты командной строки, объединяющие Linux с ChatGPT, DeepSeek, Grok и другими моделями.'
+      en: 'Command-line toolkit that connects Linux workflows with ChatGPT, DeepSeek, Grok and more',
+      ru: 'Инструменты командной строки, объединяющие Linux с ChatGPT, DeepSeek, Grok и другими AI моделями'
     },
     link: 'https://github.com/RestlessByte/AI-CLI-LINUX',
     icon:
@@ -396,8 +380,8 @@ export const arrayProjects = [
       ru: 'usingOpenAI'
     },
     description: {
-      en: 'TypeScript SDK that simplifies integrating OpenAI-compatible models into applications.',
-      ru: 'TypeScript SDK, упрощающий интеграцию совместимых с OpenAI моделей в приложения.'
+      en: 'TypeScript SDK that simplifies integrating AI models into applications.',
+      ru: 'TypeScript SDK, упрощающий интеграцию совместимых с AI моделей в приложения'
     },
     link: 'https://github.com/RestlessByte/usingOpenAI',
     icon:
