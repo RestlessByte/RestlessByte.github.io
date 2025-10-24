@@ -12,8 +12,7 @@
   backdrop-filter: blur(18px);
   box-shadow: var(--shadow-lg);
   position: relative;
-  overflow: hidden;
-  margin-top: -4.5rem;
+  
 }
 
 .rb-card::before {
