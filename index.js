@@ -69,7 +69,396 @@ const translations = {
   }
 };
 
+const sharedInfoBlocks = [
+  {
+    title: { en: '👻 Work conditions', ru: '👻 Условия работы' },
+    items: [
+      { en: 'I work politely, clearly and safely.', ru: 'Работаю вежливо, чётко и безопасно.' },
+      { en: 'Online: SSH / GitHub / AnyDesk.', ru: 'Онлайн: SSH / GitHub / AnyDesk.' },
+      { en: 'Offline: at your place or you can deliver the device to me.', ru: 'Офлайн: у вас дома или с доставкой устройства ко мне.' },
+      { en: 'Call-out without providing a service — 1,000 ₽.', ru: 'Вызов без оказания услуги — 1.000 ₽.' }
+    ]
+  },
+  {
+    title: { en: '💳 Payment options', ru: '💳 Оплата' },
+    items: [
+      { en: '💵 Cash', ru: '💵 Наличные' },
+      { en: '💳 Bank transfer', ru: '💳 Перевод на карту' },
+      { en: '₿ Crypto (USDT)', ru: '₿ Крипта (USDT)' },
+      { en: '⚖️ For companies — full paperwork available.', ru: '⚖️ Для компаний — юридическая оплата с документами.' }
+    ]
+  },
+  {
+    title: { en: '🔮 Why hire me', ru: '🔮 Почему именно я' },
+    items: [
+      {
+        en: 'I am a programmer and developer, not just a “Windows reinstaller”.',
+        ru: 'Я — программист и разработчик, а не просто «переустановщик винды».'
+      },
+      { en: 'I always explain what was done and how to use it further.', ru: 'Всегда объясняю, что сделал и как пользоваться дальше.' },
+      { en: 'Portfolio is open and transparent.', ru: 'Портфолио открыто.' }
+    ]
+  }
+];
+
+const contactsBlock = {
+  title: { en: 'Employer contacts', ru: 'Контакты работодателя' },
+  note: {
+    en: 'Please message the Telegram bot first — I have many channels and it helps to keep requests organised.',
+    ru: 'Пожалуйста, сначала пишите в чат-бот — каналов много, так проще не потерять заявку.'
+  },
+  items: [
+    {
+      label: { en: 'Telegram bot', ru: 'Telegram чат-бот' },
+      display: 'https://t.me/reportRestlessByte_bot',
+      url: 'https://t.me/reportRestlessByte_bot'
+    },
+    {
+      label: { en: 'Telegram account', ru: 'Telegram аккаунт' },
+      display: 'https://t.me/RestlessByte',
+      url: 'https://t.me/RestlessByte'
+    }
+  ]
+};
+
+const serviceContent = {
+  online: {
+    title: { en: '💻 Online Services', ru: '💻 Онлайн услуги' },
+    tabLabel: { en: 'Offline Services', ru: 'Оффлайн услуги' },
+    categories: [
+      {
+        title: { en: 'Main services', ru: 'Основные услуги' },
+        items: [
+          {
+            icon: '🪟',
+            name: { en: 'Windows 10/11 installation support', ru: 'Установка Windows 10/11' },
+            price: { en: '1,300 ₽', ru: '1.300 ₽' },
+            details: {
+              en: 'Remote session via AnyDesk: clean install, drivers and post-install tuning.',
+              ru: 'Удалённая сессия через AnyDesk: чистая установка, драйверы и финальные настройки.'
+            }
+          },
+          {
+            icon: '💿',
+            name: { en: 'Windows 7/8 installation support', ru: 'Установка Windows 7/8' },
+            price: { en: 'from 3,500 ₽', ru: 'от 3.500 ₽' },
+            details: {
+              en: 'Legacy hardware care, manual driver hunt and activation guidance.',
+              ru: 'Сложное устаревшее железо, ручной поиск драйверов и настройка активации.'
+            }
+          },
+          {
+            icon: '🧩',
+            name: { en: 'Software installation & rollout', ru: 'Установка программ' },
+            price: { en: 'from 500 ₽', ru: 'от 500 ₽' },
+            details: {
+              en: 'Remote package deployment. When the environment is ready — from 50 ₽ per app.',
+              ru: 'Удалённое развертывание пакетов. Если окружение уже готово — от 50 ₽ за программу.'
+            }
+          },
+          {
+            icon: '📡',
+            name: { en: 'Router & Wi-Fi hardening', ru: 'Настройка роутеров и Wi‑Fi' },
+            price: { en: 'from 1,000 ₽', ru: 'от 1.000 ₽' },
+            details: {
+              en: 'Secure Wi-Fi, guest networks and firewall rules. Extended protection from 3,500 ₽.',
+              ru: 'Безопасный Wi‑Fi, гостевые сети и правила firewall. Расширенная защита — от 3.500 ₽.'
+            }
+          },
+          {
+            icon: '🤖',
+            name: { en: 'Chatbot development (Telegram/VK)', ru: 'Разработка чат-ботов (Telegram/VK)' },
+            price: { en: 'from 3,000 ₽', ru: 'от 3.000 ₽' },
+            details: {
+              en: 'Scenario scripting, hosting, integrations and analytics dashboards.',
+              ru: 'Сценарии, хостинг, интеграции и аналитика.'
+            }
+          },
+          {
+            icon: '🌐',
+            name: { en: 'Website creation', ru: 'Создание сайтов' },
+            price: { en: 'from 20,000 ₽', ru: 'от 20.000 ₽' },
+            details: {
+              en: 'Builder-based sites or custom NextJS + PostgreSQL solutions from 50,000 ₽.',
+              ru: 'Конструкторы или самописные NextJS + PostgreSQL решения от 50.000 ₽.'
+            }
+          },
+          {
+            icon: '🗂️',
+            name: { en: 'Data migration & sync', ru: 'Перенос и копирование данных' },
+            price: { en: 'from 500 ₽ / 5 GB', ru: 'от 500 ₽ за 5 ГБ' },
+            details: {
+              en: 'Secure copy, checksum verification and structure preservation.',
+              ru: 'Безопасное копирование, проверка контрольных сумм и сохранение структуры.'
+            }
+          },
+          {
+            icon: '🛡️',
+            name: { en: 'Confidential backups', ru: 'Конфиденциальные бэкапы' },
+            price: { en: '500 ₽ / GB', ru: '500 ₽/ГБ' },
+            details: {
+              en: 'Single drive? I build an encrypted archive for secure storage.',
+              ru: 'Если диск один — собираю зашифрованный архив для безопасного хранения.'
+            }
+          },
+          {
+            icon: '📱',
+            name: { en: 'Phone setup & onboarding', ru: 'Настройка телефонов' },
+            price: { en: 'from 1,000 ₽', ru: 'от 1.000 ₽' },
+            details: {
+              en: 'Mail, messengers, sync and security policies ready to go.',
+              ru: 'Почта, мессенджеры, синхронизация и политики безопасности.'
+            }
+          }
+        ]
+      },
+      {
+        title: { en: 'Additional services', ru: 'Дополнительные услуги' },
+        items: [
+          {
+            icon: '📂',
+            name: { en: 'Driver installation', ru: 'Установка драйверов' },
+            price: { en: '50 ₽ / item', ru: '50 ₽/шт.' },
+            details: {
+              en: 'Remote detection, download mirrors and silent install.',
+              ru: 'Удалённый подбор, скачивание и тихая установка.'
+            }
+          },
+          {
+            icon: '⚙️',
+            name: { en: 'Windows optimisation', ru: 'Оптимизация Windows' },
+            price: { en: 'from 100 ₽', ru: 'от 100 ₽' },
+            details: {
+              en: 'Services cleanup, privacy and performance tuning.',
+              ru: 'Чистка служб, приватность и настройка производительности.'
+            }
+          },
+          {
+            icon: '🔒',
+            name: { en: 'Antivirus & security setup', ru: 'Настройка антивируса и защиты' },
+            price: { en: 'from 300 ₽', ru: 'от 300 ₽' },
+            details: {
+              en: 'Policies, scheduled scans and safe-browsing tweaks.',
+              ru: 'Политики, расписание сканов и настройки безопасного веб-сёрфинга.'
+            }
+          },
+          {
+            icon: '📡',
+            name: { en: 'Remote access configuration', ru: 'Настройка удалённого доступа' },
+            price: { en: 'from 500 ₽', ru: 'от 500 ₽' },
+            details: {
+              en: 'VPN, RDP, SSH tunnels with hardened profiles.',
+              ru: 'VPN, RDP, SSH-тоннели с усиленной защитой.'
+            }
+          },
+          {
+            icon: '🧹',
+            name: { en: 'PC / laptop cleaning guidance', ru: 'Чистка ПК/ноутбука' },
+            price: { en: 'from 700 ₽', ru: 'от 700 ₽' },
+            details: {
+              en: 'Step-by-step remote assistance for dust removal and thermal paste renewal.',
+              ru: 'Пошаговая удалённая помощь по чистке и замене термопасты.'
+            }
+          },
+          {
+            icon: '📱',
+            name: { en: 'Account recovery', ru: 'Восстановление аккаунтов' },
+            price: { en: 'from 500 ₽', ru: 'от 500 ₽' },
+            details: {
+              en: 'Google, Apple ID, social media with security review.',
+              ru: 'Google, Apple ID, социальные сети с проверкой безопасности.'
+            }
+          },
+          {
+            icon: '🛠️',
+            name: { en: 'Custom requests', ru: 'Другие задачи' },
+            price: { en: 'On request', ru: 'По запросу' },
+            details: {
+              en: 'Describe the task — I will propose a safe and efficient solution.',
+              ru: 'Опишите задачу — предложу безопасное и эффективное решение.'
+            }
+          }
+        ]
+      }
+    ],
+    infoBlocks: sharedInfoBlocks,
+    contacts: contactsBlock
+  },
+  offline: {
+    title: { en: '🛠️ Offline Services', ru: '🛠️ Оффлайн услуги' },
+    tabLabel: { en: 'Online Services', ru: 'Онлайн услуги' },
+    categories: [
+      {
+        title: { en: 'Main services', ru: 'Основные услуги' },
+        items: [
+          {
+            icon: '🖥️',
+            name: { en: 'Windows 10/11 installation', ru: 'Установка Windows 10/11' },
+            price: { en: '1,300 ₽', ru: '1.300 ₽' },
+            details: {
+              en: 'On-site clean install, drivers, activation and basic software.',
+              ru: 'Чистая установка на месте, драйверы, активация и базовый софт.'
+            }
+          },
+          {
+            icon: '💿',
+            name: { en: 'Windows 7/8 installation', ru: 'Установка Windows 7/8' },
+            price: { en: 'from 3,500 ₽', ru: 'от 3.500 ₽' },
+            details: {
+              en: 'Legacy hardware, rare drivers and fine-tuning included.',
+              ru: 'Устаревшее железо, поиск редких драйверов и тонкая настройка.'
+            }
+          },
+          {
+            icon: '🧩',
+            name: { en: 'Software installation', ru: 'Установка программ' },
+            price: { en: 'from 500 ₽', ru: 'от 500 ₽' },
+            details: {
+              en: 'Full software pack on-site. If everything is prepped — from 50 ₽ per app.',
+              ru: 'Полный пакет софта на месте. Если всё готово — от 50 ₽ за программу.'
+            }
+          },
+          {
+            icon: '📡',
+            name: { en: 'Router & Wi-Fi setup', ru: 'Настройка роутеров и Wi‑Fi' },
+            price: { en: 'from 1,000 ₽', ru: 'от 1.000 ₽' },
+            details: {
+              en: 'Tidy cabling, guest networks and extended protection from 3,500 ₽.',
+              ru: 'Аккуратная разводка, гостевые сети и усиленная защита от 3.500 ₽.'
+            }
+          },
+          {
+            icon: '🤖',
+            name: { en: 'Chatbot development (Telegram/VK)', ru: 'Разработка чат-ботов (Telegram/VK)' },
+            price: { en: 'from 3,000 ₽', ru: 'от 3.000 ₽' },
+            details: {
+              en: 'Strategy session, deployment and handover in person.',
+              ru: 'Очная стратегия, развёртывание и передача проекта.'
+            }
+          },
+          {
+            icon: '🌐',
+            name: { en: 'Website creation', ru: 'Создание сайтов' },
+            price: { en: 'from 20,000 ₽', ru: 'от 20.000 ₽' },
+            details: {
+              en: 'Builder-based launch or custom NextJS + PostgreSQL from 50,000 ₽.',
+              ru: 'Запуск на конструкторе или самопис на NextJS + PostgreSQL от 50.000 ₽.'
+            }
+          },
+          {
+            icon: '🗂️',
+            name: { en: 'Data transfer & cloning', ru: 'Перенос и копирование данных' },
+            price: { en: 'from 500 ₽ / 5 GB', ru: 'от 500 ₽ за 5 ГБ' },
+            details: {
+              en: 'Careful copying with verification and safe storage.',
+              ru: 'Аккуратное копирование с проверкой и безопасным хранением.'
+            }
+          },
+          {
+            icon: '🛡️',
+            name: { en: 'Confidential backups', ru: 'Конфиденциальные бэкапы' },
+            price: { en: '500 ₽ / GB', ru: '500 ₽/ГБ' },
+            details: {
+              en: 'If there is only one disk, I create a separate encrypted archive.',
+              ru: 'Если диск один — делаю отдельный зашифрованный архив.'
+            }
+          },
+          {
+            icon: '📱',
+            name: { en: 'Phone configuration', ru: 'Настройка телефонов' },
+            price: { en: 'from 1,000 ₽', ru: 'от 1.000 ₽' },
+            details: {
+              en: 'Apps, mail, backups and user training.',
+              ru: 'Приложения, почта, бэкапы и обучение.'
+            }
+          },
+          {
+            icon: '🔌',
+            name: { en: 'RJ-45 twisted pair crimping', ru: 'Обжатие витой пары RJ-45' },
+            price: { en: '1,900 ₽', ru: '1.900 ₽' },
+            details: {
+              en: 'Bring tools, crimp the cable, test with a tracer and tune the network.',
+              ru: 'Привожу инструмент, обжимаю кабель, проверяю трассером и настраиваю сеть.'
+            }
+          }
+        ]
+      },
+      {
+        title: { en: 'Additional services', ru: 'Дополнительные услуги' },
+        items: [
+          {
+            icon: '📂',
+            name: { en: 'Driver installation', ru: 'Установка драйверов' },
+            price: { en: '50 ₽ / item', ru: '50 ₽/шт.' },
+            details: {
+              en: 'Bring the full driver pack and install everything locally.',
+              ru: 'Привожу полный комплект драйверов и устанавливаю их на месте.'
+            }
+          },
+          {
+            icon: '⚙️',
+            name: { en: 'Windows optimisation', ru: 'Оптимизация Windows' },
+            price: { en: 'from 100 ₽', ru: 'от 100 ₽' },
+            details: {
+              en: 'Cleaning dust, trimming autoload and setting up services.',
+              ru: 'Чистка мусора, настройка автозапуска и служб.'
+            }
+          },
+          {
+            icon: '🔒',
+            name: { en: 'Antivirus & security setup', ru: 'Настройка антивируса и защиты' },
+            price: { en: 'from 300 ₽', ru: 'от 300 ₽' },
+            details: {
+              en: 'Install protection, configure policies and train the user.',
+              ru: 'Ставлю защиту, настраиваю политики и обучаю пользователя.'
+            }
+          },
+          {
+            icon: '📡',
+            name: { en: 'Remote access configuration', ru: 'Настройка удалённого доступа' },
+            price: { en: 'from 500 ₽', ru: 'от 500 ₽' },
+            details: {
+              en: 'Set up VPN, RDP or SSH with strong encryption on your hardware.',
+              ru: 'Настраиваю VPN, RDP или SSH с сильным шифрованием на вашем оборудовании.'
+            }
+          },
+          {
+            icon: '🧹',
+            name: { en: 'PC / laptop cleaning', ru: 'Чистка ПК/ноутбука' },
+            price: { en: 'from 700 ₽', ru: 'от 700 ₽' },
+            details: {
+              en: 'Disassemble, remove dust and refresh thermal paste.',
+              ru: 'Разбираю, удаляю пыль и обновляю термопасту.'
+            }
+          },
+          {
+            icon: '📱',
+            name: { en: 'Account recovery', ru: 'Восстановление аккаунтов' },
+            price: { en: 'from 500 ₽', ru: 'от 500 ₽' },
+            details: {
+              en: 'Recover Google, Apple ID or social accounts with secure handover.',
+              ru: 'Восстанавливаю Google, Apple ID или социальные аккаунты с безопасной передачей.'
+            }
+          },
+          {
+            icon: '🛠️',
+            name: { en: 'Custom requests', ru: 'Другие задачи' },
+            price: { en: 'On request', ru: 'По запросу' },
+            details: {
+              en: 'Bring any tech challenge — we will solve it together.',
+              ru: 'Любые задачи по технике — решим вместе.'
+            }
+          }
+        ]
+      }
+    ],
+    infoBlocks: sharedInfoBlocks,
+    contacts: contactsBlock
+  }
+};
+
 let currentLang = 'en';
+let currentServiceMode = 'online';
 
 const getLocalizedText = (value, lang) => {
   if (typeof value === 'string') return value;
@@ -165,6 +554,157 @@ const showWithDelay = elements => {
   });
 };
 
+const renderServices = () => {
+  const servicesContainer = document.getElementById('services-content');
+  const servicesTitle = document.getElementById('services-title');
+  const servicesToggle = document.getElementById('services-toggle');
+  if (!servicesContainer || !servicesTitle || !servicesToggle) return;
+
+  const currentData = serviceContent[currentServiceMode];
+  const targetMode = currentServiceMode === 'online' ? 'offline' : 'online';
+
+  servicesTitle.textContent = getLocalizedText(currentData.title, currentLang);
+  const toggleText = getLocalizedText(serviceContent[targetMode].tabLabel, currentLang);
+  servicesToggle.textContent = toggleText;
+  servicesToggle.setAttribute('aria-label', toggleText);
+
+  servicesContainer.innerHTML = '';
+
+  currentData.categories.forEach(category => {
+    const section = document.createElement('section');
+    section.className = 'service-category';
+
+    const heading = document.createElement('h3');
+    heading.className = 'service-category-title';
+    heading.textContent = getLocalizedText(category.title, currentLang);
+    section.appendChild(heading);
+
+    const grid = document.createElement('div');
+    grid.className = 'service-grid';
+
+    category.items.forEach(item => {
+      const card = document.createElement('article');
+      card.className = 'service-card';
+
+      const header = document.createElement('div');
+      header.className = 'service-card-header';
+
+      if (item.icon) {
+        const icon = document.createElement('span');
+        icon.className = 'service-card-icon';
+        icon.textContent = item.icon;
+        header.appendChild(icon);
+      }
+
+      const textWrap = document.createElement('div');
+      textWrap.className = 'service-card-text';
+
+      const nameEl = document.createElement('h4');
+      nameEl.className = 'service-card-title';
+      nameEl.textContent = getLocalizedText(item.name, currentLang);
+      textWrap.appendChild(nameEl);
+
+      if (item.details) {
+        const detailEl = document.createElement('p');
+        detailEl.className = 'service-card-details';
+        detailEl.textContent = getLocalizedText(item.details, currentLang);
+        textWrap.appendChild(detailEl);
+      }
+
+      header.appendChild(textWrap);
+      card.appendChild(header);
+
+      if (item.price) {
+        const priceEl = document.createElement('span');
+        priceEl.className = 'service-card-price';
+        priceEl.textContent = getLocalizedText(item.price, currentLang);
+        card.appendChild(priceEl);
+      }
+
+      grid.appendChild(card);
+    });
+
+    section.appendChild(grid);
+    servicesContainer.appendChild(section);
+  });
+
+  if ((currentData.infoBlocks && currentData.infoBlocks.length) || currentData.contacts) {
+    const infoGrid = document.createElement('div');
+    infoGrid.className = 'service-info-grid';
+
+    currentData.infoBlocks?.forEach(block => {
+      const infoCard = document.createElement('article');
+      infoCard.className = 'service-info-card';
+
+      const infoTitle = document.createElement('h3');
+      infoTitle.className = 'service-info-title';
+      infoTitle.textContent = getLocalizedText(block.title, currentLang);
+      infoCard.appendChild(infoTitle);
+
+      if (block.items && block.items.length) {
+        const list = document.createElement('ul');
+        list.className = 'service-info-list';
+        block.items.forEach(item => {
+          const listItem = document.createElement('li');
+          listItem.innerHTML = getLocalizedText(item, currentLang);
+          list.appendChild(listItem);
+        });
+        infoCard.appendChild(list);
+      }
+
+      infoGrid.appendChild(infoCard);
+    });
+
+    if (currentData.contacts) {
+      const contactCard = document.createElement('article');
+      contactCard.className = 'service-info-card service-contact-card';
+
+      const contactTitle = document.createElement('h3');
+      contactTitle.className = 'service-info-title';
+      contactTitle.textContent = getLocalizedText(currentData.contacts.title, currentLang);
+      contactCard.appendChild(contactTitle);
+
+      if (currentData.contacts.note) {
+        const note = document.createElement('p');
+        note.className = 'service-contact-note';
+        note.textContent = getLocalizedText(currentData.contacts.note, currentLang);
+        contactCard.appendChild(note);
+      }
+
+      const contactList = document.createElement('ul');
+      contactList.className = 'service-contact-list';
+
+      currentData.contacts.items.forEach(item => {
+        const contactItem = document.createElement('li');
+
+        const label = document.createElement('span');
+        label.className = 'service-contact-label';
+        label.textContent = getLocalizedText(item.label, currentLang);
+        contactItem.appendChild(label);
+
+        const link = document.createElement('a');
+        link.href = item.url;
+        link.target = '_blank';
+        link.rel = 'noopener';
+        link.textContent = item.display;
+        contactItem.appendChild(link);
+
+        contactList.appendChild(contactItem);
+      });
+
+      contactCard.appendChild(contactList);
+      infoGrid.appendChild(contactCard);
+    }
+
+    servicesContainer.appendChild(infoGrid);
+  }
+
+  requestAnimationFrame(() => {
+    showWithDelay(servicesContainer.querySelectorAll('.service-card'));
+    showWithDelay(servicesContainer.querySelectorAll('.service-info-card'));
+  });
+};
+
 const applyTranslations = lang => {
   const t = translations[lang];
   const setText = (id, text) => {
@@ -217,6 +757,7 @@ const initPage = () => {
   if (yearEl) yearEl.textContent = new Date().getFullYear();
   renderSkills();
   renderProjects();
+  renderServices();
   applyTranslations(currentLang);
 
   document.getElementById('language-btn').addEventListener('click', () => {
@@ -228,12 +769,21 @@ const initPage = () => {
       currentLang = btn.getAttribute('data-lang');
       renderSkills();
       renderProjects();
+      renderServices();
       applyTranslations(currentLang);
       showWithDelay(document.querySelectorAll('.tech-stack-card'));
       showWithDelay(document.querySelectorAll('.project-card'));
       document.getElementById('language-popup').classList.remove('open');
     });
   });
+
+  const servicesToggle = document.getElementById('services-toggle');
+  if (servicesToggle) {
+    servicesToggle.addEventListener('click', () => {
+      currentServiceMode = currentServiceMode === 'online' ? 'offline' : 'online';
+      renderServices();
+    });
+  }
 
   const copyBtn = document.getElementById('copy-address');
   const addrEl = document.getElementById('usdt-address');
