@@ -104,7 +104,12 @@
     <section class="section-card services-card" aria-labelledby="services-title">
       <div class="services-header">
         <h2 id="services-title" class="section-title">💻 Online Services</h2>
-        <button id="services-toggle" class="services-toggle" type="button">Offline Services</button>
+        <nav class="services-tabs" aria-label="Service type">
+          <a id="services-tab-online" class="services-tab active" href="./index.html" data-mode="online">💻 Online
+            Services</a>
+          <a id="services-tab-offline" class="services-tab" href="./index.html?service=offline" data-mode="offline">🛠️
+            Offline Services</a>
+        </nav>
       </div>
       <div id="services-content" class="services-content"><!-- populated via JS --></div>
     </section>

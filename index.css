@@ -459,25 +459,42 @@ body::after {
   flex-wrap: wrap;
 }
 
-.services-toggle {
-  appearance: none;
-  background: rgba(8, 44, 31, 0.75);
-  border: 1px solid rgba(46, 243, 163, 0.35);
+.services-tabs {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(8, 44, 31, 0.45);
+  border: 1px solid rgba(46, 243, 163, 0.28);
+  border-radius: var(--radius-pill);
+  padding: 0.35rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.services-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.45rem 1.1rem;
   border-radius: var(--radius-pill);
   color: var(--accent);
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: 0.55rem 1.5rem;
-  cursor: pointer;
-  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  transition: background var(--transition-base), border-color var(--transition-base), color var(--transition-base);
 }
 
-.services-toggle:hover,
-.services-toggle:focus-visible {
-  background: rgba(23, 94, 68, 0.9);
-  border-color: rgba(46, 243, 163, 0.55);
+.services-tab:hover,
+.services-tab:focus-visible {
+  background: rgba(23, 94, 68, 0.35);
   outline: none;
+}
+
+.services-tab.active {
+  background: rgba(46, 243, 163, 0.15);
+  border: 1px solid rgba(46, 243, 163, 0.55);
+  color: var(--text-primary);
 }
 
 .services-content {
@@ -689,8 +706,14 @@ body::after {
     align-items: flex-start;
   }
 
-  .services-toggle {
+  .services-tabs {
     width: 100%;
+    justify-content: space-between;
+  }
+
+  .services-tab {
+    flex: 1;
+    justify-content: center;
     text-align: center;
   }
 
