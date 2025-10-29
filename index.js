@@ -124,7 +124,6 @@ const contactsBlock = {
 const serviceContent = {
   online: {
     title: { en: '💻 Online Services', ru: '💻 Онлайн услуги' },
-    tabLabel: { en: 'Offline Services', ru: 'Оффлайн услуги' },
     categories: [
       {
         title: { en: 'Main services', ru: 'Основные услуги' },
@@ -286,7 +285,6 @@ const serviceContent = {
   },
   offline: {
     title: { en: '🛠️ Offline Services', ru: '🛠️ Оффлайн услуги' },
-    tabLabel: { en: 'Online Services', ru: 'Онлайн услуги' },
     categories: [
       {
         title: { en: 'Main services', ru: 'Основные услуги' },
@@ -458,7 +456,33 @@ const serviceContent = {
 };
 
 let currentLang = 'en';
-let currentServiceMode = 'online';
+const urlParams = new URLSearchParams(window.location.search);
+let currentServiceMode = urlParams.get('service') === 'offline' ? 'offline' : 'online';
+
+const updateServiceTabs = () => {
+  const onlineTab = document.getElementById('services-tab-online');
+  const offlineTab = document.getElementById('services-tab-offline');
+
+  if (onlineTab) {
+    onlineTab.textContent = getLocalizedText(serviceContent.online.title, currentLang);
+    onlineTab.classList.toggle('active', currentServiceMode === 'online');
+    if (currentServiceMode === 'online') {
+      onlineTab.setAttribute('aria-current', 'page');
+    } else {
+      onlineTab.removeAttribute('aria-current');
+    }
+  }
+
+  if (offlineTab) {
+    offlineTab.textContent = getLocalizedText(serviceContent.offline.title, currentLang);
+    offlineTab.classList.toggle('active', currentServiceMode === 'offline');
+    if (currentServiceMode === 'offline') {
+      offlineTab.setAttribute('aria-current', 'page');
+    } else {
+      offlineTab.removeAttribute('aria-current');
+    }
+  }
+};
 
 const getLocalizedText = (value, lang) => {
   if (typeof value === 'string') return value;
@@ -557,16 +581,12 @@ const showWithDelay = elements => {
 const renderServices = () => {
   const servicesContainer = document.getElementById('services-content');
   const servicesTitle = document.getElementById('services-title');
-  const servicesToggle = document.getElementById('services-toggle');
-  if (!servicesContainer || !servicesTitle || !servicesToggle) return;
+  if (!servicesContainer || !servicesTitle) return;
 
   const currentData = serviceContent[currentServiceMode];
-  const targetMode = currentServiceMode === 'online' ? 'offline' : 'online';
 
   servicesTitle.textContent = getLocalizedText(currentData.title, currentLang);
-  const toggleText = getLocalizedText(serviceContent[targetMode].tabLabel, currentLang);
-  servicesToggle.textContent = toggleText;
-  servicesToggle.setAttribute('aria-label', toggleText);
+  updateServiceTabs();
 
   servicesContainer.innerHTML = '';
 
@@ -776,14 +796,6 @@ const initPage = () => {
       document.getElementById('language-popup').classList.remove('open');
     });
   });
-
-  const servicesToggle = document.getElementById('services-toggle');
-  if (servicesToggle) {
-    servicesToggle.addEventListener('click', () => {
-      currentServiceMode = currentServiceMode === 'online' ? 'offline' : 'online';
-      renderServices();
-    });
-  }
 
   const copyBtn = document.getElementById('copy-address');
   const addrEl = document.getElementById('usdt-address');
