@@ -33,8 +33,16 @@
     </div>
   </div>
 
+  <header class="site-header" role="banner">
+    <nav class="main-nav" aria-label="Primary">
+      <button id="nav-resume" class="nav-link active" data-view="resume" type="button">Моё резюме</button>
+      <button id="nav-offline" class="nav-link" data-view="offline" type="button">🛠️ Оффлайн услуги</button>
+    </nav>
+  </header>
+
   <main id="main-content" class="main hidden" role="main">
-    <section class="section-card rb-card profile-card" aria-labelledby="greeting">
+    <section id="view-resume" class="view" aria-labelledby="greeting">
+      <section class="section-card rb-card profile-card">
       <div class="rb-head">
         <img class="rb-ava" src="assets/rb/avatar.svg" alt="Avatar" width="220" height="220" />
         <div class="profile-meta">
@@ -101,30 +109,17 @@
       <footer class="rb-foot">© RestlessByte <span aria-hidden="true">•</span> Built with Linux mindset</footer>
     </section>
 
-    <section class="section-card services-card" aria-labelledby="services-title">
-      <div class="services-header">
-        <h2 id="services-title" class="section-title">💻 Online Services</h2>
-        <nav class="services-tabs" aria-label="Service type">
-          <a id="services-tab-online" class="services-tab active" href="./index.html" data-mode="online">💻 Online
-            Services</a>
-          <a id="services-tab-offline" class="services-tab" href="./index.html?service=offline" data-mode="offline">🛠️
-            Offline Services</a>
-        </nav>
-      </div>
-      <div id="services-content" class="services-content"><!-- populated via JS --></div>
-    </section>
-
-    <section class="section-card" aria-labelledby="skills-title">
+      <section class="section-card" aria-labelledby="skills-title">
       <h2 id="skills-title" class="section-title">MY SKILLS</h2>
       <div id="skillsContainer" class="skills-grid"><!-- populated via JS --></div>
     </section>
 
-    <section class="section-card" aria-labelledby="projects-title">
+      <section class="section-card" aria-labelledby="projects-title">
       <h2 id="projects-title" class="section-title">🎯 Projects</h2>
       <div id="projectsContainer" class="project-grid"><!-- populated via JS --></div>
     </section>
 
-    <section class="section-card github-card" role="link"
+      <section class="section-card github-card" role="link"
       onclick="window.open('https://github.com/RestlessByte', '_blank')" tabindex="0" aria-labelledby="github-view">
       <div class="github-card-content">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg"
@@ -133,7 +128,7 @@
       </div>
     </section>
 
-    <section class="section-card connect-card" aria-labelledby="connect-title">
+      <section class="section-card connect-card" aria-labelledby="connect-title">
       <h2 id="connect-title" class="section-title">🔗 Let's Connect!</h2>
       <div class="socials">
         <a href="mailto:localhost.l@yandex.ru" target="_blank" aria-label="Email">✉️</a>
@@ -145,11 +140,21 @@
       </div>
     </section>
 
-    <section class="section-card seo-card" aria-labelledby="seo-title">
-      <h2 id="seo-title" class="section-title">🚀 Portfolio &amp; SEO</h2>
-      <p id="seo-text" class="seo-text">Daniil (RestlessByte) builds efficient web and AI solutions using JavaScript,
-        TypeScript and Linux. Explore cutting-edge projects and open-source contributions crafted with attention to
-        detail.</p>
+      <section class="section-card seo-card" aria-labelledby="seo-title">
+        <h2 id="seo-title" class="section-title">🚀 Portfolio &amp; SEO</h2>
+        <p id="seo-text" class="seo-text">Daniil (RestlessByte) builds efficient web and AI solutions using JavaScript,
+          TypeScript and Linux. Explore cutting-edge projects and open-source contributions crafted with attention to
+          detail.</p>
+      </section>
+    </section>
+
+    <section id="view-offline" class="view hidden" aria-labelledby="offline-services-title">
+      <section class="section-card services-card offline-services-card">
+        <div class="services-header">
+          <h2 id="offline-services-title" class="section-title">🛠️ Offline Services</h2>
+        </div>
+        <div id="offline-services-content" class="services-content"><!-- populated via JS --></div>
+      </section>
     </section>
   </main>
 

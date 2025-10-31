@@ -169,6 +169,78 @@ body::after {
   outline: none;
 }
 
+.site-header {
+  width: min(1080px, 100%);
+  margin: clamp(1.8rem, 6vw, 3.2rem) auto 0;
+  padding: 0 clamp(1.5rem, 4vw, 3rem);
+  position: sticky;
+  top: clamp(1rem, 2vw, 2.8rem);
+  z-index: 1200;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  background: linear-gradient(140deg, rgba(6, 24, 18, 0.92), rgba(5, 20, 15, 0.85));
+  border: 1px solid rgba(46, 243, 163, 0.28);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(18px);
+}
+
+.nav-link {
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.7rem 1.6rem;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: rgba(46, 243, 163, 0.12);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+  opacity: 1;
+}
+
+.nav-link:focus-visible {
+  outline: 2px solid rgba(46, 243, 163, 0.4);
+  outline-offset: 2px;
+}
+
+.nav-link.active {
+  color: var(--bg-primary);
+  background: var(--accent);
+  box-shadow: 0 12px 25px rgba(46, 243, 163, 0.35);
+}
+
+.nav-link[disabled] {
+  cursor: default;
+  pointer-events: none;
+  color: var(--bg-primary);
+}
+
+.view.hidden {
+  display: none;
+  opacity: 1;
+  transform: none;
+}
+
 .main {
   width: min(1080px, 100%);
   margin: 0 auto;
@@ -843,6 +915,11 @@ body::after {
     right: 16px;
   }
 
+  .site-header {
+    margin-top: clamp(1.2rem, 5vw, 2.4rem);
+    top: 16px;
+  }
+
   .profile-card {
     padding: 2.2rem;
   }
@@ -875,6 +952,24 @@ body::after {
     position: static;
     align-items: flex-end;
     margin: 1.5rem clamp(1.2rem, 5vw, 2rem) 0;
+  }
+
+  .site-header {
+    position: static;
+    width: 100%;
+    padding: 0 clamp(1.2rem, 5vw, 2rem);
+    margin: 0 auto 1.5rem;
+  }
+
+  .main-nav {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+
+  .nav-link {
+    flex: 1 1 100%;
+    text-align: center;
   }
 
   .main {
