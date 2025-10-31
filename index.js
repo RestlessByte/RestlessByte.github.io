@@ -1,4 +1,10 @@
 import { arraySkills, arrayProjects } from './arraySkills.js';
+import { renderOfflineServices } from './views/offlineServicesView.js';
+import { offlineServiceContent } from './data/offlineServices.js';
+import { getLocalizedText } from './utils/localization.js';
+
+const STORAGE_LANG_KEY = 'rb-preferred-language';
+const VIEW_QUERY_PARAM = 'view';
 
 const translations = {
   en: {
@@ -18,8 +24,6 @@ const translations = {
     footer: 'Built with ❤️ and code.',
     githubView: 'VIEW ON MY GITHUB, TO SEE MY OTHER PROJECTS',
     enter: 'Enter',
-    navProfile: 'About',
-    navProjects: 'My Projects',
     languageButton: 'Change language',
     profileChip: 'FullStack Developer • AI Coder • Security Specialist',
     profilePill: 'I love sleeping',
@@ -32,7 +36,9 @@ const translations = {
     projectAiHub:
       '<strong>AI Hub</strong> — Platform to create and manage neural Telegram bots: multi-model routing, secure tokens, role presets.',
     projectGitZipQR:
-      '<strong>GitZipQR</strong> — Encrypted offline data transfer via QR-codes (AES-256-GCM, scrypt KDF, chunking, integrity checks).'
+      '<strong>GitZipQR</strong> — Encrypted offline data transfer via QR-codes (AES-256-GCM, scrypt KDF, chunking, integrity checks).',
+    navResume: 'Моё резюме',
+    navOffline: '🛠️ Offline services'
   },
   ru: {
     greeting: '👋 Даниил [RestlessByte]',
@@ -51,8 +57,6 @@ const translations = {
     footer: 'Создано с ❤️ и кодом.',
     githubView: 'СМОТРИТЕ НА МОЁМ GITHUB, ЧТОБЫ УВИДЕТЬ ДРУГИЕ ПРОЕКТЫ',
     enter: 'Перейти',
-    navProfile: 'Обо мне',
-    navProjects: 'Мои проекты',
     languageButton: 'Сменить язык',
     profileChip: 'FullStack-разработчик • AI-кодер • Специалист по безопасности',
     profilePill: 'Люблю спать',
@@ -65,429 +69,29 @@ const translations = {
     projectAiHub:
       '<strong>AI Hub</strong> — Платформа для создания и управления нейронными Telegram-ботами: маршрутизация моделей, безопасные токены, пресеты ролей.',
     projectGitZipQR:
-      '<strong>GitZipQR</strong> — Оффлайн-передача данных через QR-коды (AES-256-GCM, scrypt, чанкирование, проверка целостности).'
-  }
-};
-
-const sharedInfoBlocks = [
-  {
-    title: { en: '👻 Work conditions', ru: '👻 Условия работы' },
-    items: [
-      { en: 'I work politely, clearly and safely.', ru: 'Работаю вежливо, чётко и безопасно.' },
-      { en: 'Online: SSH / GitHub / AnyDesk.', ru: 'Онлайн: SSH / GitHub / AnyDesk.' },
-      { en: 'Offline: at your place or you can deliver the device to me.', ru: 'Офлайн: у вас дома или с доставкой устройства ко мне.' },
-      { en: 'Call-out without providing a service — 1,000 ₽.', ru: 'Вызов без оказания услуги — 1.000 ₽.' }
-    ]
-  },
-  {
-    title: { en: '💳 Payment options', ru: '💳 Оплата' },
-    items: [
-      { en: '💵 Cash', ru: '💵 Наличные' },
-      { en: '💳 Bank transfer', ru: '💳 Перевод на карту' },
-      { en: '₿ Crypto (USDT)', ru: '₿ Крипта (USDT)' },
-      { en: '⚖️ For companies — full paperwork available.', ru: '⚖️ Для компаний — юридическая оплата с документами.' }
-    ]
-  },
-  {
-    title: { en: '🔮 Why hire me', ru: '🔮 Почему именно я' },
-    items: [
-      {
-        en: 'I am a programmer and developer, not just a “Windows reinstaller”.',
-        ru: 'Я — программист и разработчик, а не просто «переустановщик винды».'
-      },
-      { en: 'I always explain what was done and how to use it further.', ru: 'Всегда объясняю, что сделал и как пользоваться дальше.' },
-      { en: 'Portfolio is open and transparent.', ru: 'Портфолио открыто.' }
-    ]
-  }
-];
-
-const contactsBlock = {
-  title: { en: 'Employer contacts', ru: 'Контакты работодателя' },
-  note: {
-    en: 'Please message the Telegram bot first — I have many channels and it helps to keep requests organised.',
-    ru: 'Пожалуйста, сначала пишите в чат-бот — каналов много, так проще не потерять заявку.'
-  },
-  items: [
-    {
-      label: { en: 'Telegram bot', ru: 'Telegram чат-бот' },
-      display: 'https://t.me/reportRestlessByte_bot',
-      url: 'https://t.me/reportRestlessByte_bot'
-    },
-    {
-      label: { en: 'Telegram account', ru: 'Telegram аккаунт' },
-      display: 'https://t.me/RestlessByte',
-      url: 'https://t.me/RestlessByte'
-    }
-  ]
-};
-
-const serviceContent = {
-  online: {
-    title: { en: '💻 Online Services', ru: '💻 Онлайн услуги' },
-    categories: [
-      {
-        title: { en: 'Main services', ru: 'Основные услуги' },
-        items: [
-          {
-            icon: '🪟',
-            name: { en: 'Windows 10/11 installation support', ru: 'Установка Windows 10/11' },
-            price: { en: '1,300 ₽', ru: '1.300 ₽' },
-            details: {
-              en: 'Remote session via AnyDesk: clean install, drivers and post-install tuning.',
-              ru: 'Удалённая сессия через AnyDesk: чистая установка, драйверы и финальные настройки.'
-            }
-          },
-          {
-            icon: '💿',
-            name: { en: 'Windows 7/8 installation support', ru: 'Установка Windows 7/8' },
-            price: { en: 'from 3,500 ₽', ru: 'от 3.500 ₽' },
-            details: {
-              en: 'Legacy hardware care, manual driver hunt and activation guidance.',
-              ru: 'Сложное устаревшее железо, ручной поиск драйверов и настройка активации.'
-            }
-          },
-          {
-            icon: '🧩',
-            name: { en: 'Software installation & rollout', ru: 'Установка программ' },
-            price: { en: 'from 500 ₽', ru: 'от 500 ₽' },
-            details: {
-              en: 'Remote package deployment. When the environment is ready — from 50 ₽ per app.',
-              ru: 'Удалённое развертывание пакетов. Если окружение уже готово — от 50 ₽ за программу.'
-            }
-          },
-          {
-            icon: '📡',
-            name: { en: 'Router & Wi-Fi hardening', ru: 'Настройка роутеров и Wi‑Fi' },
-            price: { en: 'from 1,000 ₽', ru: 'от 1.000 ₽' },
-            details: {
-              en: 'Secure Wi-Fi, guest networks and firewall rules. Extended protection from 3,500 ₽.',
-              ru: 'Безопасный Wi‑Fi, гостевые сети и правила firewall. Расширенная защита — от 3.500 ₽.'
-            }
-          },
-          {
-            icon: '🤖',
-            name: { en: 'Chatbot development (Telegram/VK)', ru: 'Разработка чат-ботов (Telegram/VK)' },
-            price: { en: 'from 3,000 ₽', ru: 'от 3.000 ₽' },
-            details: {
-              en: 'Scenario scripting, hosting, integrations and analytics dashboards.',
-              ru: 'Сценарии, хостинг, интеграции и аналитика.'
-            }
-          },
-          {
-            icon: '🌐',
-            name: { en: 'Website creation', ru: 'Создание сайтов' },
-            price: { en: 'from 20,000 ₽', ru: 'от 20.000 ₽' },
-            details: {
-              en: 'Builder-based sites or custom NextJS + PostgreSQL solutions from 50,000 ₽.',
-              ru: 'Конструкторы или самописные NextJS + PostgreSQL решения от 50.000 ₽.'
-            }
-          },
-          {
-            icon: '🗂️',
-            name: { en: 'Data migration & sync', ru: 'Перенос и копирование данных' },
-            price: { en: 'from 500 ₽ / 5 GB', ru: 'от 500 ₽ за 5 ГБ' },
-            details: {
-              en: 'Secure copy, checksum verification and structure preservation.',
-              ru: 'Безопасное копирование, проверка контрольных сумм и сохранение структуры.'
-            }
-          },
-          {
-            icon: '🛡️',
-            name: { en: 'Confidential backups', ru: 'Конфиденциальные бэкапы' },
-            price: { en: '500 ₽ / GB', ru: '500 ₽/ГБ' },
-            details: {
-              en: 'Single drive? I build an encrypted archive for secure storage.',
-              ru: 'Если диск один — собираю зашифрованный архив для безопасного хранения.'
-            }
-          },
-          {
-            icon: '📱',
-            name: { en: 'Phone setup & onboarding', ru: 'Настройка телефонов' },
-            price: { en: 'from 1,000 ₽', ru: 'от 1.000 ₽' },
-            details: {
-              en: 'Mail, messengers, sync and security policies ready to go.',
-              ru: 'Почта, мессенджеры, синхронизация и политики безопасности.'
-            }
-          }
-        ]
-      },
-      {
-        title: { en: 'Additional services', ru: 'Дополнительные услуги' },
-        items: [
-          {
-            icon: '📂',
-            name: { en: 'Driver installation', ru: 'Установка драйверов' },
-            price: { en: '50 ₽ / item', ru: '50 ₽/шт.' },
-            details: {
-              en: 'Remote detection, download mirrors and silent install.',
-              ru: 'Удалённый подбор, скачивание и тихая установка.'
-            }
-          },
-          {
-            icon: '⚙️',
-            name: { en: 'Windows optimisation', ru: 'Оптимизация Windows' },
-            price: { en: 'from 100 ₽', ru: 'от 100 ₽' },
-            details: {
-              en: 'Services cleanup, privacy and performance tuning.',
-              ru: 'Чистка служб, приватность и настройка производительности.'
-            }
-          },
-          {
-            icon: '🔒',
-            name: { en: 'Antivirus & security setup', ru: 'Настройка антивируса и защиты' },
-            price: { en: 'from 300 ₽', ru: 'от 300 ₽' },
-            details: {
-              en: 'Policies, scheduled scans and safe-browsing tweaks.',
-              ru: 'Политики, расписание сканов и настройки безопасного веб-сёрфинга.'
-            }
-          },
-          {
-            icon: '📡',
-            name: { en: 'Remote access configuration', ru: 'Настройка удалённого доступа' },
-            price: { en: 'from 500 ₽', ru: 'от 500 ₽' },
-            details: {
-              en: 'VPN, RDP, SSH tunnels with hardened profiles.',
-              ru: 'VPN, RDP, SSH-тоннели с усиленной защитой.'
-            }
-          },
-          {
-            icon: '🧹',
-            name: { en: 'PC / laptop cleaning guidance', ru: 'Чистка ПК/ноутбука' },
-            price: { en: 'from 700 ₽', ru: 'от 700 ₽' },
-            details: {
-              en: 'Step-by-step remote assistance for dust removal and thermal paste renewal.',
-              ru: 'Пошаговая удалённая помощь по чистке и замене термопасты.'
-            }
-          },
-          {
-            icon: '📱',
-            name: { en: 'Account recovery', ru: 'Восстановление аккаунтов' },
-            price: { en: 'from 500 ₽', ru: 'от 500 ₽' },
-            details: {
-              en: 'Google, Apple ID, social media with security review.',
-              ru: 'Google, Apple ID, социальные сети с проверкой безопасности.'
-            }
-          },
-          {
-            icon: '🛠️',
-            name: { en: 'Custom requests', ru: 'Другие задачи' },
-            price: { en: 'On request', ru: 'По запросу' },
-            details: {
-              en: 'Describe the task — I will propose a safe and efficient solution.',
-              ru: 'Опишите задачу — предложу безопасное и эффективное решение.'
-            }
-          }
-        ]
-      }
-    ],
-    infoBlocks: sharedInfoBlocks,
-    contacts: contactsBlock
-  },
-  offline: {
-    title: { en: '🛠️ Offline Services', ru: '🛠️ Оффлайн услуги' },
-    categories: [
-      {
-        title: { en: 'Main services', ru: 'Основные услуги' },
-        items: [
-          {
-            icon: '🖥️',
-            name: { en: 'Windows 10/11 installation', ru: 'Установка Windows 10/11' },
-            price: { en: '1,300 ₽', ru: '1.300 ₽' },
-            details: {
-              en: 'On-site clean install, drivers, activation and basic software.',
-              ru: 'Чистая установка на месте, драйверы, активация и базовый софт.'
-            }
-          },
-          {
-            icon: '💿',
-            name: { en: 'Windows 7/8 installation', ru: 'Установка Windows 7/8' },
-            price: { en: 'from 3,500 ₽', ru: 'от 3.500 ₽' },
-            details: {
-              en: 'Legacy hardware, rare drivers and fine-tuning included.',
-              ru: 'Устаревшее железо, поиск редких драйверов и тонкая настройка.'
-            }
-          },
-          {
-            icon: '🧩',
-            name: { en: 'Software installation', ru: 'Установка программ' },
-            price: { en: 'from 500 ₽', ru: 'от 500 ₽' },
-            details: {
-              en: 'Full software pack on-site. If everything is prepped — from 50 ₽ per app.',
-              ru: 'Полный пакет софта на месте. Если всё готово — от 50 ₽ за программу.'
-            }
-          },
-          {
-            icon: '📡',
-            name: { en: 'Router & Wi-Fi setup', ru: 'Настройка роутеров и Wi‑Fi' },
-            price: { en: 'from 1,000 ₽', ru: 'от 1.000 ₽' },
-            details: {
-              en: 'Tidy cabling, guest networks and extended protection from 3,500 ₽.',
-              ru: 'Аккуратная разводка, гостевые сети и усиленная защита от 3.500 ₽.'
-            }
-          },
-          {
-            icon: '🤖',
-            name: { en: 'Chatbot development (Telegram/VK)', ru: 'Разработка чат-ботов (Telegram/VK)' },
-            price: { en: 'from 3,000 ₽', ru: 'от 3.000 ₽' },
-            details: {
-              en: 'Strategy session, deployment and handover in person.',
-              ru: 'Очная стратегия, развёртывание и передача проекта.'
-            }
-          },
-          {
-            icon: '🌐',
-            name: { en: 'Website creation', ru: 'Создание сайтов' },
-            price: { en: 'from 20,000 ₽', ru: 'от 20.000 ₽' },
-            details: {
-              en: 'Builder-based launch or custom NextJS + PostgreSQL from 50,000 ₽.',
-              ru: 'Запуск на конструкторе или самопис на NextJS + PostgreSQL от 50.000 ₽.'
-            }
-          },
-          {
-            icon: '🗂️',
-            name: { en: 'Data transfer & cloning', ru: 'Перенос и копирование данных' },
-            price: { en: 'from 500 ₽ / 5 GB', ru: 'от 500 ₽ за 5 ГБ' },
-            details: {
-              en: 'Careful copying with verification and safe storage.',
-              ru: 'Аккуратное копирование с проверкой и безопасным хранением.'
-            }
-          },
-          {
-            icon: '🛡️',
-            name: { en: 'Confidential backups', ru: 'Конфиденциальные бэкапы' },
-            price: { en: '500 ₽ / GB', ru: '500 ₽/ГБ' },
-            details: {
-              en: 'If there is only one disk, I create a separate encrypted archive.',
-              ru: 'Если диск один — делаю отдельный зашифрованный архив.'
-            }
-          },
-          {
-            icon: '📱',
-            name: { en: 'Phone configuration', ru: 'Настройка телефонов' },
-            price: { en: 'from 1,000 ₽', ru: 'от 1.000 ₽' },
-            details: {
-              en: 'Apps, mail, backups and user training.',
-              ru: 'Приложения, почта, бэкапы и обучение.'
-            }
-          },
-          {
-            icon: '🔌',
-            name: { en: 'RJ-45 twisted pair crimping', ru: 'Обжатие витой пары RJ-45' },
-            price: { en: '1,900 ₽', ru: '1.900 ₽' },
-            details: {
-              en: 'Bring tools, crimp the cable, test with a tracer and tune the network.',
-              ru: 'Привожу инструмент, обжимаю кабель, проверяю трассером и настраиваю сеть.'
-            }
-          }
-        ]
-      },
-      {
-        title: { en: 'Additional services', ru: 'Дополнительные услуги' },
-        items: [
-          {
-            icon: '📂',
-            name: { en: 'Driver installation', ru: 'Установка драйверов' },
-            price: { en: '50 ₽ / item', ru: '50 ₽/шт.' },
-            details: {
-              en: 'Bring the full driver pack and install everything locally.',
-              ru: 'Привожу полный комплект драйверов и устанавливаю их на месте.'
-            }
-          },
-          {
-            icon: '⚙️',
-            name: { en: 'Windows optimisation', ru: 'Оптимизация Windows' },
-            price: { en: 'from 100 ₽', ru: 'от 100 ₽' },
-            details: {
-              en: 'Cleaning dust, trimming autoload and setting up services.',
-              ru: 'Чистка мусора, настройка автозапуска и служб.'
-            }
-          },
-          {
-            icon: '🔒',
-            name: { en: 'Antivirus & security setup', ru: 'Настройка антивируса и защиты' },
-            price: { en: 'from 300 ₽', ru: 'от 300 ₽' },
-            details: {
-              en: 'Install protection, configure policies and train the user.',
-              ru: 'Ставлю защиту, настраиваю политики и обучаю пользователя.'
-            }
-          },
-          {
-            icon: '📡',
-            name: { en: 'Remote access configuration', ru: 'Настройка удалённого доступа' },
-            price: { en: 'from 500 ₽', ru: 'от 500 ₽' },
-            details: {
-              en: 'Set up VPN, RDP or SSH with strong encryption on your hardware.',
-              ru: 'Настраиваю VPN, RDP или SSH с сильным шифрованием на вашем оборудовании.'
-            }
-          },
-          {
-            icon: '🧹',
-            name: { en: 'PC / laptop cleaning', ru: 'Чистка ПК/ноутбука' },
-            price: { en: 'from 700 ₽', ru: 'от 700 ₽' },
-            details: {
-              en: 'Disassemble, remove dust and refresh thermal paste.',
-              ru: 'Разбираю, удаляю пыль и обновляю термопасту.'
-            }
-          },
-          {
-            icon: '📱',
-            name: { en: 'Account recovery', ru: 'Восстановление аккаунтов' },
-            price: { en: 'from 500 ₽', ru: 'от 500 ₽' },
-            details: {
-              en: 'Recover Google, Apple ID or social accounts with secure handover.',
-              ru: 'Восстанавливаю Google, Apple ID или социальные аккаунты с безопасной передачей.'
-            }
-          },
-          {
-            icon: '🛠️',
-            name: { en: 'Custom requests', ru: 'Другие задачи' },
-            price: { en: 'On request', ru: 'По запросу' },
-            details: {
-              en: 'Bring any tech challenge — we will solve it together.',
-              ru: 'Любые задачи по технике — решим вместе.'
-            }
-          }
-        ]
-      }
-    ],
-    infoBlocks: sharedInfoBlocks,
-    contacts: contactsBlock
+      '<strong>GitZipQR</strong> — Оффлайн-передача данных через QR-коды (AES-256-GCM, scrypt, чанкирование, проверка целостности).',
+    navResume: 'Моё резюме',
+    navOffline: '🛠️ Оффлайн услуги'
   }
 };
 
 let currentLang = 'en';
-const urlParams = new URLSearchParams(window.location.search);
-let currentServiceMode = urlParams.get('service') === 'offline' ? 'offline' : 'online';
+let currentView = 'resume';
 
-const updateServiceTabs = () => {
-  const onlineTab = document.getElementById('services-tab-online');
-  const offlineTab = document.getElementById('services-tab-offline');
-
-  if (onlineTab) {
-    onlineTab.textContent = getLocalizedText(serviceContent.online.title, currentLang);
-    onlineTab.classList.toggle('active', currentServiceMode === 'online');
-    if (currentServiceMode === 'online') {
-      onlineTab.setAttribute('aria-current', 'page');
-    } else {
-      onlineTab.removeAttribute('aria-current');
-    }
+const getStoredLanguage = () => {
+  const stored = localStorage.getItem(STORAGE_LANG_KEY);
+  if (stored && translations[stored]) {
+    return stored;
   }
-
-  if (offlineTab) {
-    offlineTab.textContent = getLocalizedText(serviceContent.offline.title, currentLang);
-    offlineTab.classList.toggle('active', currentServiceMode === 'offline');
-    if (currentServiceMode === 'offline') {
-      offlineTab.setAttribute('aria-current', 'page');
-    } else {
-      offlineTab.removeAttribute('aria-current');
-    }
-  }
+  return document.documentElement.lang && translations[document.documentElement.lang]
+    ? document.documentElement.lang
+    : 'en';
 };
 
-const getLocalizedText = (value, lang) => {
-  if (typeof value === 'string') return value;
-  if (!value) return '';
-  return value[lang] ?? value.en ?? value.ru ?? '';
+const showWithDelay = elements => {
+  elements.forEach((el, idx) => {
+    setTimeout(() => el.classList.add('show'), idx * 100);
+  });
 };
 
 const renderSkills = () => {
@@ -572,161 +176,8 @@ const renderProjects = () => {
   });
 };
 
-const showWithDelay = elements => {
-  elements.forEach((el, idx) => {
-    setTimeout(() => el.classList.add('show'), idx * 100);
-  });
-};
-
-const renderServices = () => {
-  const servicesContainer = document.getElementById('services-content');
-  const servicesTitle = document.getElementById('services-title');
-  if (!servicesContainer || !servicesTitle) return;
-
-  const currentData = serviceContent[currentServiceMode];
-
-  servicesTitle.textContent = getLocalizedText(currentData.title, currentLang);
-  updateServiceTabs();
-
-  servicesContainer.innerHTML = '';
-
-  currentData.categories.forEach(category => {
-    const section = document.createElement('section');
-    section.className = 'service-category';
-
-    const heading = document.createElement('h3');
-    heading.className = 'service-category-title';
-    heading.textContent = getLocalizedText(category.title, currentLang);
-    section.appendChild(heading);
-
-    const grid = document.createElement('div');
-    grid.className = 'service-grid';
-
-    category.items.forEach(item => {
-      const card = document.createElement('article');
-      card.className = 'service-card';
-
-      const header = document.createElement('div');
-      header.className = 'service-card-header';
-
-      if (item.icon) {
-        const icon = document.createElement('span');
-        icon.className = 'service-card-icon';
-        icon.textContent = item.icon;
-        header.appendChild(icon);
-      }
-
-      const textWrap = document.createElement('div');
-      textWrap.className = 'service-card-text';
-
-      const nameEl = document.createElement('h4');
-      nameEl.className = 'service-card-title';
-      nameEl.textContent = getLocalizedText(item.name, currentLang);
-      textWrap.appendChild(nameEl);
-
-      if (item.details) {
-        const detailEl = document.createElement('p');
-        detailEl.className = 'service-card-details';
-        detailEl.textContent = getLocalizedText(item.details, currentLang);
-        textWrap.appendChild(detailEl);
-      }
-
-      header.appendChild(textWrap);
-      card.appendChild(header);
-
-      if (item.price) {
-        const priceEl = document.createElement('span');
-        priceEl.className = 'service-card-price';
-        priceEl.textContent = getLocalizedText(item.price, currentLang);
-        card.appendChild(priceEl);
-      }
-
-      grid.appendChild(card);
-    });
-
-    section.appendChild(grid);
-    servicesContainer.appendChild(section);
-  });
-
-  if ((currentData.infoBlocks && currentData.infoBlocks.length) || currentData.contacts) {
-    const infoGrid = document.createElement('div');
-    infoGrid.className = 'service-info-grid';
-
-    currentData.infoBlocks?.forEach(block => {
-      const infoCard = document.createElement('article');
-      infoCard.className = 'service-info-card';
-
-      const infoTitle = document.createElement('h3');
-      infoTitle.className = 'service-info-title';
-      infoTitle.textContent = getLocalizedText(block.title, currentLang);
-      infoCard.appendChild(infoTitle);
-
-      if (block.items && block.items.length) {
-        const list = document.createElement('ul');
-        list.className = 'service-info-list';
-        block.items.forEach(item => {
-          const listItem = document.createElement('li');
-          listItem.innerHTML = getLocalizedText(item, currentLang);
-          list.appendChild(listItem);
-        });
-        infoCard.appendChild(list);
-      }
-
-      infoGrid.appendChild(infoCard);
-    });
-
-    if (currentData.contacts) {
-      const contactCard = document.createElement('article');
-      contactCard.className = 'service-info-card service-contact-card';
-
-      const contactTitle = document.createElement('h3');
-      contactTitle.className = 'service-info-title';
-      contactTitle.textContent = getLocalizedText(currentData.contacts.title, currentLang);
-      contactCard.appendChild(contactTitle);
-
-      if (currentData.contacts.note) {
-        const note = document.createElement('p');
-        note.className = 'service-contact-note';
-        note.textContent = getLocalizedText(currentData.contacts.note, currentLang);
-        contactCard.appendChild(note);
-      }
-
-      const contactList = document.createElement('ul');
-      contactList.className = 'service-contact-list';
-
-      currentData.contacts.items.forEach(item => {
-        const contactItem = document.createElement('li');
-
-        const label = document.createElement('span');
-        label.className = 'service-contact-label';
-        label.textContent = getLocalizedText(item.label, currentLang);
-        contactItem.appendChild(label);
-
-        const link = document.createElement('a');
-        link.href = item.url;
-        link.target = '_blank';
-        link.rel = 'noopener';
-        link.textContent = item.display;
-        contactItem.appendChild(link);
-
-        contactList.appendChild(contactItem);
-      });
-
-      contactCard.appendChild(contactList);
-      infoGrid.appendChild(contactCard);
-    }
-
-    servicesContainer.appendChild(infoGrid);
-  }
-
-  requestAnimationFrame(() => {
-    showWithDelay(servicesContainer.querySelectorAll('.service-card'));
-    showWithDelay(servicesContainer.querySelectorAll('.service-info-card'));
-  });
-};
-
-const applyTranslations = lang => {
-  const t = translations[lang];
+const applyTranslations = () => {
+  const t = translations[currentLang];
   const setText = (id, text) => {
     const el = document.getElementById(id);
     if (el) el.textContent = text;
@@ -735,23 +186,23 @@ const applyTranslations = lang => {
     const el = document.getElementById(id);
     if (el) el.innerHTML = html;
   };
+
+  setText('language-btn', t.languageButton);
+  setText('profile-chip', t.profileChip);
   setText('greeting', t.greeting);
   setHTML('role', t.role);
   setHTML('location', t.location);
-  setText('language-btn', t.languageButton);
-  setText('profile-chip', t.profileChip);
   setText('profile-pill', t.profilePill);
   setText('contacts', t.contactsTitle);
   setText('wallet', t.walletTitle);
   setText('payment-label', t.paymentLabel);
+
   const copyBtn = document.getElementById('copy-address');
   if (copyBtn) copyBtn.textContent = t.copy;
   setText('metamask-btn', t.payMetamask);
+
   setText('skills-title', t.skillsTitle);
   setText('projects-title', t.projectsTitle);
-  document.querySelectorAll('.project-link').forEach(el => {
-    el.textContent = t.enter;
-  });
   setText('projects-subheading', t.projectsSubheading);
   setText('quotes-subheading', t.quotesSubheading);
   setText('quote1', t.quote1);
@@ -762,44 +213,174 @@ const applyTranslations = lang => {
   setText('connect-title', t.connectTitle);
   setText('seo-title', t.seoTitle);
   setText('seo-text', t.seoText);
-  setText('nav-profile', t.navProfile);
-  setText('nav-projects', t.navProjects);
+
   const footer = document.querySelector('.footer');
   if (footer) {
     footer.innerHTML = `&copy; <span id="year"></span> Daniil [RestlessByte]. <span id="footer-text">${t.footer}</span>`;
     const yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
   }
+
+  const projectLinks = document.querySelectorAll('.project-link');
+  projectLinks.forEach(link => {
+    link.textContent = t.enter;
+  });
+
+  const resumeNav = document.getElementById('nav-resume');
+  if (resumeNav) resumeNav.textContent = t.navResume;
+
+  const offlineNav = document.getElementById('nav-offline');
+  if (offlineNav) offlineNav.textContent = t.navOffline;
 };
 
-const initPage = () => {
-  const yearEl = document.getElementById('year');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
+const updateNavState = () => {
+  const resumeNav = document.getElementById('nav-resume');
+  const offlineNav = document.getElementById('nav-offline');
+
+  if (resumeNav) {
+    resumeNav.classList.toggle('active', currentView === 'resume');
+    if (currentView === 'resume') {
+      resumeNav.setAttribute('aria-current', 'page');
+      resumeNav.setAttribute('disabled', 'true');
+    } else {
+      resumeNav.removeAttribute('aria-current');
+      resumeNav.removeAttribute('disabled');
+    }
+  }
+
+  if (offlineNav) {
+    offlineNav.classList.toggle('active', currentView === 'offline');
+    if (currentView === 'offline') {
+      offlineNav.setAttribute('aria-current', 'page');
+      offlineNav.setAttribute('disabled', 'true');
+    } else {
+      offlineNav.removeAttribute('aria-current');
+      offlineNav.removeAttribute('disabled');
+    }
+  }
+};
+
+const updateDocumentTitle = () => {
+  const viewTitle = currentView === 'offline'
+    ? getLocalizedText(offlineServiceContent.title, currentLang)
+    : translations[currentLang].navResume;
+  document.title = `${viewTitle} • RestlessByte`;
+};
+
+const updateHistory = (view, pushState) => {
+  const url = new URL(window.location.href);
+  if (view === 'offline') {
+    url.searchParams.set(VIEW_QUERY_PARAM, 'offline');
+  } else {
+    url.searchParams.delete(VIEW_QUERY_PARAM);
+  }
+
+  const state = { view };
+  if (pushState) {
+    history.pushState(state, '', url);
+  } else {
+    history.replaceState(state, '', url);
+  }
+};
+
+const setView = (view, { pushState = true } = {}) => {
+  const normalizedView = view === 'offline' ? 'offline' : 'resume';
+  if (currentView === normalizedView && pushState) {
+    return;
+  }
+
+  currentView = normalizedView;
+
+  const resumeSection = document.getElementById('view-resume');
+  const offlineSection = document.getElementById('view-offline');
+
+  if (resumeSection) {
+    resumeSection.classList.toggle('hidden', currentView !== 'resume');
+  }
+  if (offlineSection) {
+    offlineSection.classList.toggle('hidden', currentView !== 'offline');
+  }
+
+  updateNavState();
+  updateDocumentTitle();
+  updateHistory(currentView, pushState);
+
+  if (currentView === 'offline') {
+    renderOfflineServices(currentLang);
+    requestAnimationFrame(() => {
+      showWithDelay(document.querySelectorAll('#offline-services-content .service-card'));
+      showWithDelay(document.querySelectorAll('#offline-services-content .service-info-card'));
+    });
+  } else {
+    requestAnimationFrame(() => {
+      showWithDelay(document.querySelectorAll('.tech-stack-card'));
+      showWithDelay(document.querySelectorAll('.project-card'));
+    });
+  }
+};
+
+const setLanguage = lang => {
+  if (!translations[lang]) return;
+  currentLang = lang;
+  localStorage.setItem(STORAGE_LANG_KEY, currentLang);
+  document.documentElement.lang = currentLang;
+
   renderSkills();
   renderProjects();
-  renderServices();
-  applyTranslations(currentLang);
+  applyTranslations();
+  updateDocumentTitle();
 
-  document.getElementById('language-btn').addEventListener('click', () => {
-    document.getElementById('language-popup').classList.toggle('open');
+  if (currentView === 'offline') {
+    renderOfflineServices(currentLang);
+  }
+
+  requestAnimationFrame(() => {
+    showWithDelay(document.querySelectorAll('.tech-stack-card'));
+    showWithDelay(document.querySelectorAll('.project-card'));
+    if (currentView === 'offline') {
+      showWithDelay(document.querySelectorAll('#offline-services-content .service-card'));
+      showWithDelay(document.querySelectorAll('#offline-services-content .service-info-card'));
+    }
   });
+};
+
+const initLanguageControls = () => {
+  const languageBtn = document.getElementById('language-btn');
+  const popup = document.getElementById('language-popup');
+  if (languageBtn && popup) {
+    languageBtn.addEventListener('click', () => {
+      popup.classList.toggle('open');
+    });
+  }
 
   document.querySelectorAll('.lang-option').forEach(btn => {
     btn.addEventListener('click', () => {
-      currentLang = btn.getAttribute('data-lang');
-      renderSkills();
-      renderProjects();
-      renderServices();
-      applyTranslations(currentLang);
-      showWithDelay(document.querySelectorAll('.tech-stack-card'));
-      showWithDelay(document.querySelectorAll('.project-card'));
-      document.getElementById('language-popup').classList.remove('open');
+      const lang = btn.getAttribute('data-lang');
+      setLanguage(lang);
+      if (popup) {
+        popup.classList.remove('open');
+      }
     });
   });
+};
 
+const initNavigation = () => {
+  const resumeNav = document.getElementById('nav-resume');
+  const offlineNav = document.getElementById('nav-offline');
+
+  if (resumeNav) {
+    resumeNav.addEventListener('click', () => setView('resume'));
+  }
+  if (offlineNav) {
+    offlineNav.addEventListener('click', () => setView('offline'));
+  }
+};
+
+const initCopyButtons = () => {
   const copyBtn = document.getElementById('copy-address');
   const addrEl = document.getElementById('usdt-address');
   const metaBtn = document.getElementById('metamask-btn');
+
   if (copyBtn && addrEl) {
     const address = addrEl.textContent.trim();
     copyBtn.addEventListener('click', () => {
@@ -812,6 +393,7 @@ const initPage = () => {
       }, 2000);
     });
   }
+
   if (metaBtn && addrEl) {
     metaBtn.addEventListener('click', async () => {
       if (!window.ethereum) {
@@ -827,11 +409,13 @@ const initPage = () => {
         const data = '0xa9059cbb' + receiver + value;
         await window.ethereum.request({
           method: 'eth_sendTransaction',
-          params: [{
-            from: account,
-            to: '0xdAC17F958D2ee523a2206206994597C13D831ec7',
-            data
-          }]
+          params: [
+            {
+              from: account,
+              to: '0xdAC17F958D2ee523a2206206994597C13D831ec7',
+              data
+            }
+          ]
         });
       } catch (err) {
         console.error(err);
@@ -840,6 +424,36 @@ const initPage = () => {
   } else if (metaBtn) {
     metaBtn.style.display = 'none';
   }
+};
+
+const initPage = () => {
+  currentLang = getStoredLanguage();
+  document.documentElement.lang = currentLang;
+
+  const params = new URLSearchParams(window.location.search);
+  currentView = params.get(VIEW_QUERY_PARAM) === 'offline' ? 'offline' : 'resume';
+
+  const yearEl = document.getElementById('year');
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
+
+  renderSkills();
+  renderProjects();
+  applyTranslations();
+  initLanguageControls();
+  initNavigation();
+  initCopyButtons();
+  setView(currentView, { pushState: false });
+
+  requestAnimationFrame(() => {
+    showWithDelay(document.querySelectorAll('.tech-stack-card'));
+    showWithDelay(document.querySelectorAll('.project-card'));
+    if (currentView === 'offline') {
+      showWithDelay(document.querySelectorAll('#offline-services-content .service-card'));
+      showWithDelay(document.querySelectorAll('#offline-services-content .service-info-card'));
+    }
+  });
 };
 
 document.addEventListener('DOMContentLoaded', initPage);
@@ -855,7 +469,15 @@ window.addEventListener('load', () => {
     main.classList.remove('hidden');
     main.classList.add('fade-in');
   }
-  showWithDelay(document.querySelectorAll('.tech-stack-card'));
-  showWithDelay(document.querySelectorAll('.project-card'));
 });
 
+window.addEventListener('popstate', event => {
+  const viewFromState = event.state?.view;
+  if (viewFromState) {
+    setView(viewFromState, { pushState: false });
+  } else {
+    const params = new URLSearchParams(window.location.search);
+    const view = params.get(VIEW_QUERY_PARAM) === 'offline' ? 'offline' : 'resume';
+    setView(view, { pushState: false });
+  }
+});
