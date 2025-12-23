@@ -26,12 +26,28 @@
   </div>
 
   <div class="language-switcher" aria-label="Change language">
-    <button id="language-btn" type="button">Change language</button>
+    <button id="language-btn" type="button" aria-label="Change language">🌐</button>
     <div id="language-popup" role="listbox">
-      <button class="lang-option" data-lang="en" type="button">English</button>
-      <button class="lang-option" data-lang="ru" type="button">Русский</button>
-      <button class="lang-option" data-lang="kk" type="button">Қазақша</button>
-      <button class="lang-option" data-lang="zh" type="button">中文</button>
+      <button class="lang-option" data-lang="en" type="button">
+        <span class="lang-flag" aria-hidden="true">🇺🇸</span>
+        <span class="lang-name">English</span>
+      </button>
+      <button class="lang-option" data-lang="ru" type="button">
+        <span class="lang-flag" aria-hidden="true">🇷🇺</span>
+        <span class="lang-name">Русский</span>
+      </button>
+      <button class="lang-option" data-lang="kk" type="button">
+        <span class="lang-flag" aria-hidden="true">🇰🇿</span>
+        <span class="lang-name">Қазақша</span>
+      </button>
+      <button class="lang-option" data-lang="zh" type="button">
+        <span class="lang-flag" aria-hidden="true">🇨🇳</span>
+        <span class="lang-name">中文</span>
+      </button>
+      <button class="lang-option" data-lang="ar" type="button">
+        <span class="lang-flag" aria-hidden="true">🇸🇦</span>
+        <span class="lang-name">العربية</span>
+      </button>
     </div>
   </div>
 

@@ -112,8 +112,8 @@ body::after {
 
 .language-switcher {
   position: fixed;
-  top: 24px;
-  right: 24px;
+  top: 20px;
+  right: 20px;
   z-index: 1200;
   display: flex;
   flex-direction: column;
@@ -121,20 +121,21 @@ body::after {
 }
 
 .language-switcher #language-btn {
-  background: linear-gradient(135deg, rgba(124, 255, 178, 0.18), rgba(123, 157, 255, 0.22));
+  background: linear-gradient(135deg, rgba(124, 255, 178, 0.22), rgba(123, 157, 255, 0.3));
   border: 1px solid var(--surface-border);
   color: var(--text-primary);
-  font-weight: 600;
-  font-size: 0.95rem;
-  padding: 0.55rem 1.1rem;
-  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 0.6rem 1.1rem;
+  border-radius: 14px;
   cursor: pointer;
   box-shadow: var(--shadow-sm);
+  min-width: 52px;
 }
 
 .language-switcher #language-btn:hover,
 .language-switcher #language-btn:focus-visible {
-  background: linear-gradient(135deg, rgba(124, 255, 178, 0.32), rgba(123, 157, 255, 0.32));
+  background: linear-gradient(135deg, rgba(124, 255, 178, 0.38), rgba(123, 157, 255, 0.38));
   border-color: var(--surface-border-strong);
   outline: none;
 }
@@ -148,6 +149,7 @@ body::after {
   padding: 6px;
   box-shadow: var(--shadow-md);
   backdrop-filter: blur(14px);
+  min-width: 200px;
 }
 
 .language-switcher #language-popup.open {
@@ -159,11 +161,14 @@ body::after {
   background: transparent;
   color: var(--text-primary);
   border: none;
-  padding: 0.6rem 1rem;
+  padding: 0.65rem 0.85rem;
   border-radius: var(--radius-md);
   text-align: left;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
 }
 
 .language-switcher #language-popup button:hover,
@@ -172,9 +177,17 @@ body::after {
   outline: none;
 }
 
+.lang-flag {
+  font-size: 1.05rem;
+}
+
+.lang-name {
+  color: var(--text-secondary);
+}
+
 .site-header {
-  width: min(1080px, 100%);
-  margin: clamp(1.8rem, 6vw, 3.2rem) auto 0;
+  width: min(1400px, calc(100% - 32px));
+  margin: clamp(1.6rem, 5vw, 3rem) auto 0;
   padding: 0 clamp(1.5rem, 4vw, 3rem);
   position: sticky;
   top: clamp(1rem, 2vw, 2.8rem);
@@ -245,7 +258,7 @@ body::after {
 }
 
 .main {
-  width: min(1080px, 100%);
+  width: min(1400px, calc(100% - 32px));
   margin: 0 auto;
   padding: 140px clamp(1.5rem, 4vw, 3rem) 0;
   display: flex;
@@ -870,7 +883,7 @@ body::after {
 }
 
 .footer {
-  width: min(1080px, 100%);
+  width: min(1400px, calc(100% - 32px));
   margin: clamp(2.2rem, 5vw, 3rem) auto 0;
   padding: 1.4rem clamp(1.5rem, 4vw, 2.4rem);
   border-radius: var(--radius-xl);
