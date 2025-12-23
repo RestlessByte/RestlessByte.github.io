@@ -5,6 +5,14 @@ import { getLocalizedText } from './utils/localization.js';
 
 const STORAGE_LANG_KEY = 'rb-preferred-language';
 const VIEW_QUERY_PARAM = 'view';
+const GEO_LANG_MAP = {
+  RU: 'ru',
+  US: 'en',
+  CN: 'zh',
+  HK: 'zh',
+  MO: 'zh',
+  KZ: 'kk'
+};
 
 const translations = {
   en: {
@@ -37,7 +45,7 @@ const translations = {
       '<strong>AI Hub</strong> — Platform to create and manage neural Telegram bots: multi-model routing, secure tokens, role presets.',
     projectGitZipQR:
       '<strong>GitZipQR</strong> — Encrypted offline data transfer via QR-codes (AES-256-GCM, scrypt KDF, chunking, integrity checks).',
-    navResume: 'Моё резюме',
+    navResume: 'My resume',
     navOffline: '🛠️ Offline services'
   },
   ru: {
@@ -72,6 +80,72 @@ const translations = {
       '<strong>GitZipQR</strong> — Оффлайн-передача данных через QR-коды (AES-256-GCM, scrypt, чанкирование, проверка целостности).',
     navResume: 'Моё резюме',
     navOffline: '🛠️ Оффлайн услуги'
+  },
+  kk: {
+    greeting: '👋 Даниил [RestlessByte]',
+    role: '🎓 Студент | 👨🏽‍💻 Әзірлеуші | 🔮 Технология әуесқойы | 🧠 AI-кодер',
+    location: '📍 <b>Башқұртстан, Ресей | Қашықтан</b>',
+    paymentLabel: '💸 USDT төлем мекенжайы:',
+    copy: 'Көшіру',
+    copied: 'Көшірілді!',
+    payMetamask: 'MetaMask арқылы төлеу',
+    skillsTitle: 'МЕНІҢ ҚҰЗЫРЕТТЕРІМ',
+    projectsTitle: '🎯 Жобалар',
+    connectTitle: '🔗 Байланысайық!',
+    seoTitle: '🚀 Портфолио және SEO',
+    seoText:
+      'Даниил (RestlessByte) JavaScript, TypeScript және Linux көмегімен тиімді веб және AI шешімдерін жасайды. Жаңашыл жобалар мен ашық код үлестерін қарап шығыңыз.',
+    footer: '❤️ және кодпен жасалды.',
+    githubView: 'БАСҚА ЖОБАЛАРДЫ КӨРУ ҮШІН GITHUB-ПЕН ТАНЫСЫҢЫЗ',
+    enter: 'Кіру',
+    languageButton: 'Тілді өзгерту',
+    profileChip: 'FullStack әзірлеуші • AI кодер • Қауіпсіздік маманы',
+    profilePill: 'Ұйықтауды жақсы көремін',
+    contactsTitle: 'Байланыс',
+    walletTitle: 'Әмиян',
+    projectsSubheading: 'Жобалар',
+    quotesSubheading: 'Дәйексөздер',
+    quote1: '«Мүмкін емеске ұмтыл.»',
+    quote2: '«Біз ештеңе білмейміз — соны ғана білеміз. (Сократ)»',
+    projectAiHub:
+      '<strong>AI Hub</strong> — Telegram-да нейроботтар құру және басқару платформасы: көпмодельді роутинг, қауіпсіз токендер, рөл пресеттері.',
+    projectGitZipQR:
+      '<strong>GitZipQR</strong> — QR-код арқылы офлайн дерек жеткізу (AES-256-GCM, scrypt, бөлу, тұтастықты тексеру).',
+    navResume: 'Менің резюмем',
+    navOffline: '🛠️ Оффлайн қызметтер'
+  },
+  zh: {
+    greeting: '👋 Daniil [RestlessByte]',
+    role: '🎓 学生 | 👨🏽‍💻 开发者 | 🔮 技术爱好者 | 🧠 AI 工程师',
+    location: '📍 <b>巴什科尔托斯坦，俄罗斯 | 远程</b>',
+    paymentLabel: '💸 USDT 收款地址：',
+    copy: '复制',
+    copied: '已复制！',
+    payMetamask: '使用 MetaMask 支付',
+    skillsTitle: '我的技能',
+    projectsTitle: '🎯 项目',
+    connectTitle: '🔗 联系我！',
+    seoTitle: '🚀 作品集与 SEO',
+    seoText:
+      'Daniil（RestlessByte）使用 JavaScript、TypeScript 和 Linux 构建高效的 Web 与 AI 方案。探索精心打造的前沿项目与开源贡献。',
+    footer: '用 ❤️ 和代码构建。',
+    githubView: '前往我的 GitHub 查看更多项目',
+    enter: '进入',
+    languageButton: '切换语言',
+    profileChip: '全栈开发者 • AI 工程师 • 安全专家',
+    profilePill: '我热爱睡觉',
+    contactsTitle: '联系方式',
+    walletTitle: '钱包',
+    projectsSubheading: '项目',
+    quotesSubheading: '引言',
+    quote1: '“追逐不可能。”',
+    quote2: '“我们所知——只是我们一无所知。（苏格拉底）”',
+    projectAiHub:
+      '<strong>AI Hub</strong> — 在 Telegram 中创建与管理神经网络机器人：多模型路由、安全令牌、角色预设。',
+    projectGitZipQR:
+      '<strong>GitZipQR</strong> — 通过二维码离线传输加密数据（AES-256-GCM、scrypt、分片、完整性校验）。',
+    navResume: '我的简历',
+    navOffline: '🛠️ 线下服务'
   }
 };
 
@@ -83,9 +157,34 @@ const getStoredLanguage = () => {
   if (stored && translations[stored]) {
     return stored;
   }
-  return document.documentElement.lang && translations[document.documentElement.lang]
-    ? document.documentElement.lang
-    : 'en';
+  return null;
+};
+
+const detectLanguageByGeo = async () => {
+  try {
+    const response = await fetch('https://ipapi.co/json/');
+    if (!response.ok) return null;
+    const data = await response.json();
+    const code = data?.country_code?.toUpperCase();
+    if (code && GEO_LANG_MAP[code]) {
+      return GEO_LANG_MAP[code];
+    }
+  } catch (err) {
+    console.warn('Geo detection failed', err);
+  }
+  return null;
+};
+
+const resolveInitialLanguage = async () => {
+  const stored = getStoredLanguage();
+  if (stored) return stored;
+
+  const geoLang = await detectLanguageByGeo();
+  if (geoLang && translations[geoLang]) {
+    return geoLang;
+  }
+
+  return 'en';
 };
 
 const showWithDelay = elements => {
@@ -319,10 +418,12 @@ const setView = (view, { pushState = true } = {}) => {
   }
 };
 
-const setLanguage = lang => {
+const setLanguage = (lang, { persist = true } = {}) => {
   if (!translations[lang]) return;
   currentLang = lang;
-  localStorage.setItem(STORAGE_LANG_KEY, currentLang);
+  if (persist) {
+    localStorage.setItem(STORAGE_LANG_KEY, currentLang);
+  }
   document.documentElement.lang = currentLang;
 
   renderSkills();
@@ -426,21 +527,18 @@ const initCopyButtons = () => {
   }
 };
 
-const initPage = () => {
-  currentLang = getStoredLanguage();
-  document.documentElement.lang = currentLang;
-
+const initPage = async () => {
   const params = new URLSearchParams(window.location.search);
   currentView = params.get(VIEW_QUERY_PARAM) === 'offline' ? 'offline' : 'resume';
+
+  const detectedLang = await resolveInitialLanguage();
+  setLanguage(detectedLang, { persist: false });
 
   const yearEl = document.getElementById('year');
   if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
   }
 
-  renderSkills();
-  renderProjects();
-  applyTranslations();
   initLanguageControls();
   initNavigation();
   initCopyButtons();
@@ -456,7 +554,9 @@ const initPage = () => {
   });
 };
 
-document.addEventListener('DOMContentLoaded', initPage);
+document.addEventListener('DOMContentLoaded', () => {
+  initPage();
+});
 
 window.addEventListener('load', () => {
   const loader = document.getElementById('loader');

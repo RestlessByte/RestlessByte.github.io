@@ -2,7 +2,9 @@ export const arraySkills = [
   {
     label: {
       en: 'Programming Languages',
-      ru: 'Языки программирования'
+      ru: 'Языки программирования',
+      kk: 'Бағдарламалау тілдері',
+      zh: '编程语言'
     },
     items: [
       {
@@ -40,7 +42,9 @@ export const arraySkills = [
   {
     label: {
       en: 'SQL Databases',
-      ru: 'Базы данных SQL'
+      ru: 'Базы данных SQL',
+      kk: 'SQL дерекқорлары',
+      zh: 'SQL 数据库'
     },
     items: [
       {
@@ -53,7 +57,9 @@ export const arraySkills = [
   {
     label: {
       en: 'Frameworks',
-      ru: 'Фреймворки'
+      ru: 'Фреймворки',
+      kk: 'Фреймворктар',
+      zh: '框架'
     },
     items: [
       {
@@ -76,7 +82,9 @@ export const arraySkills = [
   {
     label: {
       en: 'Libraries',
-      ru: 'Библиотеки'
+      ru: 'Библиотеки',
+      kk: 'Кітапханалар',
+      zh: '类库'
     },
     items: [
       {
@@ -109,7 +117,9 @@ export const arraySkills = [
   {
     label: {
       en: 'Tools',
-      ru: 'Инструменты'
+      ru: 'Инструменты',
+      kk: 'Құралдар',
+      zh: '工具'
     },
     items: [
       {
@@ -176,7 +186,9 @@ export const arraySkills = [
   {
     label: {
       en: 'AI Assistants',
-      ru: 'AI-инструменты'
+      ru: 'AI-инструменты',
+      kk: 'AI құралдары',
+      zh: 'AI 助手'
     },
     items: [
       {
@@ -325,11 +337,15 @@ export const arrayProjects = [
   {
     title: {
       en: 'GitZipQR',
-      ru: 'GitZipQR'
+      ru: 'GitZipQR',
+      kk: 'GitZipQR',
+      zh: 'GitZipQR'
     },
     description: {
       en: 'My organization in GitHub for product which provides avoided script for secure vault and share your data',
-      ru: 'Моя организация в GitHub для продукта, который предоставляет скрипт для безопасного хранения и обмена вашими данными'
+      ru: 'Моя организация в GitHub для продукта, который предоставляет скрипт для безопасного хранения и обмена вашими данными',
+      kk: 'GitHub-тағы ұйымым: деректерді қауіпсіз сақтау мен бөлісуге арналған құрал',
+      zh: '我的 GitHub 组织，用于提供安全存储与共享数据的工具'
     },
     link: 'https://github.com/RestlessByte/GitZipQR-vault',
     icon:
@@ -338,11 +354,15 @@ export const arrayProjects = [
   {
     title: {
       en: 'Telegram Game Bot',
-      ru: 'Игровой Telegram-бот'
+      ru: 'Игровой Telegram-бот',
+      kk: 'Ойынға арналған Telegram-бот',
+      zh: 'Telegram 游戏机器人'
     },
     description: {
       en: 'Interactive Telegram game bot with real-time quests and virtual economy.',
-      ru: 'Интерактивный Telegram-бот с игровыми квестами и внутриигровой экономикой в реальном времени'
+      ru: 'Интерактивный Telegram-бот с игровыми квестами и внутриигровой экономикой в реальном времени',
+      kk: 'Нақты уақыттағы квесттері мен виртуалды экономикасы бар интерактивті Telegram-бот.',
+      zh: '拥有实时任务与虚拟经济的交互式 Telegram 游戏机器人。'
     },
     link: 'https://t.me/farmilochka0_bot',
     icon:
@@ -351,11 +371,15 @@ export const arrayProjects = [
   {
     title: {
       en: 'Telegram AI Hub Bot',
-      ru: 'Telegram AI Hub'
+      ru: 'Telegram AI Hub',
+      kk: 'Telegram AI Hub',
+      zh: 'Telegram AI Hub'
     },
     description: {
       en: 'In this chatbot, you can communicate with AI directly in Telegram, and you can also create your own chatbots based on AI, set prompts (scripts) for each chatbot',
-      ru: 'В этом чат боте общаться с AI прямо в Telegram, а также вы можете создавать своих чат ботов на основу AI, задавать промпты(сценарии) к каждому чат боту'
+      ru: 'В этом чат боте общаться с AI прямо в Telegram, а также вы можете создавать своих чат ботов на основу AI, задавать промпты(сценарии) к каждому чат боту',
+      kk: 'Бұл чат-ботта Telegram ішінде AI-мен сөйлесе аласыз, әрі әр ботқа арналған промпттармен өз AI-боттарыңызды жасайсыз.',
+      zh: '在 Telegram 中直接与 AI 对话，并创建带有自定义提示的专属 AI 机器人。'
     },
     link: 'https://t.me/AIHub0_bot',
     icon:
@@ -364,11 +388,15 @@ export const arrayProjects = [
   {
     title: {
       en: 'AI CLI LINUX',
-      ru: 'AI CLI LINUX'
+      ru: 'AI CLI LINUX',
+      kk: 'AI CLI LINUX',
+      zh: 'AI CLI LINUX'
     },
     description: {
       en: 'Command-line toolkit that connects Linux workflows with ChatGPT, DeepSeek, Grok and more',
-      ru: 'Инструменты командной строки, объединяющие Linux с ChatGPT, DeepSeek, Grok и другими AI моделями'
+      ru: 'Инструменты командной строки, объединяющие Linux с ChatGPT, DeepSeek, Grok и другими AI моделями',
+      kk: 'Linux ағымдарын ChatGPT, DeepSeek, Grok және басқа AI модельдерімен біріктіретін CLI-құралдар.',
+      zh: '将 Linux 流程与 ChatGPT、DeepSeek、Grok 等模型连接的命令行工具集。'
     },
     link: 'https://github.com/RestlessByte/AI-CLI-LINUX',
     icon:
@@ -377,11 +405,15 @@ export const arrayProjects = [
   {
     title: {
       en: 'usingOpenAI',
-      ru: 'usingOpenAI'
+      ru: 'usingOpenAI',
+      kk: 'usingOpenAI',
+      zh: 'usingOpenAI'
     },
     description: {
       en: 'TypeScript SDK that simplifies integrating AI models into applications.',
-      ru: 'TypeScript SDK, упрощающий интеграцию совместимых с AI моделей в приложения'
+      ru: 'TypeScript SDK, упрощающий интеграцию совместимых с AI моделей в приложения',
+      kk: 'AI модельдерін қосымшаларға қосуды жеңілдететін TypeScript SDK.',
+      zh: '简化 AI 模型集成的 TypeScript SDK。'
     },
     link: 'https://github.com/RestlessByte/usingOpenAI',
     icon:
