@@ -186,9 +186,9 @@ body::after {
 }
 
 .site-header {
-  width: min(1400px, calc(100% - 32px));
+  width: min(1400px, 100%);
   margin: clamp(1.6rem, 5vw, 3rem) auto 0;
-  padding: 0 clamp(1.5rem, 4vw, 3rem);
+  padding: 0 clamp(1.25rem, 4vw, 2.6rem);
   position: sticky;
   top: clamp(1rem, 2vw, 2.8rem);
   z-index: 1200;
@@ -258,9 +258,9 @@ body::after {
 }
 
 .main {
-  width: min(1400px, calc(100% - 32px));
+  width: min(1400px, 100%);
   margin: 0 auto;
-  padding: 140px clamp(1.5rem, 4vw, 3rem) 0;
+  padding: 140px clamp(1.25rem, 4vw, 2.6rem) 0;
   display: flex;
   flex-direction: column;
   gap: clamp(1.8rem, 4vw, 2.6rem);
@@ -883,7 +883,7 @@ body::after {
 }
 
 .footer {
-  width: min(1400px, calc(100% - 32px));
+  width: min(1400px, 100%);
   margin: clamp(2.2rem, 5vw, 3rem) auto 0;
   padding: 1.4rem clamp(1.5rem, 4vw, 2.4rem);
   border-radius: var(--radius-xl);
