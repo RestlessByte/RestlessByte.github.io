@@ -14,6 +14,14 @@ const GEO_LANG_MAP = {
   KZ: 'kk'
 };
 
+const LANGUAGE_FLAGS = {
+  en: '🇺🇸',
+  ru: '🇷🇺',
+  kk: '🇰🇿',
+  zh: '🇨🇳',
+  ar: '🇸🇦'
+};
+
 const translations = {
   en: {
     greeting: '👋 Daniil [RestlessByte]',
@@ -47,6 +55,39 @@ const translations = {
       '<strong>GitZipQR</strong> — Encrypted offline data transfer via QR-codes (AES-256-GCM, scrypt KDF, chunking, integrity checks).',
     navResume: 'My resume',
     navOffline: '🛠️ Offline services'
+  },
+  ar: {
+    greeting: '👋 دانييل [RestlessByte]',
+    role: '🎓 طالب | 👨🏽‍💻 مطوّر | 🔮 شغوف بالتقنية | 🧠 مبرمج ذكاء اصطناعي',
+    location: '📍 <b>باشكورتوستان، روسيا | عن بُعد</b>',
+    paymentLabel: '💸 عنوان دفع USDT:',
+    copy: 'نسخ',
+    copied: 'تم النسخ!',
+    payMetamask: 'الدفع عبر MetaMask',
+    skillsTitle: 'مهاراتي',
+    projectsTitle: '🎯 المشاريع',
+    connectTitle: '🔗 لنتواصل!',
+    seoTitle: '🚀 السيرة والأرشفة',
+    seoText:
+      'دانييل (RestlessByte) يطوّر حلول ويب وذكاء اصطناعي بكفاءة باستخدام JavaScript وTypeScript ولينكس. اكتشف المشاريع المتقدمة والمساهمات مفتوحة المصدر المصممة بعناية.',
+    footer: 'بُنيت بحب ❤️ وكود.',
+    githubView: 'استعرض بقية مشاريعي على GitHub',
+    enter: 'دخول',
+    languageButton: 'تغيير اللغة',
+    profileChip: 'مطوّر FullStack • مبرمج ذكاء اصطناعي • مختص أمن',
+    profilePill: 'أعشق النوم',
+    contactsTitle: 'وسائل التواصل',
+    walletTitle: 'المحفظة',
+    projectsSubheading: 'المشاريع',
+    quotesSubheading: 'اقتباسات',
+    quote1: '«اسعَ إلى المستحيل.»',
+    quote2: '«نحن نعلم أننا لا نعلم شيئاً. (سقراط)»',
+    projectAiHub:
+      '<strong>AI Hub</strong> — منصة لإنشاء وإدارة روبوتات تيليجرام الذكية: توجيه متعدد النماذج، مفاتيح آمنة، وقوالب أدوار.',
+    projectGitZipQR:
+      '<strong>GitZipQR</strong> — نقل بيانات مشفّرة دون اتصال عبر رموز QR (AES-256-GCM، scrypt، تقسيم، تحقق سلامة).',
+    navResume: 'سيرتي الذاتية',
+    navOffline: '🛠️ خدمات أوفلاين'
   },
   ru: {
     greeting: '👋 Даниил [RestlessByte]',
@@ -286,7 +327,11 @@ const applyTranslations = () => {
     if (el) el.innerHTML = html;
   };
 
-  setText('language-btn', t.languageButton);
+  const languageBtn = document.getElementById('language-btn');
+  if (languageBtn) {
+    languageBtn.textContent = LANGUAGE_FLAGS[currentLang] ?? '🌐';
+    languageBtn.setAttribute('aria-label', t.languageButton);
+  }
   setText('profile-chip', t.profileChip);
   setText('greeting', t.greeting);
   setHTML('role', t.role);
@@ -425,6 +470,7 @@ const setLanguage = (lang, { persist = true } = {}) => {
     localStorage.setItem(STORAGE_LANG_KEY, currentLang);
   }
   document.documentElement.lang = currentLang;
+  document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
 
   renderSkills();
   renderProjects();
