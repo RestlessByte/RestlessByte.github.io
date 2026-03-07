@@ -99,12 +99,32 @@
 
         <section class="rb-block" aria-labelledby="wallet">
           <h2 id="wallet">Wallet</h2>
-          <p id="payment-label" class="wallet-label">💸 USDT Payment Address:</p>
-          <span class="rb-badge">USDT • ERC-20</span>
-          <code id="usdt-address" class="rb-addr">0xa8b3A40008EDF9AF21D981Dc3A52aa0ed1cA88fD</code>
+          <p id="payment-label" class="wallet-label">💸 Crypto Wallets:</p>
+          <div class="wallet-grid" aria-label="Crypto addresses">
+            <article class="wallet-item">
+              <div class="wallet-item-head"><span class="rb-badge">ETH</span><button class="copy-wallet-btn" type="button" data-address="0xa8b3A40008EDF9AF21D981Dc3A52aa0ed1cA88fD">Copy</button></div>
+              <code class="rb-addr" id="evm-address">0xa8b3A40008EDF9AF21D981Dc3A52aa0ed1cA88fD</code>
+            </article>
+            <article class="wallet-item">
+              <div class="wallet-item-head"><span class="rb-badge">BTC</span><button class="copy-wallet-btn" type="button" data-address="bc1q73pdj8aqz87x366nfhvfzsf7cgyqeykzvjmvlh">Copy</button></div>
+              <code class="rb-addr">bc1q73pdj8aqz87x366nfhvfzsf7cgyqeykzvjmvlh</code>
+            </article>
+            <article class="wallet-item">
+              <div class="wallet-item-head"><span class="rb-badge">SOL</span><button class="copy-wallet-btn" type="button" data-address="FJ14Tn2UJ8MEruPeAJ7zmAJb1uUeuRr39Wu4m439vtAP">Copy</button></div>
+              <code class="rb-addr">FJ14Tn2UJ8MEruPeAJ7zmAJb1uUeuRr39Wu4m439vtAP</code>
+            </article>
+            <article class="wallet-item">
+              <div class="wallet-item-head"><span class="rb-badge">TRON</span><button class="copy-wallet-btn" type="button" data-address="TKPp27FDZHhoNcrzY1nmcXUYA1EAc8qSJ3">Copy</button></div>
+              <code class="rb-addr">TKPp27FDZHhoNcrzY1nmcXUYA1EAc8qSJ3</code>
+            </article>
+            <article class="wallet-item wallet-item-wide">
+              <div class="wallet-item-head"><span class="rb-badge">EVM NETWORKS</span></div>
+              <p class="wallet-note">LINEA • BASE • BNB • ARBITRUM • OP • POLYGON • SEI</p>
+              <code class="rb-addr">0xa8b3A40008EDF9AF21D981Dc3A52aa0ed1cA88fD</code>
+            </article>
+          </div>
 
           <div class="payment-actions">
-            <button id="copy-address" type="button">Copy</button>
             <button id="metamask-btn" type="button">Pay with MetaMask</button>
           </div>
 
