@@ -27,7 +27,7 @@ const translations = {
     greeting: '👋 Daniil [RestlessByte]',
     role: '🎓 Student | 👨🏽‍💻 Developer | 🔮 Tech Enthusiast | 🧠 AI-CODER',
     location: '📍 <b>Bashkortostan, Russia | Remote</b>',
-    paymentLabel: '💸 USDT Payment Address:',
+    paymentLabel: '💸 Crypto Wallets:',
     copy: 'Copy',
     copied: 'Copied!',
     payMetamask: 'Pay with MetaMask',
@@ -60,7 +60,7 @@ const translations = {
     greeting: '👋 دانييل [RestlessByte]',
     role: '🎓 طالب | 👨🏽‍💻 مطوّر | 🔮 شغوف بالتقنية | 🧠 مبرمج ذكاء اصطناعي',
     location: '📍 <b>باشكورتوستان، روسيا | عن بُعد</b>',
-    paymentLabel: '💸 عنوان دفع USDT:',
+    paymentLabel: '💸 محافظ العملات المشفرة:',
     copy: 'نسخ',
     copied: 'تم النسخ!',
     payMetamask: 'الدفع عبر MetaMask',
@@ -93,7 +93,7 @@ const translations = {
     greeting: '👋 Даниил [RestlessByte]',
     role: '🎓 Студент | 👨🏽‍💻 Разработчик | 🔮 Тех энтузиаст | 🧠 AI-КОДЕР',
     location: '📍 <b>Башкортостан, Россия | Удалённо</b>',
-    paymentLabel: '💸 Способ оплаты USDT:',
+    paymentLabel: '💸 Крипто-кошельки:',
     copy: 'Скопировать',
     copied: 'Скопировано!',
     payMetamask: 'Оплатить через MetaMask',
@@ -126,7 +126,7 @@ const translations = {
     greeting: '👋 Даниил [RestlessByte]',
     role: '🎓 Студент | 👨🏽‍💻 Әзірлеуші | 🔮 Технология әуесқойы | 🧠 AI-кодер',
     location: '📍 <b>Башқұртстан, Ресей | Қашықтан</b>',
-    paymentLabel: '💸 USDT төлем мекенжайы:',
+    paymentLabel: '💸 Крипто әмияндар:',
     copy: 'Көшіру',
     copied: 'Көшірілді!',
     payMetamask: 'MetaMask арқылы төлеу',
@@ -159,7 +159,7 @@ const translations = {
     greeting: '👋 Daniil [RestlessByte]',
     role: '🎓 学生 | 👨🏽‍💻 开发者 | 🔮 技术爱好者 | 🧠 AI 工程师',
     location: '📍 <b>巴什科尔托斯坦，俄罗斯 | 远程</b>',
-    paymentLabel: '💸 USDT 收款地址：',
+    paymentLabel: '💸 加密钱包：',
     copy: '复制',
     copied: '已复制！',
     payMetamask: '使用 MetaMask 支付',
@@ -341,8 +341,10 @@ const applyTranslations = () => {
   setText('wallet', t.walletTitle);
   setText('payment-label', t.paymentLabel);
 
-  const copyBtn = document.getElementById('copy-address');
-  if (copyBtn) copyBtn.textContent = t.copy;
+  const copyBtns = document.querySelectorAll('.copy-wallet-btn');
+  copyBtns.forEach(btn => {
+    btn.textContent = t.copy;
+  });
   setText('metamask-btn', t.payMetamask);
 
   setText('skills-title', t.skillsTitle);
@@ -524,13 +526,14 @@ const initNavigation = () => {
 };
 
 const initCopyButtons = () => {
-  const copyBtn = document.getElementById('copy-address');
-  const addrEl = document.getElementById('usdt-address');
+  const copyButtons = document.querySelectorAll('.copy-wallet-btn');
+  const evmAddressEl = document.getElementById('evm-address');
   const metaBtn = document.getElementById('metamask-btn');
 
-  if (copyBtn && addrEl) {
-    const address = addrEl.textContent.trim();
+  copyButtons.forEach(copyBtn => {
     copyBtn.addEventListener('click', () => {
+      const address = copyBtn.getAttribute('data-address');
+      if (!address) return;
       navigator.clipboard.writeText(address);
       copyBtn.textContent = translations[currentLang].copied;
       copyBtn.classList.add('copied');
@@ -539,9 +542,9 @@ const initCopyButtons = () => {
         copyBtn.classList.remove('copied');
       }, 2000);
     });
-  }
+  });
 
-  if (metaBtn && addrEl) {
+  if (metaBtn && evmAddressEl) {
     metaBtn.addEventListener('click', async () => {
       if (!window.ethereum) {
         alert('MetaMask not detected');
@@ -552,7 +555,7 @@ const initCopyButtons = () => {
         const amount = prompt('Amount of USDT to send:', '1');
         if (!amount) return;
         const value = BigInt(Math.round(parseFloat(amount) * 1e6)).toString(16).padStart(64, '0');
-        const receiver = addrEl.textContent.trim().slice(2).padStart(64, '0');
+        const receiver = evmAddressEl.textContent.trim().slice(2).padStart(64, '0');
         const data = '0xa9059cbb' + receiver + value;
         await window.ethereum.request({
           method: 'eth_sendTransaction',
