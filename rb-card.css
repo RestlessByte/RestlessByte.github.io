@@ -5,8 +5,8 @@
 }
 
 .rb-card {
-  background: linear-gradient(165deg, rgba(10, 20, 42, 0.94), rgba(6, 14, 32, 0.92));
-  border: 1px solid rgba(124, 255, 178, 0.32);
+  background: linear-gradient(165deg, rgba(42, 12, 66, 0.94), rgba(24, 8, 42, 0.94));
+  border: 1px solid rgba(255, 113, 206, 0.32);
   border-radius: var(--radius-xl);
   padding: clamp(2rem, 4vw, 3.2rem);
   backdrop-filter: blur(18px);
@@ -19,8 +19,17 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at top right, rgba(124, 255, 178, 0.22), transparent 60%);
+  background: radial-gradient(circle at top right, rgba(255, 113, 206, 0.22), transparent 60%);
   opacity: 0.85;
+  pointer-events: none;
+}
+
+.rb-card::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.06);
   pointer-events: none;
 }
 
@@ -42,8 +51,8 @@
   height: auto;
   border-radius: 26px;
   box-shadow: 0 22px 40px rgba(4, 10, 22, 0.55);
-  border: 1px solid rgba(124, 255, 178, 0.45);
-  background: rgba(6, 12, 24, 0.35);
+  border: 1px solid rgba(255, 113, 206, 0.45);
+  background: rgba(33, 9, 49, 0.4);
   padding: 12px;
 }
 
@@ -69,8 +78,8 @@
   align-self: flex-start;
   padding: 0.5rem 1rem;
   border-radius: var(--radius-pill);
-  background: rgba(124, 255, 178, 0.18);
-  border: 1px solid rgba(124, 255, 178, 0.45);
+  background: rgba(255, 113, 206, 0.18);
+  border: 1px solid rgba(255, 113, 206, 0.45);
   color: var(--accent);
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -84,9 +93,9 @@
 }
 
 .rb-block {
-  background: rgba(10, 17, 34, 0.92);
+  background: rgba(34, 10, 53, 0.92);
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(124, 255, 178, 0.24);
+  border: 1px solid rgba(255, 113, 206, 0.24);
   padding: clamp(1.4rem, 3vw, 1.8rem);
   box-shadow: var(--shadow-sm);
   display: flex;
@@ -136,8 +145,8 @@
   align-items: center;
   padding: 0.55rem 0.85rem;
   border-radius: var(--radius-md);
-  background: rgba(12, 22, 44, 0.45);
-  border: 1px solid rgba(124, 255, 178, 0.24);
+  background: rgba(71, 22, 102, 0.4);
+  border: 1px solid rgba(255, 113, 206, 0.24);
   color: var(--text-primary);
   text-decoration: none;
   font-weight: 600;
@@ -146,8 +155,8 @@
 
 .rb-links a:hover,
 .rb-links a:focus-visible {
-  background: rgba(124, 255, 178, 0.55);
-  color: #0a132a;
+  background: rgba(255, 113, 206, 0.58);
+  color: #2a0737;
   outline: none;
 }
 
@@ -164,8 +173,8 @@
 }
 
 .wallet-item {
-  background: linear-gradient(160deg, rgba(16, 28, 56, 0.72), rgba(10, 18, 34, 0.85));
-  border: 1px solid rgba(124, 255, 178, 0.22);
+  background: linear-gradient(160deg, rgba(54, 18, 82, 0.74), rgba(29, 10, 47, 0.88));
+  border: 1px solid rgba(166, 108, 255, 0.24);
   border-radius: var(--radius-md);
   padding: 0.8rem;
   display: flex;
@@ -196,9 +205,9 @@
   align-items: center;
   padding: 0.35rem 0.9rem;
   border-radius: var(--radius-pill);
-  background: rgba(124, 255, 178, 0.22);
-  border: 1px solid rgba(124, 255, 178, 0.55);
-  color: #0a132a;
+  background: rgba(255, 113, 206, 0.22);
+  border: 1px solid rgba(255, 113, 206, 0.55);
+  color: #2a0737;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -210,8 +219,8 @@
   display: block;
   padding: 0.9rem 1rem;
   border-radius: var(--radius-md);
-  background: rgba(10, 20, 42, 0.55);
-  border: 1px dashed rgba(124, 255, 178, 0.5);
+  background: rgba(46, 14, 68, 0.5);
+  border: 1px dashed rgba(255, 113, 206, 0.5);
   color: var(--text-primary);
   font-family: 'Space Grotesk', 'Inter', monospace;
   font-size: 0.83rem;
@@ -220,8 +229,8 @@
 }
 
 .copy-wallet-btn {
-  border: 1px solid rgba(124, 255, 178, 0.5);
-  background: rgba(124, 255, 178, 0.12);
+  border: 1px solid rgba(255, 113, 206, 0.5);
+  background: rgba(255, 113, 206, 0.12);
   color: var(--text-primary);
   font-size: 0.74rem;
   font-weight: 700;
@@ -234,14 +243,14 @@
 
 .copy-wallet-btn:hover,
 .copy-wallet-btn:focus-visible {
-  background: rgba(124, 255, 178, 0.4);
-  color: #071022;
+  background: rgba(255, 113, 206, 0.42);
+  color: #2a0737;
   outline: none;
 }
 
 .copy-wallet-btn.copied {
-  background: rgba(112, 255, 195, 0.86);
-  color: #061327;
+  background: rgba(255, 113, 206, 0.86);
+  color: #250434;
 }
 
 .rb-proj {
@@ -255,8 +264,8 @@
 .rb-proj li {
   padding: 0.75rem 0.85rem;
   border-radius: var(--radius-md);
-  background: rgba(18, 70, 52, 0.32);
-  border: 1px solid rgba(46, 243, 163, 0.24);
+  background: rgba(73, 25, 104, 0.34);
+  border: 1px solid rgba(255, 113, 206, 0.24);
   color: var(--text-secondary);
   font-size: 0.95rem;
 }
@@ -268,14 +277,14 @@
 .rb-quote {
   margin: 0;
   padding-left: 0.85rem;
-  border-left: 3px solid var(--accent);
+  border-left: 3px solid var(--accent-neo);
   color: var(--text-secondary);
 }
 
 .rb-foot {
   margin-top: clamp(1.8rem, 3vw, 2.4rem);
   padding-top: 1.4rem;
-  border-top: 1px solid rgba(46, 243, 163, 0.24);
+  border-top: 1px solid rgba(255, 113, 206, 0.24);
   color: var(--text-muted);
   font-size: 0.95rem;
   display: flex;
@@ -343,4 +352,9 @@
   .rb-addr {
     font-size: 0.85rem;
   }
+}
+
+
+.contact-note strong {
+  color: var(--text-primary);
 }

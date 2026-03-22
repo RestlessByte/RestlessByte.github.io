@@ -25,7 +25,7 @@ const LANGUAGE_FLAGS = {
 const translations = {
   en: {
     greeting: '👋 Daniil [RestlessByte]',
-    role: '🎓 Student | 👨🏽‍💻 Developer | 🔮 Tech Enthusiast | 🧠 AI-CODER',
+    role: '🎨 Neon UI crafter | 👨🏽‍💻 FullStack Developer | 🤖 Bot Builder | 🧠 AI Engineer',
     location: '📍 <b>Bashkortostan, Russia | Remote</b>',
     paymentLabel: '💸 Crypto Wallets:',
     copy: 'Copy',
@@ -36,29 +36,30 @@ const translations = {
     connectTitle: "🔗 Let's Connect!",
     seoTitle: '🚀 Portfolio & SEO',
     seoText:
-      'Daniil (RestlessByte) builds efficient web and AI solutions using JavaScript, TypeScript and Linux. Explore cutting-edge projects and open-source contributions crafted with attention to detail.',
+      'Daniil (RestlessByte) builds bold multilingual web, bot and AI experiences with strong visual identity, automation and secure delivery. Explore projects crafted to look sharp and work fast.',
     footer: 'Built with ❤️ and code.',
-    githubView: 'VIEW ON MY GITHUB, TO SEE MY OTHER PROJECTS',
+    githubView: 'VIEW MY GITHUB TO EXPLORE MORE PROJECTS, BOTS AND EXPERIMENTS',
     enter: 'Enter',
     languageButton: 'Change language',
-    profileChip: 'FullStack Developer • AI Coder • Security Specialist',
-    profilePill: 'I love sleeping',
+    profileChip: 'FullStack Developer • AI Builder • Digital Architect',
+    profilePill: 'Pink • Purple • Cyber vibes',
     contactsTitle: 'Contacts',
+    contactNote: 'Fastest reply: Telegram bot or Telegram main account. All links use HTTPS.',
     walletTitle: 'Wallet',
     projectsSubheading: 'Projects',
     quotesSubheading: 'Quotes',
     quote1: '“Strive for the impossible.”',
     quote2: '“We know — that we know nothing. (Socrates)”',
     projectAiHub:
-      '<strong>AI Hub</strong> — Platform to create and manage neural Telegram bots: multi-model routing, secure tokens, role presets.',
+      '<strong>RestlessByte Bot Suite</strong> — Telegram and VK bots for communication, automation, AI workflows and fast support.',
     projectGitZipQR:
-      '<strong>GitZipQR</strong> — Encrypted offline data transfer via QR-codes (AES-256-GCM, scrypt KDF, chunking, integrity checks).',
+      '<strong>Farmilochka Game Chat</strong> — Cross-platform game community bot in Telegram and VK with interactive chat mechanics.',
     navResume: 'My resume',
     navOffline: '🛠️ Offline services'
   },
   ar: {
     greeting: '👋 دانييل [RestlessByte]',
-    role: '🎓 طالب | 👨🏽‍💻 مطوّر | 🔮 شغوف بالتقنية | 🧠 مبرمج ذكاء اصطناعي',
+    role: '🎨 صانع واجهات نيون | 👨🏽‍💻 مطوّر FullStack | 🤖 منشئ بوتات | 🧠 مهندس AI',
     location: '📍 <b>باشكورتوستان، روسيا | عن بُعد</b>',
     paymentLabel: '💸 محافظ العملات المشفرة:',
     copy: 'نسخ',
@@ -69,29 +70,30 @@ const translations = {
     connectTitle: '🔗 لنتواصل!',
     seoTitle: '🚀 السيرة والأرشفة',
     seoText:
-      'دانييل (RestlessByte) يطوّر حلول ويب وذكاء اصطناعي بكفاءة باستخدام JavaScript وTypeScript ولينكس. اكتشف المشاريع المتقدمة والمساهمات مفتوحة المصدر المصممة بعناية.',
+      'دانييل (RestlessByte) يبني تجارب ويب وبوتات وذكاء اصطناعي متعددة اللغات بهوية بصرية جريئة وأتمتة سريعة وتسليم آمن.',
     footer: 'بُنيت بحب ❤️ وكود.',
-    githubView: 'استعرض بقية مشاريعي على GitHub',
+    githubView: 'استعرض GitHub لرؤية المزيد من المشاريع والبوتات والتجارب',
     enter: 'دخول',
     languageButton: 'تغيير اللغة',
-    profileChip: 'مطوّر FullStack • مبرمج ذكاء اصطناعي • مختص أمن',
-    profilePill: 'أعشق النوم',
+    profileChip: 'مطوّر FullStack • صانع حلول AI • مهندس تجارب رقمية',
+    profilePill: 'وردي • بنفسجي • طاقة سيبرانية',
     contactsTitle: 'وسائل التواصل',
+    contactNote: 'أسرع رد يكون عبر بوت تيليجرام أو الحساب الرئيسي في تيليجرام. كل الروابط تعمل عبر HTTPS.',
     walletTitle: 'المحفظة',
     projectsSubheading: 'المشاريع',
     quotesSubheading: 'اقتباسات',
     quote1: '«اسعَ إلى المستحيل.»',
     quote2: '«نحن نعلم أننا لا نعلم شيئاً. (سقراط)»',
     projectAiHub:
-      '<strong>AI Hub</strong> — منصة لإنشاء وإدارة روبوتات تيليجرام الذكية: توجيه متعدد النماذج، مفاتيح آمنة، وقوالب أدوار.',
+      '<strong>منظومة RestlessByte للبوتات</strong> — بوتات Telegram وVK للتواصل، الأتمتة، وتدفّقات الذكاء الاصطناعي والدعم السريع.',
     projectGitZipQR:
-      '<strong>GitZipQR</strong> — نقل بيانات مشفّرة دون اتصال عبر رموز QR (AES-256-GCM، scrypt، تقسيم، تحقق سلامة).',
+      '<strong>Farmilochka Game Chat</strong> — بوت مجتمع ألعاب يعمل على Telegram وVK مع آليات تفاعل حيّة.',
     navResume: 'سيرتي الذاتية',
     navOffline: '🛠️ خدمات أوفلاين'
   },
   ru: {
     greeting: '👋 Даниил [RestlessByte]',
-    role: '🎓 Студент | 👨🏽‍💻 Разработчик | 🔮 Тех энтузиаст | 🧠 AI-КОДЕР',
+    role: '🎨 Создатель neon UI | 👨🏽‍💻 FullStack-разработчик | 🤖 Bot Builder | 🧠 AI-инженер',
     location: '📍 <b>Башкортостан, Россия | Удалённо</b>',
     paymentLabel: '💸 Крипто-кошельки:',
     copy: 'Скопировать',
@@ -102,29 +104,30 @@ const translations = {
     connectTitle: '🔗 Свяжемся!',
     seoTitle: '🚀 Портфолио и SEO',
     seoText:
-      'Даниил (RestlessByte) создаёт эффективные веб и AI-решения на JavaScript, TypeScript и Linux. Исследуйте инновационные проекты и вклад в open-source, созданные с вниманием к деталям.',
+      'Даниил (RestlessByte) делает яркие мультиязычные web-, bot- и AI-продукты с сильной визуальной подачей, автоматизацией и аккуратной реализацией.',
     footer: 'Создано с ❤️ и кодом.',
-    githubView: 'СМОТРИТЕ НА МОЁМ GITHUB, ЧТОБЫ УВИДЕТЬ ДРУГИЕ ПРОЕКТЫ',
+    githubView: 'СМОТРИ МОЙ GITHUB: ТАМ ЕЩЁ БОЛЬШЕ ПРОЕКТОВ, БОТОВ И ЭКСПЕРИМЕНТОВ',
     enter: 'Перейти',
     languageButton: 'Сменить язык',
-    profileChip: 'FullStack-разработчик • AI-кодер • Специалист по безопасности',
-    profilePill: 'Люблю спать',
+    profileChip: 'FullStack-разработчик • AI-билдер • Архитектор цифрового опыта',
+    profilePill: 'Розовый • Фиолетовый • Кибер вайб',
     contactsTitle: 'Контакты',
+    contactNote: 'Быстрее всего отвечаю в Telegram-боте или в основном Telegram. Все ссылки работают через HTTPS.',
     walletTitle: 'Кошелёк',
     projectsSubheading: 'Проекты',
     quotesSubheading: 'Цитаты',
     quote1: '«Стремись к невозможному.»',
     quote2: '«Мы знаем, что ничего не знаем. (Сократ)»',
     projectAiHub:
-      '<strong>AI Hub</strong> — Платформа для создания и управления нейронными Telegram-ботами: маршрутизация моделей, безопасные токены, пресеты ролей.',
+      '<strong>RestlessByte Bot Suite</strong> — Telegram- и VK-боты для общения, автоматизации, AI-сценариев и быстрого саппорта.',
     projectGitZipQR:
-      '<strong>GitZipQR</strong> — Оффлайн-передача данных через QR-коды (AES-256-GCM, scrypt, чанкирование, проверка целостности).',
+      '<strong>Farmilochka Game Chat</strong> — Кроссплатформенный игровой бот для Telegram и VK с интерактивным общением.',
     navResume: 'Моё резюме',
     navOffline: '🛠️ Оффлайн услуги'
   },
   kk: {
     greeting: '👋 Даниил [RestlessByte]',
-    role: '🎓 Студент | 👨🏽‍💻 Әзірлеуші | 🔮 Технология әуесқойы | 🧠 AI-кодер',
+    role: '🎨 Neon UI жасаушы | 👨🏽‍💻 FullStack әзірлеуші | 🤖 Bot Builder | 🧠 AI инженері',
     location: '📍 <b>Башқұртстан, Ресей | Қашықтан</b>',
     paymentLabel: '💸 Крипто әмияндар:',
     copy: 'Көшіру',
@@ -135,29 +138,30 @@ const translations = {
     connectTitle: '🔗 Байланысайық!',
     seoTitle: '🚀 Портфолио және SEO',
     seoText:
-      'Даниил (RestlessByte) JavaScript, TypeScript және Linux көмегімен тиімді веб және AI шешімдерін жасайды. Жаңашыл жобалар мен ашық код үлестерін қарап шығыңыз.',
+      'Даниил (RestlessByte) айқын визуал, автоматтандыру және сенімді жеткізумен көптілді web, bot және AI тәжірибелерін жасайды.',
     footer: '❤️ және кодпен жасалды.',
-    githubView: 'БАСҚА ЖОБАЛАРДЫ КӨРУ ҮШІН GITHUB-ПЕН ТАНЫСЫҢЫЗ',
+    githubView: 'GITHUB-ПЕН ТАНЫСЫҢЫЗ: ОНДА КӨБІРЕК ЖОБА, БОТ ЖӘНЕ ЭКСПЕРИМЕНТ БАР',
     enter: 'Кіру',
     languageButton: 'Тілді өзгерту',
-    profileChip: 'FullStack әзірлеуші • AI кодер • Қауіпсіздік маманы',
-    profilePill: 'Ұйықтауды жақсы көремін',
+    profileChip: 'FullStack әзірлеуші • AI жасаушы • Цифрлық тәжірибе архитекторі',
+    profilePill: 'Қызғылт • Күлгін • Кибер атмосфера',
     contactsTitle: 'Байланыс',
+    contactNote: 'Ең жылдам жауап Telegram ботта немесе негізгі Telegram аккаунтта. Барлық сілтемелер HTTPS арқылы жұмыс істейді.',
     walletTitle: 'Әмиян',
     projectsSubheading: 'Жобалар',
     quotesSubheading: 'Дәйексөздер',
     quote1: '«Мүмкін емеске ұмтыл.»',
     quote2: '«Біз ештеңе білмейміз — соны ғана білеміз. (Сократ)»',
     projectAiHub:
-      '<strong>AI Hub</strong> — Telegram-да нейроботтар құру және басқару платформасы: көпмодельді роутинг, қауіпсіз токендер, рөл пресеттері.',
+      '<strong>RestlessByte Bot Suite</strong> — Байланыс, автоматтандыру, AI ағындары және жедел қолдау үшін Telegram және VK боттары.',
     projectGitZipQR:
-      '<strong>GitZipQR</strong> — QR-код арқылы офлайн дерек жеткізу (AES-256-GCM, scrypt, бөлу, тұтастықты тексеру).',
+      '<strong>Farmilochka Game Chat</strong> — Telegram және VK үшін интерактивті қауымдастық мүмкіндіктері бар ойын боты.',
     navResume: 'Менің резюмем',
     navOffline: '🛠️ Оффлайн қызметтер'
   },
   zh: {
     greeting: '👋 Daniil [RestlessByte]',
-    role: '🎓 学生 | 👨🏽‍💻 开发者 | 🔮 技术爱好者 | 🧠 AI 工程师',
+    role: '🎨 霓虹 UI 打造者 | 👨🏽‍💻 全栈开发者 | 🤖 Bot Builder | 🧠 AI 工程师',
     location: '📍 <b>巴什科尔托斯坦，俄罗斯 | 远程</b>',
     paymentLabel: '💸 加密钱包：',
     copy: '复制',
@@ -168,23 +172,24 @@ const translations = {
     connectTitle: '🔗 联系我！',
     seoTitle: '🚀 作品集与 SEO',
     seoText:
-      'Daniil（RestlessByte）使用 JavaScript、TypeScript 和 Linux 构建高效的 Web 与 AI 方案。探索精心打造的前沿项目与开源贡献。',
+      'Daniil（RestlessByte）打造具有鲜明视觉风格的多语言 Web、机器人与 AI 体验，兼顾自动化、安全与速度。',
     footer: '用 ❤️ 和代码构建。',
-    githubView: '前往我的 GitHub 查看更多项目',
+    githubView: '前往我的 GitHub 查看更多项目、机器人与实验',
     enter: '进入',
     languageButton: '切换语言',
-    profileChip: '全栈开发者 • AI 工程师 • 安全专家',
-    profilePill: '我热爱睡觉',
+    profileChip: '全栈开发者 • AI 构建者 • 数字体验架构师',
+    profilePill: '粉色 • 紫色 • 赛博氛围',
     contactsTitle: '联系方式',
+    contactNote: '最快回复渠道是 Telegram 机器人或主 Telegram 账号。所有链接均使用 HTTPS。',
     walletTitle: '钱包',
     projectsSubheading: '项目',
     quotesSubheading: '引言',
     quote1: '“追逐不可能。”',
     quote2: '“我们所知——只是我们一无所知。（苏格拉底）”',
     projectAiHub:
-      '<strong>AI Hub</strong> — 在 Telegram 中创建与管理神经网络机器人：多模型路由、安全令牌、角色预设。',
+      '<strong>RestlessByte Bot Suite</strong> — 面向沟通、自动化、AI 工作流与快速支持的 Telegram 与 VK 机器人组合。',
     projectGitZipQR:
-      '<strong>GitZipQR</strong> — 通过二维码离线传输加密数据（AES-256-GCM、scrypt、分片、完整性校验）。',
+      '<strong>Farmilochka Game Chat</strong> — 同时运行在 Telegram 和 VK 的互动游戏社区机器人。',
     navResume: '我的简历',
     navOffline: '🛠️ 线下服务'
   }
@@ -338,6 +343,7 @@ const applyTranslations = () => {
   setHTML('location', t.location);
   setText('profile-pill', t.profilePill);
   setText('contacts', t.contactsTitle);
+  setText('contact-note', t.contactNote);
   setText('wallet', t.walletTitle);
   setText('payment-label', t.paymentLabel);
 

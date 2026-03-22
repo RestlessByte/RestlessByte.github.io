@@ -359,13 +359,13 @@ export const arrayProjects = [
       ar: 'GitZipQR'
     },
     description: {
-      en: 'My organization in GitHub for product which provides avoided script for secure vault and share your data',
-      ru: 'Моя организация в GitHub для продукта, который предоставляет скрипт для безопасного хранения и обмена вашими данными',
-      kk: 'GitHub-тағы ұйымым: деректерді қауіпсіз сақтау мен бөлісуге арналған құрал',
-      zh: '我的 GitHub 组织，用于提供安全存储与共享数据的工具',
-      ar: 'منظمتي في GitHub لمنتج يقدّم أداة لتخزين بياناتك ومشاركتها بأمان'
+      en: 'Open-source GitHub profile with bots, utilities and experiments built under the RestlessByte brand.',
+      ru: 'Мой GitHub с ботами, утилитами и экспериментами под брендом RestlessByte.',
+      kk: 'RestlessByte брендімен жасалған боттар, утилиталар және эксперименттері бар GitHub профилім.',
+      zh: '我的 GitHub 主页，收录了 RestlessByte 品牌下的机器人、工具与实验项目。',
+      ar: 'حسابي على GitHub ويضم بوتات وأدوات وتجارب مفتوحة المصدر تحت علامة RestlessByte.'
     },
-    link: 'https://github.com/RestlessByte/GitZipQR-vault',
+    link: 'https://github.com/restlessbyte',
     icon:
       `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-telegram"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" /></svg>`
   },
@@ -390,20 +390,20 @@ export const arrayProjects = [
   },
   {
     title: {
-      en: 'Telegram AI Hub Bot',
-      ru: 'Telegram AI Hub',
-      kk: 'Telegram AI Hub',
-      zh: 'Telegram AI Hub',
-      ar: 'بوت Telegram AI Hub'
+      en: 'RestlessByte Telegram Bot',
+      ru: 'Telegram-бот RestlessByte',
+      kk: 'RestlessByte Telegram боты',
+      zh: 'RestlessByte Telegram 机器人',
+      ar: 'بوت RestlessByte في تيليجرام'
     },
     description: {
-      en: 'In this chatbot, you can communicate with AI directly in Telegram, and you can also create your own chatbots based on AI, set prompts (scripts) for each chatbot',
-      ru: 'В этом чат боте общаться с AI прямо в Telegram, а также вы можете создавать своих чат ботов на основу AI, задавать промпты(сценарии) к каждому чат боту',
-      kk: 'Бұл чат-ботта Telegram ішінде AI-мен сөйлесе аласыз, әрі әр ботқа арналған промпттармен өз AI-боттарыңызды жасайсыз.',
-      zh: '在 Telegram 中直接与 AI 对话，并创建带有自定义提示的专属 AI 机器人。',
-      ar: 'يمكنك التحدث مع الذكاء الاصطناعي مباشرة في تيليجرام وإنشاء بوتاتك الخاصة مع تعليمات مخصصة لكل بوت.'
+      en: 'Main Telegram bot for communication, updates, automation and fast routing to the right RestlessByte service.',
+      ru: 'Основной Telegram-бот для связи, апдейтов, автоматизации и быстрого перехода к нужному сервису RestlessByte.',
+      kk: 'Байланыс, жаңартулар, автоматтандыру және RestlessByte сервистеріне тез өтуге арналған негізгі Telegram бот.',
+      zh: '用于联系、获取更新、自动化处理并快速进入 RestlessByte 服务的主 Telegram 机器人。',
+      ar: 'البوت الرئيسي للتواصل والتحديثات والأتمتة والوصول السريع إلى خدمات RestlessByte.'
     },
-    link: 'https://t.me/AIHub0_bot',
+    link: 'https://t.me/restlessbytebot',
     icon:
       `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-telegram"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" /></svg>`
   },
@@ -422,7 +422,7 @@ export const arrayProjects = [
       zh: '将 Linux 流程与 ChatGPT、DeepSeek、Grok 等模型连接的命令行工具集。',
       ar: 'حزمة أوامر تربط تدفقات لينكس مع ChatGPT وDeepSeek وGrok وغيرها.'
     },
-    link: 'https://github.com/RestlessByte/AI-CLI-LINUX',
+    link: 'https://github.com/restlessbyte/AI-CLI-LINUX',
     icon:
       `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-telegram"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" /></svg>`
   },
@@ -441,7 +441,7 @@ export const arrayProjects = [
       zh: '简化 AI 模型集成的 TypeScript SDK。',
       ar: 'حزمة TypeScript تسهّل دمج نماذج الذكاء الاصطناعي في التطبيقات.'
     },
-    link: 'https://github.com/RestlessByte/usingOpenAI',
+    link: 'https://github.com/restlessbyte/usingOpenAI',
     icon:
       `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-telegram"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" /></svg>`
   }
