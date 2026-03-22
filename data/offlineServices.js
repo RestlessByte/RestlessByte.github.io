@@ -325,22 +325,42 @@ export const offlineServiceContent = {
       ar: 'بيانات التواصل'
     },
     note: {
-      en: 'Please message the Telegram bot first — I have many channels and it helps to keep requests organised.',
-      ru: 'Пожалуйста, сначала пишите в чат-бот — каналов много, так проще не потерять заявку.',
-      kk: 'Алдымен Telegram-ботқа жазыңыз — арналар көп, өтінімді жоғалтпауға көмектеседі.',
-      zh: '请先联系 Telegram 机器人——渠道很多，这样更容易整理请求。',
-      ar: 'يرجى مراسلة بوت تيليجرام أولاً — لدي قنوات عديدة وهذا يساعد على تنظيم الطلبات.'
+      en: 'For the fastest reply, start with the Telegram bot or my main Telegram account — all links below are HTTPS.',
+      ru: 'Для самого быстрого ответа сначала пиши в Telegram-бота или в основной Telegram — все ссылки ниже на HTTPS.',
+      kk: 'Ең жылдам жауап үшін алдымен Telegram ботқа немесе негізгі Telegram-ыма жазыңыз — төмендегі сілтемелердің бәрі HTTPS.',
+      zh: '想更快收到回复，请先联系 Telegram 机器人或我的主 Telegram 账号——下方所有链接均为 HTTPS。',
+      ar: 'لأسرع رد، ابدأ ببوت تيليجرام أو حسابي الرئيسي في تيليجرام — جميع الروابط أدناه تعمل عبر HTTPS.'
     },
     items: [
       {
-        label: { en: 'Telegram bot', ru: 'Telegram чат-бот', kk: 'Telegram чат-бот', zh: 'Telegram 机器人', ar: 'بوت تيليجرام' },
-        display: 'https://t.me/reportRestlessByte_bot',
-        url: 'https://t.me/reportRestlessByte_bot'
+        label: { en: 'Telegram bot', ru: 'Telegram-бот', kk: 'Telegram боты', zh: 'Telegram 机器人', ar: 'بوت تيليجرام' },
+        display: 'https://t.me/restlessbytebot',
+        url: 'https://t.me/restlessbytebot'
       },
       {
-        label: { en: 'Telegram account', ru: 'Telegram аккаунт', kk: 'Telegram аккаунт', zh: 'Telegram 账号', ar: 'حساب تيليجرام' },
-        display: 'https://t.me/RestlessByte',
-        url: 'https://t.me/RestlessByte'
+        label: { en: 'Telegram main account', ru: 'Основной Telegram', kk: 'Негізгі Telegram', zh: 'Telegram 主账号', ar: 'حساب تيليجرام الرئيسي' },
+        display: 'https://t.me/restlessbyte',
+        url: 'https://t.me/restlessbyte'
+      },
+      {
+        label: { en: 'VK bot', ru: 'VK-бот', kk: 'VK боты', zh: 'VK 机器人', ar: 'بوت VK' },
+        display: 'https://vk.com/restlessbytebot',
+        url: 'https://vk.com/restlessbytebot'
+      },
+      {
+        label: { en: 'Game chat bot in Telegram', ru: 'Игровой чат-бот в Telegram', kk: 'Telegram-дағы ойын чат-боты', zh: 'Telegram 游戏聊天机器人', ar: 'بوت دردشة الألعاب في تيليجرام' },
+        display: 'https://t.me/farmilochka0_bot',
+        url: 'https://t.me/farmilochka0_bot'
+      },
+      {
+        label: { en: 'Game chat bot in VK', ru: 'Игровой чат-бот в VK', kk: 'VK-тағы ойын чат-боты', zh: 'VK 游戏聊天机器人', ar: 'بوت دردشة الألعاب في VK' },
+        display: 'https://vk.com/farmilochkabot',
+        url: 'https://vk.com/farmilochkabot'
+      },
+      {
+        label: { en: 'GitHub', ru: 'GitHub', kk: 'GitHub', zh: 'GitHub', ar: 'GitHub' },
+        display: 'https://github.com/restlessbyte',
+        url: 'https://github.com/restlessbyte'
       }
     ]
   }
