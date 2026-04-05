@@ -25,7 +25,7 @@ const LANGUAGE_FLAGS = {
 const translations = {
   en: {
     greeting: '👋 Daniil [RestlessByte]',
-    role: '🎨 Neon UI crafter | 👨🏽‍💻 FullStack Developer | 🤖 Bot Builder | 🧠 AI Engineer',
+    role: '🎨 UI/UX crafter | 👨🏽‍💻 FullStack Developer | 🤖 Bot Builder | 🧠 AI Engineer',
     location: '📍 <b>Bashkortostan, Russia | Remote</b>',
     paymentLabel: '💸 Crypto Wallets:',
     copy: 'Copy',
@@ -93,7 +93,7 @@ const translations = {
   },
   ru: {
     greeting: '👋 Даниил [RestlessByte]',
-    role: '🎨 Создатель neon UI | 👨🏽‍💻 FullStack-разработчик | 🤖 Bot Builder | 🧠 AI-инженер',
+    role: '🎨 UI/UX создатель | 👨🏽‍💻 FullStack-разработчик | 🤖 Bot Builder | 🧠 AI-инженер',
     location: '📍 <b>Башкортостан, Россия | Удалённо</b>',
     paymentLabel: '💸 Крипто-кошельки:',
     copy: 'Скопировать',
@@ -127,7 +127,7 @@ const translations = {
   },
   kk: {
     greeting: '👋 Даниил [RestlessByte]',
-    role: '🎨 Neon UI жасаушы | 👨🏽‍💻 FullStack әзірлеуші | 🤖 Bot Builder | 🧠 AI инженері',
+    role: '🎨 UI/UX жасаушы | 👨🏽‍💻 FullStack әзірлеуші | 🤖 Bot Builder | 🧠 AI инженері',
     location: '📍 <b>Башқұртстан, Ресей | Қашықтан</b>',
     paymentLabel: '💸 Крипто әмияндар:',
     copy: 'Көшіру',
@@ -161,7 +161,7 @@ const translations = {
   },
   zh: {
     greeting: '👋 Daniil [RestlessByte]',
-    role: '🎨 霓虹 UI 打造者 | 👨🏽‍💻 全栈开发者 | 🤖 Bot Builder | 🧠 AI 工程师',
+    role: '🎨 UI/UX 設計師 | 👨🏽‍💻 全栈开发者 | 🤖 Bot Builder | 🧠 AI 工程师',
     location: '📍 <b>巴什科尔托斯坦，俄罗斯 | 远程</b>',
     paymentLabel: '💸 加密钱包：',
     copy: '复制',
